@@ -8,6 +8,7 @@ title: Stuff to read (soon)
 *  *The Illiad*, Homer
 *  *The Man Who Laughs*, Victor Hugo
 *  *Utopia*, Sir Thomas More
+*  *The Brothers Karamazov*, Dostoyevsky
 *  *Crime and Punishment*, Dostoyevsky 
 *  *Div, Grad, Curl, and All That: An Informal Text on Vector Calculus*, Schey
 *  *The Death and Life of Great American Cities*, Jane Jacobs
