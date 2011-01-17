@@ -28,14 +28,14 @@ Let's say we have two functions we want to replace: `getTreasureFingersAlbum`
 and `getToroAlbum`. We want to change them to `treasureFingersAlbum` and
 `toroAlbum`, respectively.
     
-    :doargs %s/get\(TreasureFingers\|Toro\)Album()/\l\1Album/gec | update
+    :argdo %s/get\(TreasureFingers\|Toro\)Album()/\l\1Album/gec | update
 
 Now you're whipping through each matching instance, yaying or naying each
 replacement like a glutton prince.
 
 Wait, what? Let's break down what's going on here.
 
-- `:doargs`, unsurprisingly, specifies that we're acting on the args we
+- `:argdo`, unsurprisingly, specifies that we're acting on the args we
   specified earlier.
 - `%s/foo/bar/gc` replaces each instance of `foo` with `bar` and prompts you
   before doing so.
