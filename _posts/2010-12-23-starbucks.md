@@ -6,7 +6,7 @@ title: Scenes from Starbucks
 I was waiting in line to get my coffee. A man sitting at a square table with
 his two kids made a remark about a sale at Macy's. He had his mouth full of
 three dollar pastry, was wearing a five o'clock shadow, and informing his
-disinterested kids of the commercial event with genuine zeal. He reminded me of
+uninterested kids of the commercial event with genuine zeal. He reminded me of
 an extra from a fifties period piece, somehow fitted with updated clothing and
 unknowingly displaced.
 
