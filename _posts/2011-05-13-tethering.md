@@ -1,11 +1,11 @@
 ---
-title: Tether your droid to Arch
+title: Tether your droid to Arch Linux
 layout: post
 ---
 
 Before Mike and I head out on our adventure on Wednesday, I wanted to get Droid
-tethering working so that we could blog about our horrific road-side deaths as
-they were happening (I am a progeny of web2.0, after all). 
+tethering working so that we can blog about our horrific road-side deaths as
+they happen (I am a progeny of web2.0, after all). 
 
 The process only took an afternoon and was surprising straightforward. Here are
 the steps I followed.
