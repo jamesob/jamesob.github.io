@@ -4,7 +4,7 @@ layout: post
 ---
 
 Before Mike and I head out on our adventure on Wednesday, I wanted to get Droid
-tethering working so that we can blog about our horrific road-side deaths as
+tethering working so that we can blog about our horrific roadside deaths as
 they happen (I am a progeny of web2.0, after all). 
 
 The process only took an afternoon and was surprising straightforward. Here are
@@ -14,7 +14,7 @@ the steps I followed.
 
 I followed [these
 steps](http://www.droidforums.net/forum/droid-labs/74028-root-droid-1-regardless-os-version.html)
-and found them straightfoward. I did have to google for a copy of RSD Lite 4.6
+without much snag. I did have to google for a copy of RSD Lite 4.6
 and fare the unsavory waters of mediafire, but that wasn't a big deal.
 The most complex part of this step was operating a Windows 7 machine without
 getting violently sick.
