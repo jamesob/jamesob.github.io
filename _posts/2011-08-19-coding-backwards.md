@@ -6,9 +6,9 @@ published: true
 
 For a while I've wanted to write some personal finance software. Call me crazy,
 but I can't find anything currently in existence that allows me to project my
-earnings and expenses[^1], then gives me a summary of where the hurt will be in
-my expenses. Basically, I want to be able to propose a budget to myself and
-simulate how it will play out.
+earnings and expenses[^1], then summarizes the net effect over a period of time.
+Basically, I want to be able to propose a budget to myself and simulate how it
+will play out.
 
 So I sat down (as so many programmers have before me), ready to (almost
 certainly) reinvent the wheel, and I began to code. I wasn't really feeling
