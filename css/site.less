@@ -29,7 +29,12 @@
    font-family: "VAL";
    src: url("/fonts/VAL.otf"); 
 }
-                        
+
+@font-face {
+  font-family: "permanentmarker";
+  src: url("/fonts/PermanentMarker.ttf");
+}
+        
 @dropshadow_color: #aaa;
 @link-color: #C17530; 
 @link-hover-color:#336343;   
@@ -67,6 +72,10 @@
   -moz-box-shadow: 0px 3px 6px #ccc;
   -webkit-box-shadow: 0px 3px 6px #ccc;
   box-shadow: 0px 3px 6px #ccc;
+}
+
+.inside-standout {
+  padding: 20px 0 20px 0;
 }
                   
 /* ===============================
@@ -154,7 +163,7 @@ body {
       
       ul {
         list-style-type: none;
-        font-size: 45px;
+        font-size: 35px;
         display: block;
         float: left;
         padding: 0;
@@ -165,7 +174,7 @@ body {
         }
 
         a {
-          color: #C17530; 
+          color: #AE9446; 
           text-decoration: none;
         }
 
@@ -192,7 +201,6 @@ body {
 
   #desc {
     margin-bottom: 3em;
-    padding: 20px 0 20px 0;
   }
 
   margin-bottom: 4em;
@@ -209,8 +217,8 @@ body {
    * Blog posts
    * =============================== */
   #post-title {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
 
     h1 {
       font-size: 200%;
@@ -227,6 +235,19 @@ body {
       font-weight: normal;
       margin-top: -0.5em;
     }
+  }
+
+  #abstract {
+
+    .abstract-opening {
+      text-transform: uppercase;
+      font-family: artifika;
+      font-weight: bold;
+      font-size: 12px;
+      margin-right: 20px;
+      color: #666;
+    }
+
   }
 
   #post-body {
@@ -256,6 +277,7 @@ body {
  
   ul.posts {
     list-style-type: none;
+    margin-bottom: 45px;
     
     a {
       /* color: #57B256; */
@@ -298,9 +320,42 @@ body {
     }
   }
 
-  .footer .contact {
-    float: left;
-    margin-right: 3em;
+  
+  /* ===============================
+   * Social media buttons
+   * =============================== */ 
+  #social-media-buttons {
+    float: right;
+    height: 60px;
+    width: 230px;
+    ul {
+      float: left;
+      margin: 10px 0 10px 0;
+      padding: 0;
+    }
+    ul li {
+      display: inline;
+    }
+
+    a img {
+      opacity: 0.5;
+    }
+
+    a:hover img {
+      opacity: 1;
+    }
+  }
+
+  .footer {
+
+    #footer-images {
+      float: right;
+    }
+
+    .contact {
+      float: left;
+      margin-right: 3em;
+    }
   }
 
   .footnotes {

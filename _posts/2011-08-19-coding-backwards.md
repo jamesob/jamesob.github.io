@@ -2,6 +2,8 @@
 title: Coding backwards
 layout: post
 published: true
+abstract: "Playing pretend on top of an API you haven't written yet can be a quick,
+effective way to spur ideas about design."
 ---
 
 For a while I've wanted to write some personal finance software. Call me crazy,
