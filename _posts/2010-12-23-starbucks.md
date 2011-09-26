@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Scenes from Starbucks
+published: false
 ---
 
 I was waiting in line to get my coffee. A man sitting at a square table with
