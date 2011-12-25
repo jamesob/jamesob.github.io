@@ -29,12 +29,7 @@
    font-family: "VAL";
    src: url("/fonts/VAL.otf"); 
 }
-
-@font-face {
-  font-family: "permanentmarker";
-  src: url("/fonts/PermanentMarker.ttf");
-}
-        
+       
 @dropshadow_color: #aaa;
 @link-color: #C17530; 
 @link-hover-color:#336343;   
@@ -82,7 +77,7 @@
  * body
  * =============================== */ 
 body {
-  margin: 30px 0 20px 0;
+  margin: 30px 0 20px 20px;
 }
 
 .site {
@@ -133,8 +128,65 @@ body {
     padding: 0;
   }
 
-  #front-header, #small-header {
+  .clearfix:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+       
+  /* ===============================
+   * Front page
+   * =============================== */
+
+  #showboxes {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+
+    .left, .right {
+      float: left;
+      width: auto;
+    }
+
+    .left {
+      margin-right: 25px;
+    }
+  }
+   
+  #showboxes .box {
+    position: relative;
+    width: 280px;
+    padding: 20px 4px 10px 4px;
+    margin: 10px 0px 25px 0px;
+    border: 1px solid #CCC;
+    @radius: 8px;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+  }
+
+  #showboxes .box .title {
+    position: absolute;
+    margin: auto;
+    top: -15px;
+    left: 10px;
+    border: 1px solid #444;
+    background-color: #EEE;
+    padding: 2px 10px 2px 10px;
+    text-align: center;
+    @radius: 4px;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+  }
+
+  #header {
+
+    margin-bottom: 30px;
+
     #title {
+      float: left;
       @outline-color: #555;
       a {
         text-decoration: none;
@@ -144,95 +196,14 @@ body {
                      -1px 1px 0 @outline-color,
                      1px -1px 0 @outline-color;
       }
-      font-size: 60px;
+      font-size: 43px;
       font-family: "VAL";
+    }
 
-      margin-top: 40px;
-      margin-bottom: 20px;
+    td.left {
+      padding-right: 25px;
     }
   }
-
-  #small-header {
-    height: 100px;
-
-    #title {
-      float: left;
-    }
-
-    ul {
-      display: block;
-      float: right;
-      margin-top: 35px;
-      margin-right: 80px;
-    }
-
-    ul li {
-      display: inline;
-      margin-right: 20px;
-      padding: 5px 10px 5px 10px;
-      background: #EEE;
-      border: 1px #AAA solid;
-
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-
-  #front-header {
-    
-    height: 280px;
-
-    .nav {
-      float: left;
-      position: relative;
-      bottom: 0;
-      height: 100%;
-      margin-left: 25px;
-      
-      ul {
-        list-style-type: none;
-        font-size: 35px;
-        display: block;
-        float: left;
-        padding: 0;
-        margin: 0;
-
-        li {
-          padding: 10px 0 10px 0;
-        }
-
-        a {
-          color: #CCC; 
-          text-decoration: none;
-        }
-
-        a:hover {
-          color: #888;   
-        }
-      }
-    }
-
-    @pic-height: 200px;
-    .picture {
-      float: left;
-      height: 280px;
-      width: @pic-height + 10px;
-      margin-right: 20px;
-
-      img {
-        width: @pic-height;
-        display: block;
-        .nice-border;
-      }
-    }
-  }
-
-  #desc {
-    margin-bottom: 3em;
-  }
-
-  margin-bottom: 4em;
 
   #links {
     margin-top: 4em;
@@ -245,6 +216,7 @@ body {
   /* ===============================
    * Blog posts
    * =============================== */
+
   #post-title {
     margin-top: 0;
     margin-bottom: 10px;
@@ -334,27 +306,25 @@ body {
     a {
       color: #666;
     }
+  }
                 
   /* ===============================
    * Image formatting
    * =============================== */
-    .picture {
-      margin-top: 0.5em;
-      line-height: 0px;
-      float: left;
-      margin-right: 0.5em;
-      .nice-border;
+  .picture {
+    margin-top: 0.5em;
+    line-height: 0px;
+    float: left;
+    margin-right: 0.5em;
+    .nice-border;
 
-      margin-bottom: 2em; /* lowest element on page */
-    }
+    margin-bottom: 2em; /* lowest element on page */
   }
 
-  
   /* ===============================
    * Social media buttons
    * =============================== */ 
-  #social-media-buttons {
-    float: right;
+  .social-media-buttons {
     height: 60px;
     width: 230px;
     ul {
@@ -375,7 +345,17 @@ body {
     }
   }
 
+  #header {
+    .social-media-buttons {
+      float: left;
+    }
+  }
+
   .footer {
+
+    .social-media-buttons {
+      float: right;
+    }
 
     #footer-images {
       float: right;
