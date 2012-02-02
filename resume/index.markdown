@@ -15,13 +15,12 @@ title: "James O'Beirne"
 - **Web developer**  
   Phase2 Technology, Alexandria, VA  
   Aug. 2011 --
-  - Full-stack web development using Groovy/Grails and Drupal.
+  - Full-stack web development using Groovy/Grails and Drupal (PHP).
   - Architected a feed-processing service for large news sites using Grails and
     MongoDB that (securely and quickly) injects content into Drupal from a variety of
     sources.
   - Designed REST APIs.
   - Front-end work using jQuery.
-  - Learned enough PHP to make me absolutely hate PHP.
   - Communicated directly with clients and performed live demos.
 
 - **Python developer**  
