@@ -272,76 +272,6 @@ $res = array_reduce(
 );
 {% endhighlight %} 
 
-#### From the real world
-
-If you find the previous example too contrived, consider the following PHP code
-pulled straight from production[^4]:
-
-{% highlight php %}
-<?php
-/**
- * $node is a `stdClass`, $item is an associative array.
- */
-private function update_taxonomy(&$node, $item) {
-  // loop through all the taxonomy terms we are interested in
-  $site = variable_get('site', '');
-
-  foreach ($this->taxonomyMap as $type => $map) {
-    if (($type == '*') || ($type == $node->type) || ($type == $site .'/*') \
-        || ($type = $site.'/'.$node->type)) {
-      foreach ($map as $field_name => $tax_term) {
-        $read_only = isset($tax_term['read-only']) ? $tax_term['read-only'] : FALSE;
-
-        foreach ($tax_term['path'] as $path) {
-          $list = xpath($item, $path);
-
-          if (!is_null($list)) {
-            // add terms to vocabulary
-            if (!is_array($list)) { $list = array($list); }
-            foreach ($list as $local_item) {
-              add_taxonomy_node($node, $field_name, $local_item, $tax_term['vid'], $read_only);
-            }
-          }
-        }
-      }          
-    }
-  }
-}
-{% endhighlight %}
-
-I don't expect you to read it or understand it; partly because it is
-highly contextual, but mostly because it is daunting and convoluted.
-
-On the other hand, try reading this code:
-
-{% highlight python %}
-def update_taxonomy(self, node, item):
-  site = variable.get('site', '')
-
-  ok_types = ['*', 
-              node.type, 
-              '%s/*' % site, 
-              '%s/%s' % (site, node.type)]
-
-  ok_maps = [self.taxonomyMap[t] for t in ok_types]
-
-  for field, tax_term in ok_maps.items():
-    read_only = tax_term.get('read_only', False)
-    path_list = list(tax_term.get('path', []))
-
-    for path in path_list:
-      local_items = xpath(item, path)
-      local_items = list(local_items) if local_items else []
-
-      for i in local_items:
-        add_tax_node(node, fieldname, local, i, tax_term['vid'], read_only) 
-{% endhighlight %}
-
-These two methods do the same thing and assume the same context. There is not
-necessarily a difference in the number of lines of code, but there is a clear
-difference in the readability of the two. One of the examples makes it very easy
-to see exactly what the intentions and assumptions of the author were.[^3]
-
 When a language requires more effort to read, either because it pollutes code
 with a lot of noise  
 (`$`, `->`, `array()`, et al), or lacks succinct notation
@@ -567,10 +497,6 @@ are not strings or integers.
 
 [^2]: Worth noting is that both Python and Groovy offer constructs for
 variadic arguments.
-
-[^3]: In fact, the Python is even at a disadvantage here because it interacts
-with an API that was designed to accommodate PHP's warts; namely, the continual
-checking and casting of return types.
 
 [^4]: The variable names have been sanitized for anonymity.
 
