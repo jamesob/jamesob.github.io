@@ -17,9 +17,9 @@ appeal intuitively to technical readers.
 
 ## We're engineers
 
-Often, after complaining of a surprising or erroneous behavior of
-PHP[^1] in our development chat, I am engaged by someone who is upset with my
-criticism of PHP and our use of it. 
+Often, after complaining of a surprising or erroneous behavior of PHP[^1] in our
+development chat, I am engaged by someone who takes issue with my criticism of
+PHP and our use of it. 
 
 Typically, the crux of their response is this: my criticisms of PHP are
 academic, aesthetic judgements that belong on the sidelines; at the end of the
@@ -45,7 +45,7 @@ In order to have an intelligent discussion about efficacy, we must first define
 it. What does it mean for a piece of software to be quality? Specifically, what
 does it mean for a body of code to be quality? 
 
-Quality is highly-contextual. A bridge of good quality could be described as a
+Quality is highly contextual. A bridge of good quality could be described as a
 physical construction that provides a stable, human-navigable connection between two
 pieces of land while requiring as little maintenance as possible. Quality is
 comprised of a large number of independent metrics in most cases, but
