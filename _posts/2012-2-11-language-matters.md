@@ -6,7 +6,7 @@ published: true
 
 Recently, I've been getting into confrontations in my workplace regarding our
 use of PHP. Even some who agree with me that PHP is a poor language still
-say that choice of language is mostly irrelevant to the bottom-line.
+say that choice of language is mostly irrelevant to the bottom line.
 
 I disagree. I have reason to believe that PHP, or any programming language that
 is less readable, predictable, and consistent than viable alternatives, is
