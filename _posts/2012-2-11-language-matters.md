@@ -310,7 +310,7 @@ private function update_taxonomy(&$node, $item) {
 {% endhighlight %}
 
 I don't expect you to read it or understand it; partly because it is
-highly-contextual, but mostly because it is daunting and convoluted.
+highly contextual, but mostly because it is daunting and convoluted.
 
 On the other hand, try reading this code:
 
