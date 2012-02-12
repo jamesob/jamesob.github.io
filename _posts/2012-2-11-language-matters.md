@@ -334,7 +334,7 @@ def update_taxonomy(self, node, item):
       local_items = list(local_items) if local_items else []
 
       for i in local_items:
-          add_tax_node(node, fieldname, local, i, tax_term['vid'], read_only) 
+        add_tax_node(node, fieldname, local, i, tax_term['vid'], read_only) 
 {% endhighlight %}
 
 These two methods do the same thing and assume the same context. There is not
