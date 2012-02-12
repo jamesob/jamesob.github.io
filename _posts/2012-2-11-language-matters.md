@@ -234,14 +234,11 @@ Consider the following example of PHP[^7]:
 <?php
 $x = 1;
 $nums = array(10, 20, 30, 40);
+$res = 0;
 
-$arr = array();
 foreach ($nums as $n)
   if ($n > 15)
-    $arr[] = $n * 2 + $x;
-$res = 0;
-foreach ($arr as $r)
-  $res -= $r;
+    $res -= $n*2 + $x;
 {% endhighlight %}
 
 Consider the same functionality in Groovy:
@@ -504,7 +501,8 @@ variadic arguments.
 interest to academia.
 
 [^7]: This example was taken and modified from [this
-article](http://justafewlines.com/2009/10/whats-wrong-with-php-closures/)
+article](http://justafewlines.com/2009/10/whats-wrong-with-php-closures/) and
+was kindly cleaned up by JS235 from reddit.
 
 [^8]: [Referential transparency on
 Wikipedia](http://en.wikipedia.org/wiki/Referential_transparency)
