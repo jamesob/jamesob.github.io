@@ -332,8 +332,9 @@ def update_taxonomy(self, node, item):
     for path in path_list:
       local_items = xpath(item, path)
       local_items = list(local_items) if local_items else []
-      [add_tax_node(node, fieldname, local, i, tax_term['vid'], read_only) 
-       for i in local_items]
+
+      for i in local_items:
+          add_tax_node(node, fieldname, local, i, tax_term['vid'], read_only) 
 {% endhighlight %}
 
 These two methods do the same thing and assume the same context. There is not
