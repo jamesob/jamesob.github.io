@@ -250,8 +250,19 @@ def res = nums.findAll { it > 15 }
     .inject(0) {accum, val -> accum - val}
 {% endhighlight %}
 
-The intent in the Groovy code is much clearer. We can attempt to emulate this
-succinct style in PHP, though it becomes an unreadable mess:
+Consider the same functionality in Python, [phrased even more succinctly by
+mrjbq7](http://re-factor.blogspot.com/2012/02/readability.html):
+{% highlight python %}
+>>> def foo(x, nums):
+...     return -sum(n*2+x for n in nums if n > 15)
+... 
+
+>>> foo(1, [10,20,30,40])
+-183
+{% endhighlight %}
+ 
+The intent in the latter two examples is much clearer. We can attempt to emulate
+this succinct style in PHP, though it becomes an unreadable mess:
 
 {% highlight php %}
 <?php
