@@ -49,13 +49,20 @@ title: "James O'Beirne"
 - [Ad Hoc Adventure Time](http://ahadventure.us/): a blog about my bike trip
   across the United States; written in Python and JavaScript; uses Jekyll and
   the Google Maps API.
+- [mnty](https://github.com/jamesob/mnty): easy management of SSHFS mounts; 
+  written in Python.
 - [pwdy](https://github.com/jamesob/pwdy): command-line password management;
   written in Python.
-- [txture](https://github.com/jamesob/txture): a flat-file blog engine; written
-  in Clojure.
 - [miser](https://github.com/jamesob/Miser): programmatic budgeting; written in
   Python.
+- [txture](https://github.com/jamesob/txture): a flat-file blog engine; written
+  in Clojure.
 - The rest is on my [github](https://github.com/jamesob/).
+
+## Publications
+
+- [Coding Backwards](http://hackermonthly.com/issue-17.html), printed in *Hacker
+  Monthly*'s October 2011 issue.
  
 ## Education
 
