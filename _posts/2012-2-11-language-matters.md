@@ -486,7 +486,7 @@ criticism and development to flourish.
 
 The same evolution is true of programming languages. Using programming languages
 that make concise abstraction difficult results in code that is more prone to
-error because it is more harder to develop and read. This is wasted time. This
+error because it is more difficult to develop and read. This is wasted time. This
 is wasted money[^9].
 
 For this reason, the choice of language is relevant to the daily business and
