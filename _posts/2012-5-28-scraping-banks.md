@@ -20,7 +20,7 @@ gist](https://gist.github.com/2819803). Though it is specific to Chase
 accounts, this should give you a good idea of how to scrape your own data from
 the financial institution of your choice.
 
-```python
+{% highlight python%}
 from selenium import webdriver
 import time
 
@@ -92,4 +92,4 @@ if __name__ == '__main__':
     pwd = getpass.getpass()
 
     print get_activity(uname, pwd)
-```
+{% endhighlight %}
