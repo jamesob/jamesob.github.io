@@ -25,10 +25,10 @@ Moving on: of a recent increase in corporate profit-margins, Felix writes,
 > before.
 
 This statement in itself reveals a severe misunderstanding of how the economy
-works. What does Mr. Salmon think happens to the capital once it has rushed to
-"corporation's bottom lines?" He must think that each Apple board member takes
-his freshly-earned cash home to hide it under his mattress or simply burn it
-in an oil drum.
+works. What does Mr. Salmon presume happens to the capital once it has rushed
+to "corporation's bottom lines?" He apparently assumes that each Apple board
+member takes his freshly-earned cash home to hide under his mattress or
+simply burn in an oil drum.
 
 Nothing could be further from the truth. In order to preserve a large amount of
 wealth, that wealth must be *injected back into the economy* via the purchase
