@@ -50,11 +50,13 @@ crisis.
 > laid-off teachers and firefighters, to provide some kind of safety net for
 > the millions of Americans who have been out of work for more than a year. 
 
-This proposal is ridiculous from the onset because *that line of thought is what
-landed us here.* Where does Salmon think that the $15.7 trillion debt came from?
-I'll give you a hint: that tower of debt was built using the exact blueprint 
-that Salmon is proposing here, which is to borrow and spend until... until...
-the situation improves? 
+Sparing the absurdity of the implicit assertion that a central-planning body
+can more efficiently allocate capital than can an undisturbed market, this
+proposal is ridiculous from the onset because *his solution is what we've been
+doing for a while.* Where does Salmon think that the $15.7 trillion debt came
+from?  I'll give you a hint: that tower of debt was built using the exact
+blueprint that Salmon is proposing here, which is to borrow and spend until...
+until...  the situation improves? 
 
 Salmon is proposing to make yet another gamble, kin of which have failed
 miserably, using as collateral the prosperity of the next generation. Are you
