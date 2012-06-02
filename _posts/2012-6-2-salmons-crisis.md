@@ -33,7 +33,7 @@ in an oil drum.
 Nothing could be further from the truth. In order to preserve a large amount of
 wealth, that wealth must be *injected back into the economy* via the purchase
 of assets. These "bottom lines" can't unproductively sit on cash, or that
-wealth will whither away under inflation.
+wealth will weather away under inflation.
 
 Let's relax my argument and assume that the nascent Facebook millionaires don't
 want to preserve their wealth, and so they extract from the mattress only to
