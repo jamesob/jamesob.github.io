@@ -19,9 +19,9 @@ we farm with spoons. It is missing the point to equate job creation with a
 healthy economy.
 
 Moving on: of a recent increase in corporate profit-margins, Felix writes, 
-> Just look at the amount of money which is flowing straight to corporations’
+> Just look at the amount of money which is flowing straight to corporations'
 > bottom lines, and not being put to good, productive work. Corporate profits
-> now account for significantly more than 10% of GDP: that’s never happened
+> now account for significantly more than 10% of GDP: that's never happened
 > before.
 
 This statement in itself reveals a severe misunderstanding of how the economy
