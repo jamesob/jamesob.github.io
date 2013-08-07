@@ -246,7 +246,7 @@ For me, the most interesting part of the above implementation was the dynamic
 evaluation of the code string in a namespace that existed solely for the 
 purpose of that one evaluation. It emphasized to me the simplicity of Python's
 data model: all namespaces, including modules and classes, really just reduce
-to dicts. Seeing the namedtuple usecase really exemplified the power of that
+to dicts. Seeing the namedtuple usecase really illustrates the power of that
 simplicity.
 
 With that technique in mind, I wonder if the fieldname validation couldn't be
