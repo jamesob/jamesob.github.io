@@ -265,7 +265,7 @@ the implementor might have said
 for name in (typename,) + field_names:
     try:
         exec ("%s = True" % name) in {}
-    except SyntaxError:
+    except (SyntaxError, NameError):
         raise ValueError('Invalid field name: %r' % name)
 {% endhighlight %}
 to test more directly and succinctly for a valid identifier. The drawback
