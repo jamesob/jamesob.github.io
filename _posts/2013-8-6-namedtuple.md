@@ -28,7 +28,8 @@ out](http://pymotw.com/2/collections/namedtuple.html).
 
 woo! doesn't that comment header get you jazzed!?
 
-We start off with---you guessed it---a function declaration.
+We start off with---you guessed it---a function declaration and a good use
+of doctests.
 
 {% highlight python %}
 def namedtuple(typename, field_names, verbose=False, rename=False):
@@ -56,11 +57,9 @@ def namedtuple(typename, field_names, verbose=False, rename=False):
     """
 {% endhighlight %}
 
-Nice use of doctests. 
-
 Below we start with some argument wrangling. Note the use of `basestring`,
 which should be used for isinstance checks that try to determine if something
-is str-like[^0]: this captures both unicode and str types.
+is str-like[^0]: this way, we capture both unicode and str types.
 
 {% highlight python %}
     # Parse and validate the field names.  Validation serves two purposes,
