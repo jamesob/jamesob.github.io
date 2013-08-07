@@ -511,13 +511,13 @@ variadic arguments.
 [^6]: Studies correlating bug count with language use are apparently not of
 interest to academia.
 
-[^7]: This example was taken and modified from [this
-article](http://justafewlines.com/2009/10/whats-wrong-with-php-closures/) and
+[^7]: This example was taken and modified from this
+article: http://justafewlines.com/2009/10/whats-wrong-with-php-closures/ and
 was kindly cleaned up by JS235 from reddit.
 
-[^8]: [Referential transparency on
-Wikipedia](http://en.wikipedia.org/wiki/Referential_transparency)
+[^8]: Referential transparency on
+Wikipedia: http://en.wikipedia.org/wiki/Referential_transparency
 
-[^9]: See Paul Graham's [experiences with
-Viaweb](http://www.paulgraham.com/avg.html).
+[^9]: See Paul Graham's experiences with
+Viaweb: http://www.paulgraham.com/avg.html
 
