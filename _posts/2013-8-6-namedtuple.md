@@ -27,7 +27,8 @@ out](http://pymotw.com/2/collections/namedtuple.html).
 {% endhighlight %}
 
 woo! doesn't that comment header get you jazzed!?
-Here we go. We start off with---you guessed it---a function declaration.
+
+We start off with---you guessed it---a function declaration.
 
 {% highlight python %}
 def namedtuple(typename, field_names, verbose=False, rename=False):
