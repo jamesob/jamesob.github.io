@@ -6,17 +6,18 @@ published: true
 
 The other day, I was on a plane to San Francisco. Lacking an internet
 connection, I decided to read through some of the source for Python 2.7's
-standard library. I found `namedtuple`'s implementation particularly
+standard library. I found `namedtuple`'s implementation especially
 interesting, I guess because I had assumed it was a lot more magical than it
 turns out to be.
 
-Here's the source, reprinted with some annotations on stuff I found
-interesting. If you haven't heard of namedtuple before, it's a very useful
-builtin that you should
-[check out](http://pymotw.com/2/collections/namedtuple.html).
+Here's the
+[source](http://hg.python.org/releasing/2.7.3/file/7bb96963d067/Lib/collections.py#l232),
+reprinted with some annotations on stuff I found interesting. If you haven't
+heard of namedtuple before, it's a very useful builtin that you should [check
+out](http://pymotw.com/2/collections/namedtuple.html). 
 
 #### The code
-
+                                                              
 
 {% highlight python %}
 ################################################################################
