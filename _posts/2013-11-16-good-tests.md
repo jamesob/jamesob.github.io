@@ -20,13 +20,15 @@ that taking the extra few minutes to bang out a few basic usages
 has revealed some dumb omission on my part that would've wasted valuable
 QA time.
 
-But we can go too far. The returns on testing don't just diminish;
-they actually begin to cost if we overdo it in the wrong way.
+But we can go too far. The returns on testing don't just diminish; tests
+actually become counterproductive if we hit cruise-control and stop using
+care.
 
 
 ### So what do you test?
 
-One of the things that I always ask a serious engineering candidate is, given
+One of the things that I always ask a serious engineering candidate at 
+[Percolate](http://www.percolate.com/jobs) is, given
 some basic module, what does the shape of your automated test look like?
 
 I usually give them a contrived but illustrative example, the `sorter` module:
@@ -202,6 +204,13 @@ in programming, and it's especially true in effective, sustainable testing.
 Careful consideration of privacy in dynamic languages is also key for 
 maintaining a team's sanity. Be decisive and clear about what you choose to
 expose in a module. Maintenance, testing, and use will be much more pleasant.
+
+### Related resources 
+
+- [Growing Object-Oriented Software, Guided by Tests](http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627/ref=sr_1_1?ie=UTF8&qid=1384633202&sr=8-1&keywords=growing+objects+tests): 
+an engaging read on the importance of end-to-end tests, and how to do them right.
+- [Martin Fowler's article on mocks vs. stubs](http://martinfowler.com/articles/mocksArentStubs.html)
+and some of the second-order implications.
 
 
 [^0]: of course there are exceptions here (&lt;1.0 releases) but it's a good
