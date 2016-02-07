@@ -48,7 +48,7 @@ written one!
 
 Ten minutes and a few backspaces later, I came up with this:
 
-{% highlight python %}
+```python
 from miser import *
 
 m = Miser("jobeirne")
@@ -75,7 +75,7 @@ m.attachIncome(income)
 
 print(m.summary(fromdt = Date(2011, 8, 20), 
                 todt = Date(2012, 9, 1))) 
-{% endhighlight %}
+```
 
 ## Skipping steps
 
@@ -88,15 +88,15 @@ When I wrote a script in my fictional API, I decoupled the transactions and
 their frequency of occurrence into two disparate objects without really thinking
 about it; instead of my initial design,
  
-{% highlight python %}
+```python
 MonthlyExpense(name = "netflix", amount = 14.);
-{% endhighlight %}
+```
  
 I now had
 
-{% highlight python %}
+```python
 Expense(name = "netflix", amount = 14., on = MonthlyRecurring(15))
-{% endhighlight %}
+```
                     
 which makes for a waaay more reasonable class tree (goodbye, multiple
 inheritance).

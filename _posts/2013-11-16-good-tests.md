@@ -114,7 +114,7 @@ interface:
 
 Let's see where that gets us with coverage:
 
-{% highlight sh %}
+```sh
 $ nosetests --cov-report=term --with-coverage --cover-package=sorter the_right_test_1.py 
 .
 Name     Stmts   Miss  Cover   Missing
@@ -124,7 +124,7 @@ sorter      15      2    87%   40-41
 Ran 1 test in 0.004s
 
 OK
-{% endhighlight %}
+```
 
 As you would expect, such a basic test doesn't fully exercise the module. 
 Looks like we missed a `_merge_sort` call, so let's include a test case that'll
@@ -134,7 +134,7 @@ fix that.
 </script>
   
 
-{% highlight sh %}
+```sh
 $ nosetests --cov-report=term --with-coverage --cover-package=sorter the_right_test_2.py 
 .
 Name     Stmts   Miss  Cover   Missing
@@ -144,7 +144,7 @@ sorter      15      1    93%   28
 Ran 1 test in 0.004s
 
 OK
-{% endhighlight %}
+```
 
 Great, we're making solid progress. The last thing we need to test is the
 ValueError.
@@ -158,7 +158,7 @@ everything is covered, we added in a few assertions that test degenerate
 arguments.
  
 
-{% highlight sh %}
+```sh
 $ nosetests --cov-report=term --with-coverage --cover-package=sorter the_right_test_3.py 
 .
 Name     Stmts   Miss  Cover   Missing
@@ -168,7 +168,7 @@ sorter      15      0   100%
 Ran 1 test in 0.005s
 
 OK
-{% endhighlight %}
+```
 
 ### Better
 

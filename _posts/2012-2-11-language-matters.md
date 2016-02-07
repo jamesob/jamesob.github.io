@@ -94,11 +94,12 @@ The more clearly the intentions of the programmer are represented in code, the
 easier it will be for the author and other programmers to verify correctness.
 
 What do you expect the following code example to result in?
-{% highlight php %}
+
+```php
 <?php
 php> $a = null;
 php> $a->hotbaz = 1;
-{% endhighlight %}
+```
 
 Conceptually, `null` (in most programming languages, and in PHP) is the single,
 canonical representation of nothing. It is the absence of value. From the PHP
@@ -113,13 +114,14 @@ in which the attempted retrieval of, say, an object fails.
 
 Unfortunately, that isn't what happens. Instead, PHP accepts the above as a
 valid operation. Here's how `$a` looks afterwards:
-{% highlight php %}
+
+```php
 <?php
 php> = $a
 <object #2 of type stdClass> {
   hotbaz => 1,
 }
-{% endhighlight %}
+```
 
 A `stdClass` object is automatically instantiated, from nothing, with no
 warning. A bug results when a user employing the fictional API mentioned above
@@ -129,14 +131,14 @@ thrown and caught.
 In other languages, namely Python and Groovy, this class of bugs is not
 possible: 
 
-{% highlight python %}
+```python
 >>> a = None 
 >>> a.hotbaz = 1
 Traceback (most recent call last): File "<stdin>", line 1, in <module>
 AttributeError: 'NoneType' object has no attribute 'hotbaz' 
-{% endhighlight %}
+```
 
-{% highlight python %}
+```groovy
 groovy:000> a = null
 ===> null
 groovy:000> a.hotbaz = 1
@@ -144,7 +146,7 @@ ERROR java.lang.NullPointerException:
 Cannot set property 'hotbaz' on null object
         at groovysh_evaluate.run (groovysh_evaluate:2)
         ...
-{% endhighlight %}
+```
 
 Those two languages maintain a reverence for the definition of `None` and
 `null`, and thus behave in a way that a programmer capable of deductive
@@ -156,7 +158,8 @@ fundamental properties such as the null value, how can we rely on it to do more
 complex operations in a predictable way?
 
 Let's consider another essential language property: function arity. 
-{% highlight php %}
+
+```php
 <?php
 php> function baz($a) {
  ...   return $a + 1;
@@ -164,7 +167,7 @@ php> function baz($a) {
 
 php> = baz(1, 2, 3);
 2
-{% endhighlight %}
+```
 
 The PHP interpreter doesn't complain when a function is passed more arguments
 than what it was defined to handle; this makes the execution of a program more
@@ -176,7 +179,7 @@ information to combat errors.
 This sort of lenience is not permitted in other languages, where predictability
 as a tool for quality is recognized[^2]:
 
-{% highlight python %}
+```python
 >>> def foo(a):
 ...   return a + 1
 ... 
@@ -184,9 +187,9 @@ as a tool for quality is recognized[^2]:
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: foo() takes exactly 1 argument (3 given)
-{% endhighlight %}
+```
 
-{% highlight python %}
+```groovy
 groovy:000> def baz(a) {
 groovy:001>   a + 1
 groovy:002> }
@@ -199,7 +202,7 @@ types: (java.lang.Integer, java.lang.Integer, java.lang.Integer) values: [1, 2, 
 Possible solutions: baz(java.lang.Object), wait(), run(), run(), any(), grep()
         at groovysh_evaluate.run (groovysh_evaluate:2)
         ...
-{% endhighlight %}
+```
 
 
 ### Readability
@@ -230,7 +233,7 @@ amenable a program is to housing errors.
 
 Consider the following example of PHP[^7]:
 
-{% highlight php %}
+```php
 <?php
 $x = 1;
 $nums = array(10, 20, 30, 40);
@@ -239,32 +242,35 @@ $res = 0;
 foreach ($nums as $n)
   if ($n > 15)
     $res -= $n*2 + $x;
-{% endhighlight %}
+```
 
 Consider the same functionality in Groovy:
-{% highlight python %}
+
+```groovy
 def x = 1
 def nums = [10, 20, 30, 40]
 def res = nums.findAll { it > 15 } 
     .collect { it * 2 + x } 
     .inject(0) {accum, val -> accum - val}
-{% endhighlight %}
+```
 
 Consider the same functionality in Python, [phrased even more succinctly by
 mrjbq7](http://re-factor.blogspot.com/2012/02/readability.html):
-{% highlight python %}
+
+```python
 >>> def foo(x, nums):
 ...     return -sum(n*2+x for n in nums if n > 15)
 ... 
 
 >>> foo(1, [10,20,30,40])
 -183
-{% endhighlight %}
+```
  
-The intent in the latter two examples is much clearer. We can attempt to emulate
-this succinct style in PHP, though it becomes an unreadable mess:
+The intent in the latter two examples is much clearer *(edit: years later I'm
+not so sure about the Groovy example...)*. We can attempt to emulate this
+succinct style in PHP, though it becomes an unreadable mess:
 
-{% highlight php %}
+```php
 <?php
 $x = 1;
 $nums = array(10, 20, 30, 40);
@@ -278,7 +284,7 @@ $res = array_reduce(
             ),
         function ($v, $w) { return -$v - $w; }
 );
-{% endhighlight %} 
+```
 
 When a language requires more effort to read, either because it pollutes code
 with a lot of noise  
@@ -316,7 +322,7 @@ Nodes, one of the most common datatypes in Drupal, are represented with
 `stdClass`s when, by nature of having behaviors and required attributes, they
 should be distinct classes.
 
-{% highlight php %}
+```php
 <?php
 php> $node = new stdClass();
 php> $node->title = 'foobar';
@@ -329,7 +335,7 @@ php> node_save($node2);
 
 Uncaught exception: EntityMalformedException: Missing bundle property on entity
 of type node.
-{% endhighlight %}
+```
 
 Persisting the node to a datastore can be attempted without the node having
 required attributes. 
@@ -344,7 +350,7 @@ to be.
 Consistency in the data model of PHP would encourage consistency in Drupal. This
 is how the above should look:
  
-{% highlight php %}
+```php
 <?php
 php> $node = new Node('article');
 php> $node->title = 'foobar';
@@ -353,13 +359,13 @@ php> $node->save();
 php> // better yet
 php> $node = new ArticleNode($title);
 ...
-{% endhighlight %}
+```
 
 #### Regularity in notation
 
 In Python and Groovy, collections behave consistently. 
 
-{% highlight python %}
+```python
 Python 2.7.2 (default, Dec  5 2011, 20:11:10)
 ...
 >>> for i in "abc":
@@ -383,7 +389,7 @@ a c b
 
 >>> {"abc"[x]:x for x in range(3)}
 {'a': 0, 'c': 2, 'b': 1}
-{% endhighlight %}
+```
 
 Specifically, collections are objects that all implement a specific interface
 which allows them to be used by the same control structures. They are
@@ -394,7 +400,7 @@ message clearer.
 
 PHP does not exhibit this kind of compactness.
 
-{% highlight php %}
+```php
 <?php
 php> foreach (array(1, 2, 3) as $x) {
  ...   echo $x;
@@ -413,7 +419,7 @@ php> foreach(str_split('abc') as $x) {
  ...   echo $x;
  ... }
 abc
-{% endhighlight %}
+```
 
 This divides how a user operates with separate data structures that are, in many
 ways, analogous. If we were reading Chinese, this is like having to parse a
@@ -423,7 +429,7 @@ check that text's grammar and content now has twice as much work.
 PHP also doesn't respect referential transparency[^8], a large factor in compactness
 and predictability.
 
-{% highlight php %}
+```php
 <?php
 php> "abc"[0]
 Multiline input has no syntactic completion:
@@ -452,7 +458,7 @@ Parse error: syntax error, unexpected '[' in Command line code on line 1
 
 php> = $arr[0]
 1
-{% endhighlight %}
+```
 
 This kind of behavior stifles regularity, and therefore compactness. It
 places a needless burden on the programmer and his co-workers. 
