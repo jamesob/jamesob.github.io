@@ -74,13 +74,11 @@ MongoDB that injects content into Drupal from various data sources.
   National Institute of Standards and Technology, Gaithersburg, MD  
   May 2010 – May 2011  
     
-  - I worked on [FiPy](http://www.ctcms.nist.gov/fipy/), an object-oriented
-partial differential equation solution package written in Python and hosted
-at NIST.
+  - Developed [FiPy](http://www.ctcms.nist.gov/fipy/), an object-oriented
+partial differential equations lib.
   - Added parallelized solving for a large class of problems. 27x faster than
-serial solution.
-  - Proposed and implemented a continuous-integration testing framework with
-Buildbot, in Python.
+serial solutions.
+  - Proposed and implemented a CI testing framework with Buildbot.
   - Refactored huge class hierarchies to be more Pythonic.
 
 - **Web developer**  
