@@ -6,22 +6,24 @@ published: true
 
 - I'm a generalist engineer with a bent towards backend and
   [DevOps](https://twitter.com/devops_borat/status/41587168870797312). 
-- I like long walks by the beach, candlelit dinners, monitoring, tests, and
-  working in Linux.
+- I like long walks by the beach, candlelit dinners, monitoring, 
+  "permissionless innovation," and working in Linux.
 
 ## Notable opensource contributions
 
-- cpp:
-  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)  
-- sh: 
-  [desk](https://github.com/jamesob/desk)\*  
 - py: 
+  [rds_cp](https://github.com/counsyl/rds_cp)\*,
   [errbot](https://github.com/errbotio/errbot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob), 
   [redset](https://github.com/percolate/redset)\*, 
   [pyotp](https://github.com/pyotp/pyotp/pull/1),
   [ddbmock](https://github.com/sendgridlabs/ddbmock/commits?author=jamesob),
   [beets](https://github.com/beetbox/beets/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob),
-  [boto](https://github.com/boto/boto/pull/1899)
+  [boto](https://github.com/boto/boto/pull/1899),
+- sh: 
+  [desk](https://github.com/jamesob/desk)\*,
+  [docker-btc](https://github.com/jamesob/docker-btc)
+- cpp:
+  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)  
 - go: 
   [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)  
 - coffee: 
@@ -35,6 +37,7 @@ published: true
   [Counsyl](https://www.counsyl.com/), South San Francisco, CA  
   Mar. 2015 -  
   
+  - Led development of a lab ETL/BI system.
   - Modernized the infrastructure of a robotics-automated wetlab with Docker,
     AWS, monitoring, and continuous deployment.
   - Automated finance ETL jobs away from painful once-per-month ordeals to
@@ -42,8 +45,8 @@ published: true
   - Much wrangling of AWS under HIPAA constraints.
   - Improved developer experience by introducing
     [Sentry](https://getsentry.com/welcome/),
-    [chatops](https://speakerdeck.com/jnewland/chatops-at-github), and physical
-    monitoring displays. 
+    an effortless service deployment mechanism,
+    and physical monitoring displays. 
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
@@ -81,14 +84,6 @@ serial solutions.
   - Proposed and implemented a CI testing framework with Buildbot.
   - Refactored huge class hierarchies to be more Pythonic.
 
-- **Web developer**  
-  George Mason University, Fairfax, VA  
-  Mar. 2008 – May 2010  
-   
-  - Designed and coded a CMS for displaying and storing news and upcoming events
-on the cs.gmu homepage, which is still in use.
-  - All work done in PHP, HTML, and JavaScript in a Linux environment.
-
 ## Publications
 
   - [Our engineering culture](https://blog.percolate.com/2013/08/engineering-culture/),
@@ -103,16 +98,16 @@ Monthly*’s October 2011 issue.
 - **B.Sc. in Computer Science, minor in Mathematics**  
   George Mason University, Fairfax, VA  
 
-## Some ideas
+## Philosophy
 
-- Tight feedback loop = happy developers
+- Tight feedback loop + audited autonomy = happy developers
 - Choose [boring](http://mcfunley.com/choose-boring-technology) tech
 - Assume good [faith](https://en.wikipedia.org/wiki/Wikipedia:Assume_good_faith)
 - Simplest thing that could work
 
 ## Interests
 
-Bitcoin, camping, cooking,
+Bitcoin, cooking, olympic lifting,
 [reading](https://www.goodreads.com/user/show/16430645-jamesob), DJing
 ([poorly](http://soundcloud.com/jamesob)), going for walks and taking
 [pictures](http://instagram.com/_jamesob), biking,
