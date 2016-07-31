@@ -39,13 +39,14 @@ published: true
   
   - Led development of an ETL/BI system that provides analytics on the operation
     of an automated genome sequencing lab.
+  - Wrote and introduced a tool that allows individual devs to safely create 
+    and deploy new services without any ops intervention.
   - Modernized the infrastructure of over ten systems with Docker,
     AWS, monitoring, and continuous deployment.
   - Automated finance ETL jobs away from painful once-per-month ordeals to
     nightly exports using Puppet and Python.
   - Improved developer experience by introducing
-    an effortless service deployment mechanism
-    and various monitoring tools including [Sentry](https://getsentry.com/welcome/)
+    various monitoring tools including [Sentry](https://getsentry.com/welcome/)
     and [Datadog](https://www.datadoghq.com/).
   - Managed provisioning of a whole bunch of HIPAA-compliant infrastructure in 
     AWS.
