@@ -44,7 +44,7 @@ published: true
   - Automated finance ETL jobs away from painful once-per-month ordeals to
     nightly exports using Puppet and Python.
   - Improved developer experience by introducing
-    an effortless service deployment mechanism,
+    an effortless service deployment mechanism
     and various monitoring tools including [Sentry](https://getsentry.com/welcome/)
     and [Datadog](https://www.datadoghq.com/).
   - Managed provisioning of a whole bunch of HIPAA-compliant infrastructure in 
