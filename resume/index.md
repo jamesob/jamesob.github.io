@@ -7,7 +7,7 @@ published: true
 - I'm a generalist engineer with a bent towards backend and
   [DevOps](https://twitter.com/devops_borat/status/41587168870797312). 
 - I like long walks by the beach, candlelit dinners, monitoring, 
-  "permissionless innovation," and working in Linux.
+  "permissionless innovation," AWS, and working in Linux.
 
 ## Notable opensource contributions
 
@@ -18,7 +18,7 @@ published: true
   [pyotp](https://github.com/pyotp/pyotp/pull/1),
   [ddbmock](https://github.com/sendgridlabs/ddbmock/commits?author=jamesob),
   [beets](https://github.com/beetbox/beets/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob),
-  [boto](https://github.com/boto/boto/pull/1899),
+  [boto](https://github.com/boto/boto/pull/1899)
 - sh: 
   [desk](https://github.com/jamesob/desk)\*,
   [docker-btc](https://github.com/jamesob/docker-btc)
@@ -44,8 +44,8 @@ published: true
   - Automated finance ETL jobs away from painful once-per-month ordeals to
     nightly exports with Puppet and Python.
   - Improved developer experience by introducing
-    [Sentry](https://getsentry.com/welcome/),
     an effortless service deployment mechanism,
+    [Sentry](https://getsentry.com/welcome/),
     and physical monitoring displays. 
   - Much wrangling of AWS under HIPAA constraints.
 
