@@ -48,8 +48,7 @@ published: true
   - Improved developer experience by introducing
     various monitoring tools including [Sentry](https://getsentry.com/welcome/)
     and [Datadog](https://www.datadoghq.com/).
-  - Managed provisioning of a whole bunch of HIPAA-compliant infrastructure in 
-    AWS.
+  - Provisioned and managed many pieces of HIPAA-compliant infrastructure in AWS.
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
