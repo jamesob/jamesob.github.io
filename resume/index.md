@@ -37,16 +37,17 @@ published: true
   [Counsyl](https://www.counsyl.com/), South San Francisco, CA  
   Mar. 2015 -  
   
-  - Led development of a lab ETL/BI system.
-  - Modernized the infrastructure of a robotics-automated wetlab with Docker,
+  - Led development of an ETL/BI system that provides analytics on the operation
+    of an automated genome sequencing lab.
+  - Modernized the infrastructure of over ten systems with Docker,
     AWS, monitoring, and continuous deployment.
   - Automated finance ETL jobs away from painful once-per-month ordeals to
     nightly exports with Puppet and Python.
-  - Much wrangling of AWS under HIPAA constraints.
   - Improved developer experience by introducing
     [Sentry](https://getsentry.com/welcome/),
     an effortless service deployment mechanism,
     and physical monitoring displays. 
+  - Much wrangling of AWS under HIPAA constraints.
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
