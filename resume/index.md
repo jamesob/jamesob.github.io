@@ -42,12 +42,13 @@ published: true
   - Modernized the infrastructure of over ten systems with Docker,
     AWS, monitoring, and continuous deployment.
   - Automated finance ETL jobs away from painful once-per-month ordeals to
-    nightly exports with Puppet and Python.
+    nightly exports using Puppet and Python.
   - Improved developer experience by introducing
     an effortless service deployment mechanism,
-    [Sentry](https://getsentry.com/welcome/),
-    and physical monitoring displays. 
-  - Much wrangling of AWS under HIPAA constraints.
+    and various monitoring tools including [Sentry](https://getsentry.com/welcome/)
+    and [Datadog](https://www.datadoghq.com/).
+  - Managed provisioning of a whole bunch of HIPAA-compliant infrastructure in 
+    AWS.
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
