@@ -4,8 +4,7 @@ layout: res
 published: true
 ---
 
-- I'm a generalist engineer with a bent towards backend and
-  [DevOps](https://twitter.com/devops_borat/status/41587168870797312). 
+- I'm a generalist engineer with a bent towards delivering value quickly. 
 - I like long walks by the beach, Python, candlelit dinners, monitoring, React,
   "permissionless innovation," AWS, vim, and working in Linux.
 
@@ -13,6 +12,7 @@ published: true
 
 - py: 
   [rds_cp](https://github.com/counsyl/rds_cp)\*,
+  [fipy](https://github.com/usnistgov/fipy),
   [errbot](https://github.com/errbotio/errbot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob), 
   [redset](https://github.com/percolate/redset)\*, 
   [pyotp](https://github.com/pyotp/pyotp/pull/1),
@@ -20,8 +20,7 @@ published: true
   [beets](https://github.com/beetbox/beets/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob),
   [boto](https://github.com/boto/boto/pull/1899)
 - sh: 
-  [desk](https://github.com/jamesob/desk)\*,
-  [docker-btc](https://github.com/jamesob/docker-btc)
+  [desk](https://github.com/jamesob/desk)\*
 - cpp:
   [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)  
 - go: 
@@ -70,7 +69,6 @@ published: true
   - Implemented practices and tools that helped the engineering team ship 
     multiple times a day while rapidly growing from 4 to ~50 engineers. 
   - Resurrected QA, [automated it](https://blog.percolate.com/2012/11/tools-we-use/).
-  - Resurrected testing, [automated it](https://blog.percolate.com/2013/02/introducing-jennifer/).
   - Performed months-long refactorings and data migrations, including
     implementing user multi-tenancy and SQL-to-NoSQL.
   - Sped up multiple pages and processes by an order of magnitude.
@@ -80,7 +78,6 @@ published: true
   Phase2 Technology, Alexandria, VA  
   Aug. 2011 – Mar. 2012  
     
-  - Full-stack web development using Groovy/Grails.
   - Built a feed-processing service for large news sites using Grails and
 MongoDB that injects content into Drupal from various data sources.
   - Wallowed in [Drupal hell](https://www.drupal.org/project/oauth).
@@ -90,12 +87,11 @@ MongoDB that injects content into Drupal from various data sources.
   National Institute of Standards and Technology, Gaithersburg, MD  
   May 2010 – May 2011  
     
-  - Developed [FiPy](http://www.ctcms.nist.gov/fipy/), an object-oriented
+  - Worked on [FiPy](http://www.ctcms.nist.gov/fipy/), an object-oriented
 partial differential equations lib.
   - Added parallelized solving for a large class of problems. 27x faster than
 serial solutions.
   - Proposed and implemented a CI testing framework with Buildbot.
-  - Refactored huge class hierarchies to be more Pythonic.
 
 ## Publications
 
