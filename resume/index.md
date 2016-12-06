@@ -7,7 +7,7 @@ published: true
 - I'm a generalist engineer with a bent towards backend and
   [DevOps](https://twitter.com/devops_borat/status/41587168870797312). 
 - I like long walks by the beach, Python, candlelit dinners, monitoring, React,
-  "permissionless innovation," AWS, and working in Linux.
+  "permissionless innovation," AWS, vim, and working in Linux.
 
 ## Notable opensource contributions
 
