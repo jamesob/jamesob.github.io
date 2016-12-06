@@ -6,7 +6,7 @@ published: true
 
 - I'm a generalist engineer with a bent towards backend and
   [DevOps](https://twitter.com/devops_borat/status/41587168870797312). 
-- I like long walks by the beach, candlelit dinners, monitoring, 
+- I like long walks by the beach, Python, candlelit dinners, monitoring, React,
   "permissionless innovation," AWS, and working in Linux.
 
 ## Notable opensource contributions
@@ -33,9 +33,20 @@ published: true
 
 ## Work experience
 
+- **Senior Software Engineer**  
+  [Tempo Automation](https://www.tempoautomation.com/), San Francisco, CA  
+  Aug. 2016 - 
+
+  - Led design and implementation of an ES6/React frontend on a tight timeline
+    that facilitates $MM in annualized revenue.
+  - Added numerous improvements and features to the Python/Django backend.
+  - Implemented a business intelligence data warehouse using AWS in under a 
+    week.
+
+
 - **Platform Engineer**  
   [Counsyl](https://www.counsyl.com/), South San Francisco, CA  
-  Mar. 2015 -  
+  Mar. 2015 - Aug. 2016
   
   - Led development of an ETL/BI system that provides analytics on the operation
     of an automated genome sequencing lab.
