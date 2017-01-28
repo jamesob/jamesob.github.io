@@ -34,9 +34,8 @@ developing beforehand:
 > electromechanical machine, called the Bombe, that searched through the
 > permutations, and by the end of the war the British were able to read all
 > daily German Naval Enigma traffic.
-> 
-> - [*Some sort of reputable
->   source*](https://blogs.scientificamerican.com/guest-blog/how-alan-turing-invented-the-computer-age/)
+> -- [*Some sort of reputable
+> source*](https://blogs.scientificamerican.com/guest-blog/how-alan-turing-invented-the-computer-age/)
 
 It's hard to argue that this sort of effort and rabid allocation of talent
 wouldn't have moved "practical" computing forward by quite a lot. I'm sure there
