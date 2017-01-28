@@ -58,6 +58,18 @@ table.  I'd like to imagine that if WWII hadn't happened, some kind of peaceful
 potpourri of telecommunication and profit motive would've eventually netted us
 personal computers, but it's hard to know. 
 
-It's safe to say the kind of abilities, value, and connectivity that we enjoy
+~~It's safe to say the kind of abilities, value, and connectivity that we enjoy
 because of widely dispersed computing wouldn't have gotten here nearly as
-quickly, and that's ironic.
+quickly, and that's ironic.~~
+
+Edit: [@lucaswiman](https://twitter.com/lucaswiman) has kindly offered some 
+perspective that calls into question that last, kinda grim statement:
+
+> Shannon's work on information theory was pre-war, and unclassified. It had a
+> much bigger practical impact, since Turing's work remained classified for
+> decades. I'd say the Cold War had a bigger effect on the history of
+> computation than WWII due to the need for nuclear weapons simulations and the
+> space race. Arguably the main innovations required for the first electronic
+> computers came out of Bell Labs and pre-war academic research. It's possible
+> that absent WWII and the Cold War, we'd be a few years behind in technologies
+> which happened to have military importance, but I'd take that trade off.
