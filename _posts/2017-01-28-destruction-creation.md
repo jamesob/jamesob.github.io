@@ -8,6 +8,8 @@ worker](http://www.learnnc.org/lp/media/uploads/2009/12/bomber_worker.jpg){:styl
 *A woman works on the nose of a bomber at the Douglas Aircraft Company plant in
 Long Beach, California in 1942.*
 
+---
+
 I wonder if we'd have computers today if World War II hadn't been so
 terrifically horrible. 
 
