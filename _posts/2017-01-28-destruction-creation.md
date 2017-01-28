@@ -13,17 +13,17 @@ Long Beach, California in 1942.*
 I wonder if we'd have computers today if World War II hadn't been so
 terrifically horrible. 
 
-The death, destruction, and general frenzy that comes with an existential crisis
-at the national level drive individuals to do remarkable things. Not hard to
-imagine that's because survival and way of life are on the line. 
+Not hard to imagine that the death, destruction, and general frenzy that comes
+with an existential crisis at the national level drive individuals to do
+remarkable things. Code breaking and the development of nuclear weapons during
+WWII undoubtedly pushed computing forward. 
 
-Code breaking and the development of nuclear weapons during WWII undoubtedly
-pushed computing forward. Alan Turing, the father (or at the very least the guy
-who delivered the baby) of modern computing, started work on [the theoretical
-basis for the computer](https://en.wikipedia.org/wiki/Turing_machine)
-back in 1936, before WWII, but he spent the war holed up in Bletchely Park,
-putting into application much of the theory about computing that he'd been
-developing beforehand:
+Alan Turing, the father (or at the
+very least the guy who delivered the baby) of modern computing, started work on
+[the theoretical basis for the
+computer](https://en.wikipedia.org/wiki/Turing_machine) back in 1936, before
+WWII, but he spent the war holed up in Bletchely Park, putting into application
+much of the theory about computing that he'd been developing beforehand:
 
 > The British needed mathematicians to crack the German Navy’s Enigma code.
 > Turing worked in the British top-secret Government Code and Cipher School at
@@ -34,6 +34,7 @@ developing beforehand:
 > electromechanical machine, called the Bombe, that searched through the
 > permutations, and by the end of the war the British were able to read all
 > daily German Naval Enigma traffic.
+>
 > -- [*Some sort of reputable
 > source*](https://blogs.scientificamerican.com/guest-blog/how-alan-turing-invented-the-computer-age/)
 
