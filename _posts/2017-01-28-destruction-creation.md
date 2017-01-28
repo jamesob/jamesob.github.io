@@ -1,5 +1,5 @@
 ---
-title: Creation -> destruction
+title: Destruction -> creation
 layout: post
 ---
 
