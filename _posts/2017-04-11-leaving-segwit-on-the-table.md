@@ -38,7 +38,7 @@ forward, the question remains: why fight SegWit?
 
 The [recent revelations re:
 ASICBOOST](http://www.coindesk.com/bitcoins-new-controversy-asicboost-allegations-explained/)
-provide a convincing (if not unproven) narrative on why people who are rational,
+provide a convincing (if not proven) narrative on why people who are rational,
 intelligent, and savvy with the protocol would be ignoring (and in certain cases
 antagonizing) an otherwise net-positive change. Unless I'm missing some
 technical aspect which would explain how SegWit activation locks in Core
