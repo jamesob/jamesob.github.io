@@ -55,4 +55,4 @@ interest has trickled down from powerful mining incumbents to well-intended
 but unaware technical participants.
 
 The last few paragraphs are pretty heavy speculation (and I'm happy to be
-corrected), but I'm unable to see of a more convincing explanation.
+corrected), but I'm unable to see a more convincing explanation.
