@@ -28,7 +28,7 @@ submit to their continued reign over the protocol in the future. Why not
 selfishly reap the benefits and then take a crack at pursuing a fork?
 
 To leave SegWit on the table seems fairly irrational to me -- it feels like
-too big an oversight. And I certainly don't think anyone who has a 
+too big an oversight. And I don't think anyone who has a 
 technical horse in this race is dumb enough to miss its obvious benefits, 
 which creates interesting circumstantial evidence in the case of ASICBOOST.
 
@@ -45,7 +45,7 @@ technical aspect which would explain how SegWit activation locks in Core
 dominance, it doesn't make sense that a significant plurality of a community
 invested in Bitcoin's success wouldn't be for a SegWit activation.
 
-I can completely understand arguing over the next steps, and I can understand
+I can completely understand arguing over the next steps and I can understand
 the desire for increased transaction throughput, but SegWit itself seems like a
 given.
 
