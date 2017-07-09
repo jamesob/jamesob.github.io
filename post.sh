@@ -17,4 +17,4 @@ layout: post
 
 EOL
 
-exec nvim ${FILENAME}
+exec ${EDITOR} ${FILENAME}
