@@ -1,0 +1,41 @@
+
+@font-face {
+  font-family: 'monaco';
+  font-style: monospace;
+  src: local('/fonts/MONACO.TTF');
+}
+
+/* ===============================
+ * body
+ * =============================== */ 
+body {
+  margin: 30px 0 20px 60px;
+  font-family: Palatino, georgia, "times new roman", serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* 
+ * paragraphs outside of lists.
+ */
+#quotes > p {
+  margin-left: 20px;
+}
+
+#quotes {
+  width: 700px;
+  margin-bottom: 80px;
+  line-height: 120%;
+}
+
+/* ===============================
+ * list stuff
+ * =============================== */ 
+
+
+ul li {
+  margin-top: 32px;
+}
+ 
