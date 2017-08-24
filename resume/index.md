@@ -28,7 +28,7 @@ published: true
 - go: 
   [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)
   (golang isn't second-nature yet)
-- node (ugh): 
+- node: 
   [jennifer](https://github.com/percolate/jennifer)\*  
 
 \* created
