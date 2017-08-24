@@ -4,13 +4,14 @@ layout: res
 published: true
 ---
 
-- I'm a generalist engineer with a bent towards delivering value quickly. 
+- I'm a generalist engineer with devops know-how and a bent towards delivering value quickly. 
 - I like long walks by the beach, Python, candlelit dinners, monitoring, React,
-  "permissionless innovation," AWS, vim, and working in Linux.
+  permissionless innovation, AWS, vim, and working with Linux systems.
 
 ## Notable opensource contributions
 
 - py: 
+  [tinychain](https://github.com/jamesob/tinychain)\*,
   [rds_cp](https://github.com/counsyl/rds_cp)\*,
   [fipy](https://github.com/usnistgov/fipy),
   [errbot](https://github.com/errbotio/errbot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob), 
@@ -22,10 +23,12 @@ published: true
 - sh: 
   [desk](https://github.com/jamesob/desk)\*
 - cpp:
-  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)  
+  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)
+  (but I don't *really* know C++)
 - go: 
-  [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)  
-- coffee: 
+  [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)
+  (golang isn't second-nature yet)
+- node (ugh): 
   [jennifer](https://github.com/percolate/jennifer)\*  
 
 \* created
@@ -36,29 +39,24 @@ published: true
   [Tempo Automation](https://www.tempoautomation.com/), San Francisco, CA  
   Aug. 2016 - 
 
+  - Automated operation of a PCB factory with soup-to-nuts development of various tools.
+  - Solely responsible for design, maintenance, and deploy of an ITAR-compliant
+    server infrastructure on AWS. Uptime so far (including migration) is ~99.992%.
   - Led design and implementation of an ES6/React frontend on a tight timeline
     that facilitates $MM in annualized revenue.
-  - Added numerous improvements and features to the Python/Django backend.
-  - Implemented a business intelligence data warehouse using AWS in under a 
-    week.
 
 
 - **Platform Engineer**  
   [Counsyl](https://www.counsyl.com/), South San Francisco, CA  
   Mar. 2015 - Aug. 2016
   
+  - Provisioned and managed many pieces of HIPAA-compliant infrastructure in AWS.
+  - Wrote and introduced a tool that allows individual devs to safely create 
+    and deploy new services without any ops intervention, applied to 12+ systems.
   - Led development of an ETL/BI system that provides analytics on the operation
     of an automated genome sequencing lab.
-  - Wrote and introduced a tool that allows individual devs to safely create 
-    and deploy new services without any ops intervention.
-  - Modernized the infrastructure of over ten systems with Docker,
-    AWS, monitoring, and continuous deployment.
   - Automated finance ETL jobs away from painful once-per-month ordeals to
     nightly exports using Puppet and Python.
-  - Improved developer experience by introducing
-    various monitoring tools including [Sentry](https://getsentry.com/welcome/)
-    and [Datadog](https://www.datadoghq.com/).
-  - Provisioned and managed many pieces of HIPAA-compliant infrastructure in AWS.
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
@@ -69,19 +67,15 @@ published: true
   - Implemented practices and tools that helped the engineering team ship 
     multiple times a day while rapidly growing from 4 to ~50 engineers. 
   - Resurrected QA, [automated it](https://blog.percolate.com/2012/11/tools-we-use/).
-  - Performed months-long refactorings and data migrations, including
-    implementing user multi-tenancy and SQL-to-NoSQL.
   - Sped up multiple pages and processes by an order of magnitude.
-  - Implemented decentralized services using Apache Thrift.
+  - Helped lead drive towards SOA.
 
 - **Web developer**  
   Phase2 Technology, Alexandria, VA  
   Aug. 2011 – Mar. 2012  
     
   - Built a feed-processing service for large news sites using Grails and
-MongoDB that injects content into Drupal from various data sources.
-  - Wallowed in [Drupal hell](https://www.drupal.org/project/oauth).
-  - Communicated directly with clients and performed live demos.
+    MongoDB that injects content into Drupal from various data sources.
 
 - **Python developer**  
   National Institute of Standards and Technology, Gaithersburg, MD  
@@ -91,7 +85,7 @@ MongoDB that injects content into Drupal from various data sources.
 partial differential equations lib.
   - Added parallelized solving for a large class of problems. 27x faster than
 serial solutions.
-  - Proposed and implemented a CI testing framework with Buildbot.
+  - Proposed and implemented a CI framework with Buildbot.
 
 ## Publications
 
@@ -99,8 +93,8 @@ serial solutions.
 an overview of the practices I helped foster at Percolate.
   - [Introducing redset](https://blog.percolate.com/2013/10/introducing-redset/),
 a post about a library I helped opensource at Percolate.
-  - [Coding Backwards](http://hackermonthly.com/issue-17.html), printed in *Hacker
-Monthly*’s October 2011 issue.
+  - [Lisp: more is less](http://jameso.be/2014/01/19/lisp.html) and other rants can be
+    found on my blog.
 
 ## Education
 
@@ -110,7 +104,7 @@ Monthly*’s October 2011 issue.
 ## Philosophy
 
 - Tight feedback loop + audited autonomy = happy developers
-- Choose [boring](http://mcfunley.com/choose-boring-technology) tech
+- Choose [boring](http://mcfunley.com/choose-boring-technology) tech (most of the time)
 - Assume good [faith](https://en.wikipedia.org/wiki/Wikipedia:Assume_good_faith)
 - Simplest thing that could work
 
