@@ -69,12 +69,14 @@ class: center, middle
 
 ---
 
-### Initialization and concurrency model > `qt/bitcoin.cpp` 
- 
+### Initialization and concurrency model > `qt/bitcoin.cpp`
+
 ---
 
-### Initialization and concurrency model > threading 
- 
+### Initialization and concurrency model > threading
+
+- CScheduler
+
 
 ---
 
@@ -85,16 +87,78 @@ class: center, middle
 ---
 
 ## Storage > `.dat` files
- 
+
 ---
 
 ## Storage > leveldb
- 
+
 ---
 
 ## Storage > berkeleydb
- 
+
 ---
+ 
+class: center, middle
+
+# Data structures
+
+---
+
+### Data structures > chainstate > `CCoinsView`
+
+- Defined in:
+- Used in:
+
+---
+
+### Data structures > chainstate > `CChainState`
+
+- Defined in:
+- Used in:
+
+---
+  
+### Data structures > chainstate > `CBlockLocator`
+
+- Defined in:
+- Used in:
+
+--- 
+ 
+### Data structures > mempool > `CTxMempool`
+
+- Defined in:
+- Used in:
+
+---
+
+### Data structures > p2p > `CNode`
+
+- Defined in:
+- Used in:
+
+---
+
+### Data structures > p2p > `CAddrMan`
+
+- Defined in:
+- Used in:
+
+---
+
+### Data structures > p2p > `CConman`
+
+- Defined in:
+- Used in:
+
+---
+
+### Data structures > validation > `CSignatureCache`
+
+- Defined in:
+- Used in:
+
+---   
 
 class: center, middle
 
@@ -122,49 +186,83 @@ class: center, middle
 
 ---
 
-### Regions > `script/`  
+### Regions > `script/`
+
+
+---
+
+### Regions > `consensus/`
+
+---
+
+### Regions > `policy/`
+
+---
+
+### Regions > `interfaces/`
+
+---
+
+### Regions > `indexes/`
+
+---
+
+### Regions > `wallet/`
+
+---
+
+### Regions > `qt/`
+
+---
+
+### Regions > `rpc/`
+
+---
+
+### Regions > `zmq/`
+
+---
  
+class: center, middle
+
+# Libs
 
 ---
 
-### Regions > `consensus/` 
+
+
+  
+class: center, middle
+
+# Flow control
 
 ---
 
-### Regions > `policy/` 
-
----
-
-### Regions > `interfaces/` 
-
----
-
-### Regions > `indexes/` 
  
 ---
 
-### Regions > `wallet/` 
+### Flow control > `ValidationInterface`
  
 ---
 
-### Regions > `qt/` 
+
+   
+class: center, middle
+
+# Locks
 
 ---
-
-### Regions > `rpc/` 
  
----
-
-### Regions > `zmq/`  
-
----
 
 class: center, middle
 
-# Data structures
+# Examples
 
----
- 
-### Data structures > `CCoinsView`  
+---    
+  
 
----
+class: center, middle
+
+# Future work
+
+---     
