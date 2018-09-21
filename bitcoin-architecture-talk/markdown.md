@@ -49,13 +49,13 @@ Bitcoin Core serves a number of uses:
 In this talk, we will discuss the structure of the Bitcoin Core software and
 how it accomplishes these uses, including
 
-- concurrency model: how do we do multiple things simultaneously?
-
 - storage: how do we store and access data on disk?
 
 - data structures: how is data represented and manipulated in memory?
 
 - regions: what are the major subsystems?
+
+- concurrency model: how do we do multiple things simultaneously?
 
 - libs: what are the stateless libraries we use?
 
@@ -156,7 +156,7 @@ The ZMQ interface publishes notfications over a socket upon receipt of a
 
 which allows external software to perform some action on these events:
 
-#   
+#
 
 
 ```python
@@ -169,7 +169,7 @@ topic, body, *_ = msg
 
 if topic == b"hashblock":
     print('saw hashblock')
-    print(binascii.hexlify(body)) 
+    print(binascii.hexlify(body))
 ```
 
 See also: `-blocknotify=<cmd_str %s>`
@@ -185,42 +185,107 @@ class: center, middle
 class: center, middle
 
 # Storage
-
+ 
 ---
 
 ## Storage > `.dat` files
+
+Bitcoin stores some data in `.dat` files, which are just the raw bytes of
+some serialized data structure.
  
+---
+
+## Storage > `.dat` files
+
 - `blocks/blk?????.dat`: serialized block data
     - `validation.cpp:WriteBlockToDisk()`
     - `src/primitives/block.h:CBlock::SerializationOp()`
+
+--
 
 - `blocks/rev?????.dat`: "undo" data -- UTXOs added and removed by a block
     - `validation.cpp:UndoWriteToDisk()`
     - `src/undo.h:CTxUndo`
 
+--
+
 - `mempool.dat`: serialized list of mempool contents
     - `src/txmempool.cpp:CTxMemPool::infoAll()`
     - Dumped in `src/init.cpp:Shutdown()`
 
-- P2P
-  - 
+--
+
+- `peers.dat`: serialized peers
+    - `src/addrmah.h::CAddrMan::Serialize()`
+
+--
+
+- `banlist.dat`: banned node IPs/subnets
+    - See `src/addrdb.cpp` for serialization details
 
 ---
 
 ## Storage > leveldb
 
-- Blocks
-  - `blocks/index`
-  - 
+Leveldb is a fast, sorted key value store used for a few things in Bitcoin.
+
+It allows bulk writes and snapshots.
+
+It is bundled with the source tree in `src/leveldb/` and maintained in 
+[`bitcoin-core/leveldb`](https://github.com/bitcoin-core/leveldb).
+
+???
+
+Pieter on BDB -> LBD: https://bitcoin.stackexchange.com/a/51446
+
+---
+              
+## Storage > leveldb
+              
+- `blocks/index`: the complete tree of valid(ish) blocks the node has seen
+  - Serializes `mapBlockIndex`, or a list of `CBlockIndex`es
+  - `CBlockIndex` is a block header plus some important metadata, for example validation
+    status of the block (`nStatus`) and position on disk (`nFile`/`nDataPos`)
+
+--
+  
+- `chainstate/`: holds UTXO set
+  - `COutPoint` -> `CCoinsCacheEntry`
+      - Basically `(txid, index) -> Coin` (i.e. [CTxOut, is_coinbase, height])
+  - `CCoinsViewCache::BatchWrite()`
+
+--
+
+#### Important class
+- `CDBWrapper` (`src/dbwrapper*`)
+  - Abstracts away leveldb API
+
+???
+
+- Confusing that blocks/index holds, basically, the state of the chain but
+  we call the index of unspent outputs "chainstate." Kind of a misnomer.
+
+Chainstate: CCoinsViewCache
 
 ---
 
 ## Storage > berkeleydb
 
+BerkeleyDB is basically like leveldb but
+[worse](https://bitcoin.stackexchange.com/a/51446). 
+
+We still use it for the wallet.
+
+Some want to replace it with SQLite.
+   
+---
+
+## Storage > berkeleydb
+   
 - Wallet
   - `wallets/wallet.dat`: BerkeleyDB wallet file
       - `src/wallet/db.cpp`
-                            
+
 ---
 
 class: center, middle
@@ -228,11 +293,74 @@ class: center, middle
 # Data structures
 
 ---
+                
+# Data structures
 
-### Data structures > chainstate > `CCoinsView`
+The storage formats we just covered are deserialized into in-memory
+data structures during runtime.
 
-- Defined in:
-- Used in:
+Here are a few of the important ones.
+ 
+---
+                
+### Data structures > chainstate > blocks
+
+##### `src/primitives/block.h:CBlockHeader`
+
+The block header attributes you know and love: `nVersion, hashPrevBlock,
+hashMerkleRoot, nTime, nBits, nNonce`.
+
+--
+   
+##### `src/primitives/block.h:CBlock`
+
+It's `CBlockHeader`, but with transactions attached.
+
+--
+    
+##### `src/primitives/block.h:CBlockLocator`
+
+A list of <32 block hashes starting with a given block and going back through
+a chain in sort-of logarithmic distribution.
+
+Used to quickly find the divergence point between two tips.
+
+Construction logic lives in [`src/chain.cpp:CChain::GetLocator()`]().
+
+???
+
+- Clarify that everyone knows what a tip is.
+   
+---
+                 
+### Data structures > chainstate > blocks (continued)
+
+##### `src/chain.h:CBlockIndex`
+
+A block header plus some important metadata, for example validation
+status of the block (`nStatus`) and position on disk (`nFile`/`nDataPos`)
+
+The entire blockchain (and orphaned, invalid parts of the tree) is stored
+this way.
+
+---
+                
+### Data structures > chainstate > UTXOs
+                          
+##### `src/chain.h:CCoinsView`
+
+This manages an iterable view of all unspent coins.
+
+It is an abstract base class that provides a lookup from `COutPoint` (txid and txout
+index) to the `Coin` (`CTxOut`, `is_coinbase`, `nHeight`).
+
+It is subclassed by `src/txdb.h:CCoinsViewDB` to provide access to on-disk
+UTXO data (`datadir/chainstate/*.ldb`).
+
+It is also subclassed by `CCoinsViewBacked`, which in turn is subclassed by 
+`CCoinsViewCache` (an in-memory view of the UTXO set) and 
+`src/txmempool.cpp:CCoinsViewMemPool`.
+
 
 ---
 
@@ -291,19 +419,19 @@ class: center, middle
 - Used in:
 
 ---
- 
+
 # Initialization and concurrency model
 
 ---
- 
+
 ## Initialization and concurrency model
 
-- Bitcoin Core performs a number of tasks simultaneously 
+- Bitcoin Core performs a number of tasks simultaneously
 - It has a model of concurrent execution to support this
 
 
 ---
- 
+
 
 ### Initialization and concurrency model > `init.cpp`
 
