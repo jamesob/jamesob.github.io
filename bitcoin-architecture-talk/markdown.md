@@ -1,13 +1,24 @@
 
-class: center, middle
+class: left, bottom, nonumber, title, split-33
 
-# Bitcoin Core architecture overview
-### Dev++ 2018
-### jamesob, Chaincode Labs
+
+## Bitcoin Core<br> .stroke[architecture overview]
+
+.column[
+Dev++ 2018<br /> Tokyo, Japan
+]
+
+.column[
+[`@jamesob`](https://twitter.com/jamesob)<br />Chaincode Labs
+]
+
+.column[
+<img class="bottom right chaincode-img" src="https://chaincode.com/img/chaincode.jpg" />
+]
 
 ---
-
-# Agenda
+           
+## Agenda
 
 0. General introduction
 0. User interfaces
@@ -30,21 +41,19 @@ class: center, middle
 
 ---
 
-# Introduction
+### Introduction
 
 Bitcoin Core serves a number of uses:
 
 - A validating relay node in the peer-to-peer network
   - Blocks (chainstate) and transactions (mempool)
-
 - A canonical wallet implementation
-  - A tool for end-users
+  - A GUI/RPC tool for end-users
   - A working example for wallet implementers (e.g. coin selection)
-
 - Block assembly and submission for miners
-
 - A programmatic interface for Bitcoin applications
   - RPC via HTTP, CLI
+- (Kind-of-not-really) a reusable library for validation, serialization
 
 ---
 
@@ -53,13 +62,10 @@ Bitcoin Core serves a number of uses:
 In this talk, we will discuss the structure of the Bitcoin Core software and
 how it accomplishes these uses, including
 
-- concurrency model: how do we do multiple things simultaneously?
-
-- regions: what are the major subsystems?
-
-- storage: how do we store and access data on disk?
-
-- data structures: how is data represented and manipulated in memory?
+- .bold[concurrency model]: how do we do multiple things simultaneously?
+- .bold[regions]: what are the major subsystems?
+- .bold[storage]: how do we store and access data on disk?
+- .bold[data structures]: how is data represented and manipulated in memory?
 
 ---
 
@@ -68,13 +74,9 @@ how it accomplishes these uses, including
 I'm going to gloss over:
 
 - Any and all cryptographic implementations
-
 - Details of P2P message protocol
-
 - Graphical code (`qt/`)
-
 - Test framework (`test/`)
-
 - Exact validation semantics
 
 ...or basically anything really detailed.
@@ -89,11 +91,22 @@ important data structures.
 I've probably forgotten a few things, so feel free to shout out or ask
 questions.
 
+--
+
+Aaaand it's really hard to do this talk without circular dependencies. 
+
+I'll refer to the same thing multiple times.
+
+.center.margin-top-40[<img src="http://www.causality.inf.ethz.ch/images/cause-effect.gif" width="70%"
+alt="https://steemit.com/biology/@liberosist/the-egg-came-before-the-chicken"/>]
+
 ---
 
-class: center, middle
+class: center, middle, hasbg, nonumber
 
 # User interfaces
+
+<div class="thebg ui-bg"></div>
 
 ---
 
@@ -104,28 +117,24 @@ the user interfaces that Bitcoin provides.
 
 ---
 
-### User interfaces > P2P
+### .subsec[User interfaces >] P2P
 
 - Bitcoin forms a TCP overlay network of nodes passing messages to one another
   - Messages defined in `src/protocol.h`
-
 - Each node has a set of outbound and inbound peers they exchange data with
   - `-addnode=<addr>`
   - `-maxconnections=<n>`
   - `net.h MAX_OUTBOUND_CONNECTIONS, DEFAULT_MAX_PEER_CONNECTIONS`
-
-- Peers can be manually added (`-addnode`) or are discovered randomly from
+- Peers can be manually added (`-addnode`) or are discovered from
   DNS seeds: DNS servers that randomly resolve to known Bitcoin nodes
-
 - DoS protection is implemented to prevent malicious peers from disrupting the
   network
   - `-banscore=<n>` configures sensitivity, defaults to `100`
-
 - SPV (simple payment verification) nodes retrieve txout proofs
 
 ---
 
-### User interfaces > RPC/HTTP
+### .subsec[User interfaces >] RPC/HTTP
 
 A remote procedure call (RPC) interface allows users to programmatically
 interact with Bitcoin Core over HTTP
@@ -140,7 +149,7 @@ interact with Bitcoin Core over HTTP
 
 ---
 
-### User interfaces > Qt
+### .subsec[User interfaces >] Qt
 
 The Qt interface reveals
 
@@ -154,7 +163,7 @@ The Qt interface reveals
 
 ---
 
-### User interfaces > ZMQ
+### .subsec[User interfaces >] ZMQ
 
 The ZMQ interface publishes notfications over a socket upon receipt of a
 
@@ -198,11 +207,13 @@ class: center, middle
 
 ---
 
-### Concurrency model > threads
+class: threads
 
-| Purpose                 | # | Task run           |
-| :---------------------- | ----------------: | :-------------------- |
-| Script verification | `min(nproc, 16))`*   | `ThreadScriptCheck()` |
+### .subsec[Concurrency model >] threads
+
+| Purpose                 | # threads | Task run           |
+| :---------------------- | :---------------- | :-------------------- |
+| Script verification | `nproc or 16`*   | `ThreadScriptCheck()` |
 | Loading blocks  | 1   | `ThreadImport()` |
 | Servicing RPC calls | 4*| `ThreadHTTP()` |
 | Load peer addresses from DNS seeds | 1 | `ThreadDNSAddressSeed()` |
@@ -210,10 +221,8 @@ class: center, middle
 | Initializing network connections | 1 | `ThreadOpenConnections()` |
 | Opening added network connections | 1 | `ThreadOpenAddedConnections()` |
 | Process messages from `net` -> `net_processing` | 1 | `ThreadMessageHandler()` |
-| Tor control | 1 | `TorControlThread()` |
-| Wallet notify (`-walletnotify`) | 1 | user-specified |
 
-* can be overridden
+\* can be overridden
 
 ???
 
@@ -225,16 +234,19 @@ TODO: research select poll
 
 ---
 
-### Concurrency model > threads (continued)
+class: threads
+
+### .subsec[Concurrency model >] threads (continued)
 
 
-| Purpose                 | # | Task run           |
-| :---------------------- | ----------------: | :-------------------- |
+| Purpose                 | # threads | Task run           |
+| :---------------------- | :---------------- | :-------------------- |
+| Tor control | 1 | `TorControlThread()` |
+| Wallet notify (`-walletnotify`) | 1 | user-specified |
 | txindex building | 1   | `ThreadSync()` |
 | Block notify (`-blocknotify`) | 1   | user-specified |
 | Upnp connectivity | 1   | ThreadMapPort |
-| `CScheduler` service queue | 1   | `CScheduler::serviceQueue()` |
-| (powers `ValidationInterface`) |     |  |
+| `CScheduler` service queue<br />(powers `ValidationInterface`) | 1   | `CScheduler::serviceQueue()` |
 
 ???
 
@@ -242,7 +254,7 @@ TODO: research select poll
 
 ---
 
-### Concurrency model > `ValidationInterface`
+### .subsec[Concurrency model >] `ValidationInterface`
 
 Allows the asynchronous decoupling of chainstate events from various
 responses.
@@ -294,7 +306,7 @@ which parts of the system do what tasks.
 
 ---
 
-### Regions > `net.{h,cpp}`
+### .subsec[Regions >] `net.{h,cpp}`
 
 `net` is the "bottom" of the Bitcoin core stack. It handles network
 communication with the P2P network.
@@ -314,7 +326,7 @@ The globally-accessible `CConman` instance is called `g_conman`.
 
 ---
 
-### Regions > `net_processing.{h,cpp}`
+### .subsec[Regions >] `net_processing.{h,cpp}`
 
 `net_processing` adapts the network layer to the chainstate validation layer.
 It translates network messages into calls for local state changes.
@@ -339,7 +351,7 @@ Peers are also penalized here based on the network messages they send
 
 ---
 
-### Regions > `validation.{h,cpp}`
+### .subsec[Regions >] `validation.{h,cpp}`
 
 `validation` handles modifying in-memory data structures for chainstate and
 transactions (mempool) on the basis of certain acceptance rules.
@@ -354,10 +366,16 @@ This is probably because `validation.{h,cpp}` is the result of refactoring
 
 It contains the instantiation of the infamous `cs_main` lock, which we'll
 talk more about later.
-
+ 
 ---
 
-### Regions > `txmempool.{h,cpp}`
+### .subsec[Regions >] `validation.{h,cpp}`
+
+![validation](img/validation.png)
+ 
+---
+
+### .subsec[Regions >] `txmempool.{h,cpp}`
 
 `txmempool` provides a definition for the in-memory data structure that manages
 the set of transactions this node has seen, `CTxMempool`.
@@ -373,10 +391,22 @@ is also defined here (`CCoinsViewMemPool`).
 
 This region is used in `validation`. `src/policy` (fee estimation), `miner`,
 and others.
-
+  
 ---
 
-### Regions > `script/`
+### .subsec[Regions >] `coins.{h,cpp}` & `txdb.{h,cpp}`
+
+TODO
+   
+---
+
+### .subsec[Regions >] `dbwrapper.{h,cpp}`
+
+TODO
+ 
+---
+
+### .subsec[Regions >] `script/`
 
 The `script` subtree contains procedures for defining and executing Bitcoin
 scripts, as well as signing transactions (`script/sign.*`).
@@ -389,7 +419,7 @@ Script evaluation happens in `script/interpreter.cpp::EvalScript()`.
 
 ---
 
-### Regions > `consensus/`
+### .subsec[Regions >] `consensus/`
 
 Contains procedures for obviously consensus-critical actions like computing
 Merkle trees, checking transaction validity.
@@ -406,7 +436,7 @@ and likelihood of DoS when examining blocks.
 
 ---
 
-### Regions > `policy/`
+### .subsec[Regions >] `policy/`
 
 Policy contains logic for making various assessments about transactions (does
 this tx signal replace-by-fee?).
@@ -415,7 +445,7 @@ It contains logic for doing fee estimation (`policy/fees.*`).
 
 ---
 
-### Regions > `interfaces/`
+### .subsec[Regions >] `interfaces/`
 
 Defines interfaces for interacting with the major subsystems in Bitcoin:
 node, wallet, GUI (eventually).
@@ -429,7 +459,7 @@ repositories which can be maintained at different cadences.
 
 ---
 
-### Regions > `indexes/`
+### .subsec[Regions >] `indexes/`
 
 Contains optional indexes and a generic base class for adding more.
 
@@ -444,7 +474,7 @@ More indexes proposed, e.g. address to any related transactions.
 
 ---
 
-### Regions > `wallet/`
+### .subsec[Regions >] `wallet/`
 
 Contains
 
@@ -456,7 +486,7 @@ Contains
 
 ---
 
-### Regions > `qt/`
+### .subsec[Regions >] `qt/`
 
 Contains all the code for doing the graphical user interface.
 
@@ -464,13 +494,13 @@ Contains all the code for doing the graphical user interface.
 
 ---
 
-### Regions > `rpc/`
+### .subsec[Regions >] `rpc/`
 
 Defines RPC interface and provides related utilities (`UniValue` mangling).
 
 ---
 
-### Regions > `miner.{h,cpp}`
+### .subsec[Regions >] `miner.{h,cpp}`
 
 Includes utilities for generating blocks to be mined (e.g. `BlockAssembler`).
 Used in conjunction with `rpc/mining.cpp` by miners:
@@ -480,7 +510,7 @@ Used in conjunction with `rpc/mining.cpp` by miners:
 
 ---
 
-### Regions > `zmq/`
+### .subsec[Regions >] `zmq/`
 
 Registers events with `ValidationInterface` to forward on notifications about
 new blocks and transactions to ZMQ sockets.
@@ -496,6 +526,57 @@ class: center, middle
 class: center, middle
 
 # Storage
+
+---
+
+class: split
+
+## Storage
+
+### `$ tree ~/.bitcoin/regtest/`
+
+.column[
+<pre class="remark-code">
+<code class="remark-code">
+├── banlist.dat
+<b>├── blocks
+│   ├── blk00000.dat
+│   ├── index
+│   │   ├── 000005.ldb
+│   │   ├── 000006.log
+│   │   ├── CURRENT
+│   │   ├── LOCK
+│   │   └── MANIFEST-000004
+│   └── rev00000.dat</b>
+├── chainstate
+│   ├── 000005.ldb
+│   ├── 000006.log
+│   ├── CURRENT
+│   ├── LOCK
+│   └── MANIFEST-000004
+├── debug.log
+
+</code>
+</pre>
+]
+.column[
+<pre>
+<code class="remark-code">
+├── fee_estimates.dat
+├── indexes
+│   └── txindex
+│       ├── 000003.log
+│       ├── CURRENT
+│       ├── LOCK
+│       └── MANIFEST-000002
+├── mempool.dat
+├── peers.dat
+└── wallets
+    ├── db.log
+    └── wallet.dat
+</code>
+</pre>
+]
 
 ---
 

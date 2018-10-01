@@ -4,27 +4,144 @@
     <title>Bitcoin Core architecture</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+      @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+      @import url(https://fonts.googleapis.com/css?family=Lusitana);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; }
+      body { font-family: 'Lusitana'; }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        /* font-family: 'Permanent Marker'; */
+        font-family: 'Fredoka One';
         font-weight: normal;
+        color: #555;
+      }
+
+      pre {
+        margin: 0;
+      }
+      pre code {
+        background: #FFFFFF !important;
+      }
+
+      .nonumber .remark-slide-number {
+        display: none;
+      }
+
+      ul > li, ol > li {
+        margin-top: 0.5em;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .margin-top-40 {
+        margin-top: 40px;
+      }
+
+      .column { float: left; }
+      .column:first-of-type {float:left}
+      .column:last-of-type {float:right}
+      .split .column:first-of-type {width: 50%}
+      .split .column:last-of-type {width: 50%}
+      .split-33 .column {width: 40%}
+
+      .marker { 
+        font-family: 'Permanent Marker'; 
+        color: #555;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .stroke {
+        -webkit-text-stroke: 1px #000;
+        color: white;
+      }
+      .title h2 {
+        color: #555;
+      }
+
+      .chaincode-img {
+        width: 8%;
+        height: 10%;
+        position: absolute;
+        bottom: 7%;
+        right: 10%;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .subsec {
+        color: #888;
+      }
+
+      .hasbg {
+        position: relative;
+        z-index: 0;
+      }
+      .hasbg h1 {
+        z-index: 10;
+        position: relative;
+      }
+      .thebg {
+        content : "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity : 0.2;
+        z-index: 1;
+      }
+
+      .threads th:nth-child(1), .threads td:nth-child(1) {
+        width: 50%;
+      }
+       
+      .threads th:nth-child(2), .threads td:nth-child(2) {
+        width: 20%;
+      }
+                
+      .threads th:nth-child(3), .threads td:nth-child(3) {
+        width: 30%;
+      }
+                
+      tbody tr:nth-child(odd) {
+        background-color: #ccc;
+      }
+
+      tbody td, thead th {
+        padding: 0.5em;
+      }
+
+      tbody td {
+        min-width: 20%;
+      }
+
+      tbody {
+        font-size: 0.9em;
+      }
+
+      .ui-bg {
+        background-image: url(https://openclipart.org/download/295783/publicdomainq-girl_laptop.svg);
+        background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=765df2a852805815ffbfecc9c0d53e54&auto=format&fit=crop&w=1189&q=80);
+      }
+
     </style>
   </head>
   <body>
     <textarea id="source">
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
     <script>
       var slideshow = remark.create({
         sourceUrl: 'markdown.md'
       });
+      mermaid.initialize({startOnLoad: true});
     </script>
   </body>
 </html>
