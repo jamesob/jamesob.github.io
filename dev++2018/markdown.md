@@ -17,7 +17,7 @@ Dev++ 2018<br /> Tokyo, Japan
 ]
 
 ---
-           
+
 ## Agenda
 
 0. General introduction
@@ -93,7 +93,7 @@ questions.
 
 --
 
-Aaaand it's really hard to do this talk without circular dependencies. 
+Aaaand it's really hard to do this talk without circular dependencies.
 
 I'll refer to the same thing multiple times.
 
@@ -205,6 +205,16 @@ class: center, middle
 - It has a model of concurrent execution to support this based on
   `{std,boost}::threads`, shared state, and a number of locks.
 
+--
+
+.bold[However,]
+
+- All changes to chainstate are effectively single-threaded
+
+--
+
+- All communications over the P2P network are single-threaded
+
 ---
 
 class: threads
@@ -266,7 +276,7 @@ blocked on lock acquisition, e.g. `cs_main`.
 Used (subclassed) for many things:
 - Index building (`src/index/bash.h:BaseIndex`)
 - Messaging with peers (`net_processing:PeerLogicValidation`)
-- Trigger wallet updates (`wallet/wallet.h:CWallet`)
+- Triggering wallet updates (`wallet/wallet.h:CWallet`)
 - Sending ZMQ publications (`CZMQNotificationInterface`)
 
 
@@ -366,13 +376,13 @@ This is probably because `validation.{h,cpp}` is the result of refactoring
 
 It contains the instantiation of the infamous `cs_main` lock, which we'll
 talk more about later.
- 
+
 ---
 
 ### .subsec[Regions >] `validation.{h,cpp}`
 
 ![validation](img/validation.png)
- 
+
 ---
 
 ### .subsec[Regions >] `txmempool.{h,cpp}`
@@ -391,21 +401,23 @@ is also defined here (`CCoinsViewMemPool`).
 
 This region is used in `validation`. `src/policy` (fee estimation), `miner`,
 and others.
-  
+
 ---
 
-### .subsec[Regions >] `coins.{h,cpp}` & `txdb.{h,cpp}`
+### .subsec[Regions >] `coins.{h,cpp} & txdb.{h,cpp}`
 
-TODO
-   
+.center[![CDBWrapper hierarchy](img/ccoinsview.png)]
+
 ---
 
 ### .subsec[Regions >] `dbwrapper.{h,cpp}`
 
-TODO
- 
----
+Abstracts access to leveldb databases.
 
+.center[![CDBWrapper hierarchy](img/cdbwrapper.png)]
+
+---
+ 
 ### .subsec[Regions >] `script/`
 
 The `script` subtree contains procedures for defining and executing Bitcoin
