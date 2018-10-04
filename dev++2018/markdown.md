@@ -216,8 +216,7 @@ class: center, middle, hasbg, nonumber
 
 .bold[However,]
 
-- All changes to chainstate are effectively single-threaded 
-  - thanks, `cs_main`
+All changes to chainstate are effectively single-threaded. Thanks, `cs_main`.
 
 ---
 
@@ -273,9 +272,13 @@ class: threads
 Allows the asynchronous decoupling of chainstate events from various
 responses.
 
+--
+
 Uses `SingleThreadedSchedulerClient` to queue responses and execute them
 out-of-band w.r.t. things like network communications, though still often
 blocked on lock acquisition, e.g. `cs_main`.
+
+--
 
 Used (subclassed) for many things:
 - Index building (`src/index/bash.h:BaseIndex`)
@@ -290,14 +293,10 @@ TODO: understand the PeerLogicValidation bit better
 
 ---
 
+### .subsec[Concurrency model >] Exercises
 
-### Locks
-
-
-- `CCriticalSection`: a named, recursive mutual-exclusion lock.
-- `cs_main`: guards basically everything.
-- `cs_vNodes`: guards P2P peer state.
-- `cs_wallet`: guards wallet state.
+- Grep for `CCriticalSection` to find (most) lock definitions.
+- Grep for `TraceThread` to find threads and where they are spawned.
 
 ---
 
