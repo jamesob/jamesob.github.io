@@ -33,8 +33,18 @@
         margin-top: 0.5em;
       }
 
+      li > p {
+        margin-bottom: 0;
+      }
+
       .center {
         text-align: center;
+      }
+
+      .caption {
+        font-size: 0.8em;
+        font-style: italic;
+
       }
 
       .margin-top-40 {
@@ -47,6 +57,7 @@
       .split .column:first-of-type {width: 50%}
       .split .column:last-of-type {width: 50%}
       .split-33 .column {width: 40%}
+      .split-66 .column {width: 66%}
 
       .marker { 
         font-family: 'Permanent Marker'; 
@@ -59,6 +70,10 @@
       }
       .title h2 {
         color: #555;
+      }
+
+      .regions-summary h3 {
+        margin-bottom: 6px;
       }
 
       .chaincode-img {
@@ -78,23 +93,19 @@
       }
 
       .hasbg {
-        position: relative;
-        z-index: 0;
+        background-color: #ffb489;
       }
+
       .hasbg h1 {
-        z-index: 10;
-        position: relative;
+        color: white;
       }
-      .thebg {
-        content : "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity : 0.2;
-        z-index: 1;
+
+      .remark-inline-code {
+        background-color: #f8f8f8;
+        border: 1px solid #cccccc;
+        overflow: auto;
+        padding: 2px 3px;
+        border-radius: 3px;
       }
 
       .threads th:nth-child(1), .threads td:nth-child(1) {
@@ -111,6 +122,10 @@
                 
       tbody tr:nth-child(odd) {
         background-color: #ccc;
+      }
+
+      pre code b {
+        color: red;
       }
 
       tbody td, thead th {

@@ -9,7 +9,7 @@ Dev++ 2018<br /> Tokyo, Japan
 ]
 
 .column[
-[`@jamesob`](https://twitter.com/jamesob)<br />Chaincode Labs
+[@jamesob](https://twitter.com/jamesob)<br />Chaincode Labs
 ]
 
 .column[
@@ -95,18 +95,13 @@ questions.
 
 Aaaand it's really hard to do this talk without circular dependencies.
 
-I'll refer to the same thing multiple times.
-
-.center.margin-top-40[<img src="http://www.causality.inf.ethz.ch/images/cause-effect.gif" width="70%"
-alt="https://steemit.com/biology/@liberosist/the-egg-came-before-the-chicken"/>]
+Almost certainly I'll refer to the same thing multiple times.
 
 ---
 
 class: center, middle, hasbg, nonumber
 
 # User interfaces
-
-<div class="thebg ui-bg"></div>
 
 ---
 
@@ -158,8 +153,9 @@ The Qt interface reveals
 - RPC console
 
 
-
-- TODO: screenshots
+.center[<img
+src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Bitcoin-core-v0.10.0.png"
+width="65%" />]
 
 ---
 
@@ -193,7 +189,7 @@ See also: `-blocknotify=<cmd_str %s>`
 
 ---
 
-class: center, middle
+class: center, middle, hasbg, nonumber
 
 # Concurrency model
 
@@ -202,18 +198,26 @@ class: center, middle
 ## Concurrency model
 
 - Bitcoin Core performs a number of tasks simultaneously
+
+--
+
 - It has a model of concurrent execution to support this based on
   `{std,boost}::threads`, shared state, and a number of locks.
 
 --
 
-.bold[However,]
-
-- All changes to chainstate are effectively single-threaded
+- P2P networking is enabled by a single `select` loop
+  (`CConman::ThreadSocketHandler`)
+  - We may replace `select` with `poll`
+    ([#14336](https://github.com/bitcoin/bitcoin/pull/14336)) to avoid file
+    descripter limits
 
 --
 
-- All communications over the P2P network are single-threaded
+.bold[However,]
+
+- All changes to chainstate are effectively single-threaded 
+  - thanks, `cs_main`
 
 ---
 
@@ -297,7 +301,7 @@ TODO: understand the PeerLogicValidation bit better
 
 ---
 
-class: center, middle
+class: center, middle, hasbg, nonumber
 
 # Regions
 
@@ -313,6 +317,29 @@ domain of tasks at a certain layer of abstraction.
 
 Starting here will give us a high-level but specified sense of
 which parts of the system do what tasks.
+
+---
+
+class: regions-summary
+
+
+### Regions summary
+ 
+| Name                 | Purpose |
+| :---------------------- | :---------------- |
+| `net` | Handles socket networking, tracking of peers |
+| `net_processing` | Routes P2P messages into validation calls and response P2P messages |
+| `validation` | Defines how we update our validated state (chain, mempool) |
+| `txmempool` | Mempool data structures |
+| `coins & txdb` | Interface for in-memory view of the UTXO set |
+| `script/` | Script execution and caching |
+| `consensus/` | Consensus params, Merkle roots, some TX validation |
+| `policy/` | Fee estimation, replace-by-fee |
+| `indexes/` | Peripheral index building (e.g. `txindex`) |
+| `wallet/` | Wallet db, coin selection, fee bumping |
+| `rpc/` | Defines the RPC interface |
+
+                
 
 ---
 
@@ -478,7 +505,8 @@ Contains optional indexes and a generic base class for adding more.
 Currently only one index: `indexes/txindex` which provides a mapping of
 transaction ID to the `CDiskTxPos` for that transaction.
 
-More indexes proposed, e.g. address to any related transactions.
+More indexes proposed, e.g. address to any related transactions
+([#14053](https://github.com/bitcoin/bitcoin/pull/14053) by @marcinja).
 
 ???
 
@@ -510,6 +538,32 @@ Contains all the code for doing the graphical user interface.
 
 Defines RPC interface and provides related utilities (`UniValue` mangling).
 
+#### Example
+
+```cpp
+static UniValue getconnectioncount(const JSONRPCRequest& request)
+{
+    if (request.fHelp || request.params.size() != 0)
+        throw std::runtime_error(
+            "getconnectioncount\n"
+            "\nReturns the number of connections to other nodes.\n"
+            "\nResult:\n"
+            "n          (numeric) The connection count\n"
+            "\nExamples:\n"
+            + HelpExampleCli("getconnectioncount", "")
+            + HelpExampleRpc("getconnectioncount", "")
+        );
+
+    if(!g_connman)
+        throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
+
+    return (int)g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL);
+}
+```
+
+Then referenced in `Register.*RPCCommands()` later.
+ 
+
 ---
 
 ### .subsec[Regions >] `miner.{h,cpp}`
@@ -531,11 +585,11 @@ new blocks and transactions to ZMQ sockets.
 
 class: center, middle
 
-# Let's talk about data structures
+# Let's talk about data
 
 ---
 
-class: center, middle
+class: center, middle, hasbg, nonumber
 
 # Storage
 
@@ -551,7 +605,7 @@ class: split
 <pre class="remark-code">
 <code class="remark-code">
 ├── banlist.dat
-<b>├── blocks
+├── blocks
 │   ├── blk00000.dat
 │   ├── index
 │   │   ├── 000005.ldb
@@ -559,7 +613,7 @@ class: split
 │   │   ├── CURRENT
 │   │   ├── LOCK
 │   │   └── MANIFEST-000004
-│   └── rev00000.dat</b>
+│   └── rev00000.dat
 ├── chainstate
 │   ├── 000005.ldb
 │   ├── 000006.log
@@ -567,6 +621,7 @@ class: split
 │   ├── LOCK
 │   └── MANIFEST-000004
 ├── debug.log
+...
 
 </code>
 </pre>
@@ -592,44 +647,132 @@ class: split
 
 ---
 
-## Storage > `.dat` files
+### .subec[Storage >] `.dat` files
 
 Bitcoin stores some data in `.dat` files, which are just the raw bytes of
 some serialized data structure.
 
----
+See `serialize.h` for details on how serialization often works.
 
-## Storage > `.dat` files
-
-- `blocks/blk?????.dat`: serialized block data
-    - `validation.cpp:WriteBlockToDisk()`
-    - `src/primitives/block.h:CBlock::SerializationOp()`
-
---
-
-- `blocks/rev?????.dat`: "undo" data -- UTXOs added and removed by a block
-    - `validation.cpp:UndoWriteToDisk()`
-    - `src/undo.h:CTxUndo`
-
---
-
-- `mempool.dat`: serialized list of mempool contents
-    - `src/txmempool.cpp:CTxMemPool::infoAll()`
-    - Dumped in `src/init.cpp:Shutdown()`
-
---
-
-- `peers.dat`: serialized peers
-    - `src/addrmah.h::CAddrMan::Serialize()`
-
---
-
-- `banlist.dat`: banned node IPs/subnets
-    - See `src/addrdb.cpp` for serialization details
 
 ---
 
-## Storage > leveldb
+### A brief digression into serialization
+
+```cpp
+class CBlockHeader
+{
+public:
+    // header
+    int32_t nVersion;
+    uint256 hashPrevBlock;
+    ...
+
+    ADD_SERIALIZE_METHODS;
+
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action) {
+        READWRITE(this->nVersion);
+        READWRITE(hashPrevBlock);
+        READWRITE(hashMerkleRoot);
+        READWRITE(nTime);
+        READWRITE(nBits);
+        READWRITE(nNonce);
+    }
+    ...
+}
+```
+
+---
+
+### .subsec[Storage >] `.dat` files
+
+- .bold[`blocks/blk?????.dat`]: serialized block data
+  - `validation.cpp:WriteBlockToDisk()`
+  - `src/primitives/block.h:CBlock::SerializationOp()`
+
+--
+
+- .bold[`blocks/rev?????.dat`]: "undo" data -- UTXOs added and removed by a block
+  - `validation.cpp:UndoWriteToDisk()`
+  - `src/undo.h:CTxUndo`
+
+--
+
+- .bold[`mempool.dat`]: serialized list of mempool contents
+  - `src/txmempool.cpp:CTxMemPool::infoAll()`
+  - Dumped in `src/init.cpp:Shutdown()`
+
+--
+
+- .bold[`peers.dat`]: serialized peers
+  - `src/addrmah.h::CAddrMan::Serialize()`
+
+--
+
+- .bold[`banlist.dat`]: banned node IPs/subnets
+  - See `src/addrdb.cpp` for serialization details
+
+???
+
+CTxUndo contains the coins spent by a transaction
+CBlockUndo contains all CTxUndos for a block
+ 
+---
+
+class: split
+
+### .subec[Storage >] `.dat` files
+
+`$ tree ~/.bitcoin/regtest/`
+
+.column[
+<pre class="remark-code">
+<code class="remark-code">
+<b>├── banlist.dat</b>
+├── blocks
+<b>│   ├── blk00000.dat</b>
+│   ├── index
+│   │   ├── 000005.ldb
+│   │   ├── 000006.log
+│   │   ├── CURRENT
+│   │   ├── LOCK
+│   │   └── MANIFEST-000004
+<b>│   └── rev00000.dat</b>
+├── chainstate
+│   ├── 000005.ldb
+│   ├── 000006.log
+│   ├── CURRENT
+│   ├── LOCK
+│   └── MANIFEST-000004
+├── debug.log
+...
+
+</code>
+</pre>
+]
+.column[
+<pre>
+<code class="remark-code">
+<b>├── fee_estimates.dat</b>
+├── indexes
+│   └── txindex
+│       ├── 000003.log
+│       ├── CURRENT
+│       ├── LOCK
+│       └── MANIFEST-000002
+<b>├── mempool.dat</b>
+<b>├── peers.dat</b>
+└── wallets
+    ├── db.log
+    <b>└── wallet.dat</b>
+</code>
+</pre>
+]
+ 
+---
+
+### .subsec[Storage >] leveldb
 
 Leveldb is a fast, sorted key value store used for a few things in Bitcoin.
 
@@ -644,7 +787,7 @@ Pieter on BDB -> LBD: https://bitcoin.stackexchange.com/a/51446
 
 ---
 
-## Storage > leveldb
+### .subsec[Storage >] leveldb
 
 - `blocks/index`: the complete tree of valid(ish) blocks the node has seen
   - Serializes `mapBlockIndex`, or a list of `CBlockIndex`es
@@ -658,22 +801,66 @@ Pieter on BDB -> LBD: https://bitcoin.stackexchange.com/a/51446
       - Basically `(txid, index) -> Coin` (i.e. [CTxOut, is_coinbase, height])
   - `CCoinsViewCache::BatchWrite()`
 
---
-
-#### Important class
-- `CDBWrapper` (`src/dbwrapper*`)
-  - Abstracts away leveldb API
-
 ???
 
 - Confusing that blocks/index holds, basically, the state of the chain but
   we call the index of unspent outputs "chainstate." Kind of a misnomer.
 
 Chainstate: CCoinsViewCache
-
 ---
 
-## Storage > berkeleydb
+class: split
+
+### .subsec[Storage >] leveldb
+`$ tree ~/.bitcoin/regtest/`
+
+.column[
+<pre class="remark-code">
+<code class="remark-code">
+├── banlist.dat
+├── blocks
+│   ├── blk00000.dat
+│   ├── index
+│   │   ├── <b>000005.ldb</b>
+│   │   ├── <b>000006.log</b>
+│   │   ├── <b>CURRENT</b>
+│   │   ├── <b>LOCK</b>
+│   │   └── <b>MANIFEST-000004</b>
+│   └── rev00000.dat
+├── chainstate
+│   ├── <b>000005.ldb</b>
+│   ├── <b>000006.log</b>
+│   ├── <b>CURRENT</b>
+│   ├── <b>LOCK</b>
+│   └── <b>MANIFEST-000004</b>
+├── debug.log
+...
+
+</code>
+</pre>
+]
+.column[
+<pre>
+<code class="remark-code">
+├── fee_estimates.dat
+├── indexes
+│   └── txindex
+│       ├── <b>000003.log</b>
+│       ├── <b>CURRENT</b>
+│       ├── <b>LOCK</b>
+│       └── <b>MANIFEST-000002</b>
+├── mempool.dat
+├── peers.dat
+└── wallets
+    ├── db.log
+    └── wallet.dat
+</code>
+</pre>
+]
+ 
+---
+
+### .subsec[Storage >] berkeleydb
 
 BerkeleyDB is basically like leveldb but
 [worse](https://bitcoin.stackexchange.com/a/51446).
@@ -684,7 +871,7 @@ Some want to replace it with SQLite.
 
 ---
 
-## Storage > berkeleydb
+### .subsec[Storage >] berkeleydb
 
 - Wallet
   - `wallets/wallet.dat`: BerkeleyDB wallet file
@@ -692,7 +879,7 @@ Some want to replace it with SQLite.
 
 ---
 
-class: center, middle
+class: center, middle, hasbg, nonumber
 
 # Data structures
 
@@ -707,7 +894,7 @@ Here are a few of the important ones.
 
 ---
 
-### Data structures > chainstate > blocks
+### .subsec[Data structures >] chainstate > blocks
 
 ##### `src/primitives/block.h:CBlockHeader`
 
@@ -737,7 +924,7 @@ Construction logic lives in [`src/chain.cpp:CChain::GetLocator()`]().
 
 ---
 
-### Data structures > chainstate > blocks (continued)
+### .subsec[Data structures >] chainstate > blocks
 
 ##### `src/chain.h:CBlockIndex`
 
@@ -749,9 +936,9 @@ this way.
 
 ---
 
-### Data structures > chainstate > UTXOs
+### .subsec[Data structures >] chainstate > UTXOs
 
-##### `src/chain.h:CCoinsView`
+##### `src/coins.h:CCoinsView`
 
 This manages an iterable view of all unspent coins.
 
@@ -768,7 +955,7 @@ It is also subclassed by `CCoinsViewBacked`, which in turn is subclassed by
 
 ---
 
-### Data structures > chainstate > `CChainState`
+### .subsec[Data structures >] chainstate > `CChainState`
 
 Defined in `validation`. Contains logic and storage for maintaining the
 `activeChain`, the most-work valid chain.
@@ -796,9 +983,30 @@ CSignatureCache
 
 ---
 
+## Exploring the codebase
+
+- Ensure your editor is setup with goto-definition, find-usages functionality
+  - [rtags](https://github.com/Andersbakken/rtags) is very helpful; hooks into
+    LLVM to generate symbol information
+      - good rtags setup guide by @eklitzke
+        [here](https://eklitzke.org/using-emacs-and-rtags-with-autotools-c++-projects)
+- Bitcoin's [doxygen output](https://dev.visucore.com/bitcoin/doxygen/)
+- Read `doc/developer-notes.md` 
+
+.center[<img src="./img/doxygen.png" width="40%" /><br />.caption[Doxygen output]]
+
+---
+
 ### Future work
 
 - [#12934: Call ProcessNewBlock()
   asynchronously](https://github.com/bitcoin/bitcoin/pull/12934) by @skeees
 - [#10973: Refactor: separate wallet from
   node](https://github.com/bitcoin/bitcoin/pull/10973) by @ryanofsky
+- [net refactoring project](https://github.com/bitcoin/bitcoin/projects/4) by @theuni
+
+---
+
+class: left, bottom, nonumber, title, split-33
+
+## ありがとうございます!<br> .stroke[thank you]
