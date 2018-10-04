@@ -107,17 +107,11 @@ important data structures.
 
 ---
 
-### Introduction
+class: center, middle, nonumber
 
-I've probably forgotten a few things, so feel free to shout out or ask
-questions.
+# This talk<br />is just food for `grep`
 
---
-
-Aaaand it's really hard to do this talk without circular dependencies.
-
-Almost certainly I'll refer to the same thing multiple times.
-
+   
 ---
 
 class: center, middle, hasbg, nonumber
@@ -249,7 +243,7 @@ class: center, middle, hasbg, nonumber
 
 .bold[However,]
 
-All changes to chainstate are effectively single-threaded. Thanks, `cs_main`.
+all changes to chainstate are effectively single-threaded. Thanks, `cs_main`.
 
 ---
 
@@ -291,7 +285,7 @@ class: threads
 | Wallet notify (`-walletnotify`) | 1 | user-specified |
 | txindex building | 1   | `ThreadSync()` |
 | Block notify (`-blocknotify`) | 1   | user-specified |
-| Upnp connectivity | 1   | ThreadMapPort |
+| Upnp connectivity | 1   | `ThreadMapPort()` |
 | `CScheduler` service queue<br />(powers `ValidationInterface`) | 1   | `CScheduler::serviceQueue()` |
 
 ???
@@ -396,12 +390,20 @@ class: regions-summary
 `net` is the "bottom" of the Bitcoin core stack. It handles network
 communication with the P2P network.
 
+--
+
 It contains addresses and statistics (`CNodeStats`) for peers (`CNode`s) that
 the running node is aware of.
+
+
+--
 
 `CConman` is the main class in this region - it manages socket connections (and
 network interaction more generally) for each peer, and forwards messages to the
 `net_processing` region (via `CConman::ThreadMessageHandler`).
+
+
+--
 
 The globally-accessible `CConman` instance is called `g_conman`.
 
@@ -1026,25 +1028,6 @@ status of the block (`nStatus`) and position on disk (`nFile`/`nDataPos`)
 
 The entire blockchain (and orphaned, invalid parts of the tree) is stored
 this way.
-
----
-
-### .subsec[Data structures >] chainstate > UTXOs
-
-##### `src/coins.h:CCoinsView`
-
-This manages an iterable view of all unspent coins.
-
-It is an abstract base class that provides a lookup from `COutPoint` (txid and txout
-index) to the `Coin` (`CTxOut`, `is_coinbase`, `nHeight`).
-
-It is subclassed by `src/txdb.h:CCoinsViewDB` to provide access to on-disk
-UTXO data (`datadir/chainstate/*.ldb`).
-
-It is also subclassed by `CCoinsViewBacked`, which in turn is subclassed by
-`CCoinsViewCache` (an in-memory view of the UTXO set) and
-`src/txmempool.cpp:CCoinsViewMemPool`.
-
 
 ---
 
