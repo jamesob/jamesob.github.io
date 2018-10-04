@@ -5,7 +5,7 @@ class: left, bottom, nonumber, title, split-33
 ## Bitcoin Core<br> .stroke[architecture overview]
 
 .column[
-Dev++ 2018<br /> Tokyo, Japan
+Dev++ 2018<br /> Keio University, Tokyo
 ]
 
 .column[
@@ -47,12 +47,24 @@ Bitcoin Core serves a number of uses:
 
 - A validating relay node in the peer-to-peer network
   - Blocks (chainstate) and transactions (mempool)
+
+--
+
 - A canonical wallet implementation
   - A GUI/RPC tool for end-users
   - A working example for wallet implementers (e.g. coin selection)
+
+--
+
 - Block assembly and submission for miners
+
+--
+
 - A programmatic interface for Bitcoin applications
   - RPC via HTTP, CLI
+
+--
+
 - (Kind-of-not-really) a reusable library for validation, serialization
 
 ---
@@ -63,8 +75,17 @@ In this talk, we will discuss the structure of the Bitcoin Core software and
 how it accomplishes these uses, including
 
 - .bold[concurrency model]: how do we do multiple things simultaneously?
+
+--
+
 - .bold[regions]: what are the major subsystems?
+
+--
+
 - .bold[storage]: how do we store and access data on disk?
+
+--
+
 - .bold[data structures]: how is data represented and manipulated in memory?
 
 ---
@@ -116,15 +137,27 @@ the user interfaces that Bitcoin provides.
 
 - Bitcoin forms a TCP overlay network of nodes passing messages to one another
   - Messages defined in `src/protocol.h`
+
+--
+
 - Each node has a set of outbound and inbound peers they exchange data with
   - `-addnode=<addr>`
   - `-maxconnections=<n>`
   - `net.h MAX_OUTBOUND_CONNECTIONS, DEFAULT_MAX_PEER_CONNECTIONS`
+
+--
+
 - Peers can be manually added (`-addnode`) or are discovered from
   DNS seeds: DNS servers that randomly resolve to known Bitcoin nodes
+
+--
+
 - DoS protection is implemented to prevent malicious peers from disrupting the
   network
   - `-banscore=<n>` configures sensitivity, defaults to `100`
+
+--
+
 - SPV (simple payment verification) nodes retrieve txout proofs
 
 ---
@@ -282,7 +315,7 @@ blocked on lock acquisition, e.g. `cs_main`.
 
 Used (subclassed) for many things:
 - Index building (`src/index/bash.h:BaseIndex`)
-- Messaging with peers (`net_processing:PeerLogicValidation`)
+- Triggering announcements to peers (`net_processing:PeerLogicValidation`)
 - Triggering wallet updates (`wallet/wallet.h:CWallet`)
 - Sending ZMQ publications (`CZMQNotificationInterface`)
 
@@ -290,6 +323,22 @@ Used (subclassed) for many things:
 ???
 
 TODO: understand the PeerLogicValidation bit better
+
+---
+
+### .subsec[Concurrency model >] `ValidationInterface`
+
+Events you can make use of:
+
+- UpdatedBlockTip
+- TransactionAddedToMempool
+- TransactionRemovedFromMempool
+- BlockConnected
+- BlockDisconnected
+- ChainStateFlushed
+- ResendWalletTransactions
+- BlockChecked
+- NewPoWValidBlock
 
 ---
 
@@ -367,8 +416,12 @@ The globally-accessible `CConman` instance is called `g_conman`.
 `net_processing` adapts the network layer to the chainstate validation layer.
 It translates network messages into calls for local state changes.
 
+--
+
 "Validation"-specific (i.e. information relating to chainstate) data is
 maintained per-node using `CNodeState` instances.
+
+--
 
 Much of this region is `ProcessMessage()`: a giant conditional for rendering
 particular network message types to calls deeper into Bitcoin, e.g.
@@ -376,6 +429,9 @@ particular network message types to calls deeper into Bitcoin, e.g.
 - `NetMsgType::BLOCK` -> `validation:ProcessNewBlock()`
 - `NetMsgType::HEADERS` -> `validation:ProcessNewBlockHeaders()`
 - ...
+
+--
+
 
 Peers are also penalized here based on the network messages they send
 (see `Misbehaving` and its usages).
@@ -392,16 +448,21 @@ Peers are also penalized here based on the network messages they send
 `validation` handles modifying in-memory data structures for chainstate and
 transactions (mempool) on the basis of certain acceptance rules.
 
+--
+
 It both defines some of these data structures (`CChainState`, `mapBlockIndex`)
 as well as procedures for validating them, e.g. `CheckBlock()`.
+
+--
 
 Oddly, it also contains some utility functions for marshalling data to and from
 disk, e.g. `ReadBlockFromDisk()`, `FlushStateToDisk()`, `{Dump,Load}Mempool()`.
 This is probably because `validation.{h,cpp}` is the result of refactoring
 `main.{h,cpp}` into smaller pieces.
 
-It contains the instantiation of the infamous `cs_main` lock, which we'll
-talk more about later.
+--
+
+It contains the instantiation of the infamous `cs_main` lock.
 
 ---
 
@@ -433,12 +494,43 @@ and others.
 ### .subsec[Regions >] `coins.{h,cpp} & txdb.{h,cpp}`
 
 .center[![CDBWrapper hierarchy](img/ccoinsview.png)]
+   
+---
+
+### .subsec[Regions >] `coins.{h,cpp} & txdb.{h,cpp}`
+
+Basically, they just provide this interface:
+   
+
+```cpp
+/** Abstract view on the open txout dataset. */
+class CCoinsView
+{
+public:
+    /** Retrieve the Coin (unspent transaction output) for a given outpoint.
+     *  Returns true only when an unspent coin was found, which is returned in coin.
+     *  When false is returned, coin's value is unspecified.
+     */
+    virtual bool GetCoin(const COutPoint &outpoint, Coin &coin) const;
+
+    //! Just check whether a given outpoint is unspent.
+    virtual bool HaveCoin(const COutPoint &outpoint) const;
+
+    //! Retrieve the block hash whose state this CCoinsView currently represents
+    virtual uint256 GetBestBlock() const;
+ 
+    ...
+}
+```
 
 ---
 
 ### .subsec[Regions >] `dbwrapper.{h,cpp}`
 
 Abstracts access to leveldb databases.
+
+Adds ability to obfuscate data - we do this to avoid spurious anti-virus
+detection and illegal data in the chainstate getting people in trouble.
 
 .center[![CDBWrapper hierarchy](img/cdbwrapper.png)]
 
@@ -506,6 +598,8 @@ transaction ID to the `CDiskTxPos` for that transaction.
 
 More indexes proposed, e.g. address to any related transactions
 ([#14053](https://github.com/bitcoin/bitcoin/pull/14053) by @marcinja).
+
+Makes use of `ValidationInterface` events to perform index maintenance.
 
 ???
 
