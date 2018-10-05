@@ -233,6 +233,10 @@ class: center, middle, hasbg, nonumber
 
 --
 
+- Most threads are started (directly or indirectly) in `init.cpp`
+
+--
+
 - P2P networking is enabled by a single `select` loop
   (`CConman::ThreadSocketHandler`)
   - We may replace `select` with `poll`
