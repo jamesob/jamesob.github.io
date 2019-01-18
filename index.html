@@ -57,3 +57,14 @@ title: James O'Beirne
     </div>
   </div>
 </div>
+
+<div class="centered">
+    <ul class="posts">
+    {% for post in site.posts %}
+      <li><span class="date">{{ post.date | date_to_string }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+
