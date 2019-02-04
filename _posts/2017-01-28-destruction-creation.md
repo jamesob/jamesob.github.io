@@ -1,6 +1,7 @@
 ---
 title: Destruction -> creation
 layout: post
+published: false
 ---
 
 ![bomber

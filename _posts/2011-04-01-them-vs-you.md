@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why I went with them and not you
+published: false
 ---
 
 I've been interviewing for post-undergrad jobs on-and-off for a few months now,
@@ -105,5 +106,3 @@ relative to the other company. I hope this helps.
 
 Regards,<br />
 James
-
-
