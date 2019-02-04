@@ -1,4 +1,4 @@
 
 .PHONY: serve
 serve:
-	bundle exec jekyll serve
+	docker run --rm -p 3000:4000 --volume="$(PWD):/srv/jekyll" -it jekyll/jekyll:3.8 jekyll serve --watch
