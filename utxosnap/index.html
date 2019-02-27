@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UTXO snapshots</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+      @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+      @import url(https://fonts.googleapis.com/css?family=Lusitana);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Lusitana'; }
+      h1, h2, h3 {
+        /* font-family: 'Permanent Marker'; */
+        font-family: 'Fredoka One';
+        font-weight: normal;
+        color: #555;
+      }
+
+      pre {
+        margin: 0;
+      }
+      pre code {
+        background: #FFFFFF !important;
+      }
+
+      pre code.hljs.remark-code {
+        overflow-x: visible !important;
+      }
+       
+      .nonumber .remark-slide-number {
+        display: none;
+      }
+       
+      .remark-code {
+        overflow: visible;
+      }
+
+      .smallcode pre .remark-code {
+        font-size: 12px;
+      }
+       
+      ul > li, ol > li {
+        margin-top: 0.5em;
+      }
+
+      li > p {
+        margin-bottom: 0;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .caption {
+        font-size: 0.8em;
+        font-style: italic;
+
+      }
+
+      .margin-top-40 {
+        margin-top: 40px;
+      }
+
+      .column { float: left; }
+      .column:first-of-type {float:left}
+      .column:last-of-type {float:right}
+      .split .column:first-of-type {width: 50%}
+      .split .column:last-of-type {width: 50%}
+      .split-33 .column {width: 40%}
+      .split-66 .column {width: 66%}
+
+      .marker { 
+        font-family: 'Permanent Marker'; 
+        color: #555;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .stroke {
+        -webkit-text-stroke: 1px #000;
+        color: white;
+      }
+      .title h2 {
+        color: #555;
+      }
+
+      .regions-summary h3 {
+        margin-bottom: 6px;
+      }
+
+      .chaincode-img {
+        width: 8%;
+        height: 10%;
+        position: absolute;
+        bottom: 7%;
+        right: 10%;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .subsec {
+        color: #888;
+      }
+
+      .hasbg {
+        background-color: #ffb489;
+      }
+
+      .hasbg h1 {
+        color: white;
+      }
+
+      .remark-inline-code {
+        background-color: #f8f8f8;
+        border: 1px solid #cccccc;
+        overflow: auto;
+        padding: 2px 3px;
+        border-radius: 3px;
+      }
+
+      .threads th:nth-child(1), .threads td:nth-child(1) {
+        width: 50%;
+      }
+       
+      .threads th:nth-child(2), .threads td:nth-child(2) {
+        width: 20%;
+      }
+                
+      .threads th:nth-child(3), .threads td:nth-child(3) {
+        width: 30%;
+      }
+                
+      tbody tr:nth-child(odd) {
+        background-color: #ccc;
+      }
+
+      pre code b {
+        color: red;
+      }
+
+      tbody td, thead th {
+        padding: 0.5em;
+      }
+
+      tbody td {
+        min-width: 20%;
+      }
+
+      tbody {
+        font-size: 0.9em;
+      }
+
+      .ui-bg {
+        background-image: url(https://openclipart.org/download/295783/publicdomainq-girl_laptop.svg);
+        background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=765df2a852805815ffbfecc9c0d53e54&auto=format&fit=crop&w=1189&q=80);
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+    <script>
+      var slideshow = remark.create({
+        sourceUrl: 'markdown.md'
+      });
+      mermaid.initialize({startOnLoad: true});
+    </script>
+  </body>
+</html>
