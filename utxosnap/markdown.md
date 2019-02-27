@@ -18,11 +18,13 @@ CL HQ<br /> New York City, New York, USA
 
 ---
 
+class: middle
+
 ## Agenda
 
 0. What are we trying to do?
-0. What did I implement?
 0. Demo
+0. What did I implement?
 0. Questions
 
 <!--
