@@ -73,11 +73,14 @@ class: center, middle, hasbg, nonumber
 
 - The bootstrapping node 
   - reads this file in 
-  - does sanity checks
+  - does sanity checks, records hash of the snapshot utxo contents
   - loads the coins
   - fakes a chain
   - completes IBD (ahem) to network tip
   - starts background verification of the snapshot on a different chainstate
+  - when IBD tip hits snapshot base, compare the utxo content hash
+    - drop IBD chainstate if it checks out
+    - freak out if it doesn't
   
 ---
 
@@ -140,6 +143,10 @@ loadtxoutset(file_path);
   - namespace some `CNodeState` data by chainstate
   - tweak, e.g., `FindNextBlocksToDownload()`
 
+--
+
+- Serialize chainstate & snapshot metadata to disk
+
 ---
 
 class: center, middle, hasbg, nonumber
@@ -199,7 +206,7 @@ class: center, middle, hasbg, nonumber
 
 - `SendMessages()`: if we don't have any eligible peers we're currently
   syncing headers from, assign one and send `GETHEADERS`.
-- (usually) peer replies with a `HEADERS` message, which we call
+- Peer replies with a `HEADERS` message, which we call
   `ProcessHeadersMessage()` on.
 - `ProcessHeadersMessage()` queues a follow-on `HEADERS` request if our peer 
   sent over a message containing `MAX_HEADERS_RESULTS`.
@@ -217,23 +224,77 @@ class: center, middle, hasbg, nonumber
 
 ---
 
+class: smallcode
+
+## fetching blocks diff
 
 ```diff
-+  std::vector<std::shared_ptr<CChainState>> chainstates_to_service;
+-        if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
+-            std::vector<const CBlockIndex*> vToDownload;
+-            NodeId staller = -1;
+-            FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownl
+
+[...]
+
++        std::vector<std::shared_ptr<CChainState>> chainstates_to_service;
 +
-+  // Service the snapshot chainstate first - more important to get to the
-+  // network's tip quickly than do the background validation on the
-+  // snapshot.
-+  // TODO jamesob: is this what we really want?
-+  //
-+  if (g_chainstate_manager.m_snapshot_chainstate) {
-+      chainstates_to_service.push_back(g_chainstate_manager.m_snapshot_chainstate);
-+  }
-+  chainstates_to_service.push_back(g_chainstate_manager.m_ibd_chainstate);
-+  int requests_available = MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight;
++        // Service the snapshot chainstate first - more important to get to the
++        // network's tip quickly than do the background validation on the
++        // snapshot.
++        // TODO jamesob: is this what we really want?
++        //
++        if (g_chainstate_manager.m_snapshot_chainstate) {
++            chainstates_to_service.push_back(g_chainstate_manager.m_snapshot_chainstate);
++        }
++        chainstates_to_service.push_back(g_chainstate_manager.m_ibd_chainstate);
++        int requests_available = MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight;
 +
-+  for (std::shared_ptr<CChainState> chainstate : chainstates_to_service) {
++        for (std::shared_ptr<CChainState> chainstate : chainstates_to_service) {
++            if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !chainstate->IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
++                std::vector<const CBlockIndex*> vToDownload;
++                NodeId staller = -1;
++                FindNextBlocksToDownload(chainstate, pto->GetId(), requests_available, vToDownload, staller, consensusParams);
+
 ```
+
+- Service *all* chainstates (prioritizing the snapshot)
+- Parameterize `FindNextBlocksToDownload()` by chainstate
+- (not shown) replace `CNodeState->pindexLastCommonBlock` for
+  `chainstate_to_last_common_block`
+
+---
+
+class: smallcode
+
+## which chain do I append to?
+
+```diff
+@@ -2742,7 +2801,12 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
+   // we have a chain with at least nMinimumChainWork), and we ignore
+   // compact blocks with less work than our tip, it is safe to treat
+   // reconstructed compact blocks as having been requested.
+-  ProcessNewBlock(chainparams, pblock, /*fForceProcessing=*/true, &fNewBlock);
++  CChainState* relevant_chain;
++  {
++      LOCK(cs_main);
++      relevant_chain = g_chainstate_manager.GetChainstateForNewBlock(pblock->GetHash()).get();
++  }
++  ProcessNewBlock(relevant_chain, chainparams, pblock, /*fForceProcessing=*/true, &fNewBlock);
+```
+
+---
+
+## the only other non-trivial changes
+
+are in `init.cpp`:
+- load snapshot metadata off disk if it exists
+- do initialization for each chainstate relevant
+
+everything else basically just refers to 
+- `ChainActive()`
+- `ActiveChainstate()`
+- `ActiveChainstate()->GetCoinsCache()`
+
 ---
 
 class: smallcode
@@ -292,9 +353,11 @@ class: smallcode
 
 - how should this affect pruning (which is almost certainly broken atm)?
 - do we split `dbcache` down the middle?
-- on-disk block locality might be adversely affected - how much does that
+- does this affect `ValidationInterface` clients? 
+  - going to bone up `txindex`?
+- on-disk block locality will be affected - how much does that
   matter?
-- `cs_main` still be locking everything
+- `cs_main` still be locking everythang
 
 --
 
