@@ -156,7 +156,7 @@ class: center, middle, hasbg, nonumber
 
 class: center, middle, hasbg, nonumber
 
-# what hopelessly unmergeable changes does this entail?
+# let's see those hopelessly unmergeable changes
 
 ---
  
@@ -330,7 +330,7 @@ everything else basically just refers to
 
 class: smallcode
 
-<div style="position: absolute; left: 600px; top: 100px; font-size: 120px;">
+<div style="position: absolute; left: 600px; bottom: 140px; font-size: 120px;">
 😭
 </div>
 
