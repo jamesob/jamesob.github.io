@@ -20,8 +20,6 @@ CL HQ<br /> New York City, New York, USA
 
 class: middle
 
-## Agenda
-
 0. What are we trying to do?
 0. Demo
 0. What did I implement?
@@ -111,13 +109,12 @@ loadtxoutset(file_path);
 
 ## details
 
-- The node will only serve blocks from the fully-validated chain
+- Node will only serve blocks from the fully-validated chain
 
 - `miner.cpp` will not generate blocks based off of an unvalidated snapshot
   chain
 
-- The wallet consults `ChainActive()` only, whether it's from an unvalidated
-  snapshot or not
+- Wallet consults `ChainActive()` only
 
 - Syncing to the network tip is prioritized over validating the snapshot
   - shouldn't really matter since syncing to network tip should be pretty quick
@@ -159,7 +156,7 @@ class: center, middle, hasbg, nonumber
 
 class: center, middle, hasbg, nonumber
 
-# what'd you do to the code, you monster
+# what hopelessly unmergeable changes does this entail?
 
 ---
  
@@ -208,8 +205,14 @@ class: center, middle, hasbg, nonumber
 
 - `SendMessages()`: if we don't have any eligible peers we're currently
   syncing headers from, assign one and send `GETHEADERS`.
+
+--
+
 - Peer replies with a `HEADERS` message, which we call
   `ProcessHeadersMessage()` on.
+
+--
+
 - `ProcessHeadersMessage()` queues a follow-on `HEADERS` request if our peer 
   sent over a message containing `MAX_HEADERS_RESULTS`.
 
@@ -234,7 +237,7 @@ class: smallcode
 -        if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
 -            std::vector<const CBlockIndex*> vToDownload;
 -            NodeId staller = -1;
--            FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownl
+-            FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
 
 [...]
 
@@ -243,12 +246,13 @@ class: smallcode
 +        // Service the snapshot chainstate first - more important to get to the
 +        // network's tip quickly than do the background validation on the
 +        // snapshot.
-+        // TODO jamesob: is this what we really want?
 +        //
 +        if (g_chainstate_manager.m_snapshot_chainstate) {
 +            chainstates_to_service.push_back(g_chainstate_manager.m_snapshot_chainstate);
 +        }
-+        chainstates_to_service.push_back(g_chainstate_manager.m_ibd_chainstate);
++        if (g_chainstate_manager.m_ibd_chainstate) {
++            chainstates_to_service.push_back(g_chainstate_manager.m_ibd_chainstate);
++        }
 +        int requests_available = MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight;
 +
 +        for (std::shared_ptr<CChainState> chainstate : chainstates_to_service) {
@@ -379,11 +383,10 @@ class: smallcode
 # unsolved mysteries
 
 - how should this affect pruning (which is almost certainly broken atm)?
-- do we split `dbcache` down the middle?
-- does this affect `ValidationInterface` clients? 
-  - going to bone up `txindex`?
-- on-disk block locality will be affected - how much does that
-  matter?
+- split `dbcache` down the middle?
+- `ValidationInterface` clients? 
+  - going to bungle up `txindex`?
+- on-disk block locality will be affected
 - `cs_main` still be locking everythang
 
 --
@@ -399,13 +402,13 @@ class: smallcode
 
 # todo
 
+- think through aforementioned (VI, pruning)
 - mitigate diff size
 - split into digestible commits
 - write some (i.e. a lot of) tests
 - q4u: how much refactoring should I attempt to roll into this project?
   - inclined to minimize, but also a good opportunity
-  - lock-splitting, code-shuffling especially appealing while I'm in the
-    neighborhood and have to touch `validation` anyway
+  - lock-splitting, code-shuffling especially appealing
 
 ---
 
