@@ -145,7 +145,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 104)
+  github-pages
+  jekyll-feed
 
 BUNDLED WITH
-   1.16.4
+   1.17.2

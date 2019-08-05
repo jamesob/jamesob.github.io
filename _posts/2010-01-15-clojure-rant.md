@@ -2,6 +2,7 @@
 layout: post
 title: Writing a robot driver with Clojure
 labels: clojure, robots, state
+enable_comments: true
 ---
 
 So after watching a few of the <a href="http://clojure.blip.tv">Hickey talks</a>,
