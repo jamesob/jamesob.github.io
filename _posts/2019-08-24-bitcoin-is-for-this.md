@@ -59,7 +59,7 @@ point they go more negative than their European counterparts.
 
 <blockquote class="twitter-tweet tw-align-center" data-conversation="none"><p lang="en" dir="ltr">And today: Absurdity that the US w/ at least $800bn net in Treasuries to still be auctioned this year has the least attractive (most inverted) G10 curve and missing foreign end buyers that have been &quot;priced out of the market&quot; <a href="https://t.co/Lpkjimi9Nr">pic.twitter.com/Lpkjimi9Nr</a></p>&mdash; Andrew W. Park (@apark_) <a href="https://twitter.com/apark_/status/1164295658460897280?ref_src=twsrc%5Etfw">August 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-This may not seem like such a big deal, or at the most an abstraction more or
+This may not seem like such a big deal, or at most a weird abstraction more or
 less confined to finance people, the kind of people who worry
 about bond yields and think in basis points. 
 
@@ -502,10 +502,14 @@ safe-haven asset.
 I'm not sure that Bitcoin will work in the way that I think it will. Nobody is.
 But I am sure that if the narrative I spell out above is anywhere near right,
 the financial system in its current form is due for an abrupt change sometime
-in the next few years.
+in the next few years. I'm sure that there's no coming back from the
+government largesse that materialized in 2008, both in terms of the
+reliance on credit it introduced and the precedent for significant
+intervention that it broached.
 
 Bitcoin is designed, intentionally or simply incidentally, as the perfect armor
-to have on when turmoil hits global markets. Trustless settlement makes Bitcoin
+to have on when turmoil hits global markets. When governments start to engage
+in never-before-seen monetary experimentation. Trustless settlement makes Bitcoin
 the ideal ["currency of
 enemies"](https://twitter.com/murchandamus/status/926928242933510144) and
 censorship resistance means unconditional liquidity.
