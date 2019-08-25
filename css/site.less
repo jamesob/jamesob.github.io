@@ -82,6 +82,7 @@ body {
 
 .site {
 
+
   /* ===============================
    * Site-wide formatting
    * =============================== */
@@ -253,8 +254,8 @@ body {
 
   #post-body {
 
-    h2 {
-      margin-top: 2em;
+    h2, h3, h4 {
+      margin-top: 4em;
     }
 
     img {
@@ -266,15 +267,16 @@ body {
     blockquote {
       border-left: 3px solid #ccc;
       padding-left: 15px;
-      color: #777;
+      color: #444;
     }
 
     .caption {
-      font-size: 80%;
+      font-size: 90%;
       text-align: center;
+      font-style: italic;
+      margin-bottom: 2em;
     }
 
-    padding-left: 1em;
     margin-bottom: 4em;
   }
 
@@ -378,14 +380,21 @@ body {
 
   .footnotes {
     margin-top: 40px;
-    font-size: 80%;
-    line-height: normal;
   }
 
   .gist {
       font-size: 12px;
       line-height: 14px;
   }
+
+  .bitcoin-for {
+    padding: 0.4em 1em 0.4em 1em !important;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    .nice-border;
+    @radius: 8px;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+  }
    
 }
-
