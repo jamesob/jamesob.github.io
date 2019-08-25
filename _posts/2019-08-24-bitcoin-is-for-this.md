@@ -502,15 +502,18 @@ safe-haven asset.
 I'm not sure that Bitcoin will work in the way that I think it will. Nobody is.
 But I am sure that if the narrative I spell out above is anywhere near right,
 the financial system in its current form is due for an abrupt change sometime
-in the next few years. I'm sure that there's no coming back from the
+in the next few years. 
+
+
+I'm sure that there's no coming back from the
 government largesse that materialized in 2008, both in terms of the
 reliance on credit it introduced and the precedent for significant
 intervention that it broached.
 
-Bitcoin is designed, intentionally or simply incidentally, as the perfect armor
-to have on when turmoil hits global markets. When governments start to engage
-in never-before-seen monetary experimentation. Trustless settlement makes Bitcoin
-the ideal ["currency of
+Bitcoin is designed, intentionally or incidentally, as a near ideal tool to
+have access to when turmoil hits global markets. When governments start to
+engage in never-before-seen monetary experimentation. Trustless settlement
+makes Bitcoin the ideal ["currency of
 enemies"](https://twitter.com/murchandamus/status/926928242933510144) and
 censorship resistance means unconditional liquidity.
 
