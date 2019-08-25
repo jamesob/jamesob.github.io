@@ -409,8 +409,8 @@ Since the Bretton Woods Conference in 1944, the US dollar has had the
 meant that there's always a healthy demand for the dollar, which in turn stokes
 reliable demand for our government debt in the form of Treasuries (well, until
 recently). This has let us run big deficits without worrying too much:
-there will always going to be other countries waiting in line to buy
-Treasuries, right? They want to buy oil, don't they?
+there will always going to be other countries waiting in line to roll our
+debt by buying Treasuries, right? They want to buy oil, don't they?
 
 Unfortunately, it doesn't look like this will last. Foreign banks have stopped
 buying US treasuries at an alarming rate.
