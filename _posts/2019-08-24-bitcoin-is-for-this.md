@@ -380,7 +380,7 @@ just feels kind of outdated. The only easy way to buy exposure to gold (ETFs)
 are still just a paper proxy for the real thing.  They're subject to the same
 kind of risks if there's a huge crash and financial markets are ordered to a
 halt. Bitcoin maintains liquidity through such a crash because governments
-can't control its exchanges.  </p>
+can't stop its ability to perform transactions.  </p>
 
 <p>
 Unlike gold, the authenticity of a Bitcoin balance is immediately verifiable with
