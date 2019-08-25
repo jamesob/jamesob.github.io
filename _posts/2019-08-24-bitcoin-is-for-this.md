@@ -14,13 +14,6 @@ into the global financial system. Aside from exaggerated divides in wealth
 distribution, this has created profound systemic risk. The last few months have
 shown indications that this risk is starting to come to the surface.
 
-I'm going to walk through the narrative I've been watching that points to not
-only a downturn in the coming months, but the much broader issue of substantial
-devaluation of the US dollar. This will be driven by a decreased willingness of
-foreign central banks to support the USD as the global reserve currency, and
-the failing willingness of foreign investors continuing to fund our perpetual
-deficits through debt purchase.
-
 The setup in front of us is not for a garden variety recession. It's for
 potential cataclysm: a drawdown that will hit normal investors hard, but
 retirees and pensions especially so. This drawdown, when and if it happens,
