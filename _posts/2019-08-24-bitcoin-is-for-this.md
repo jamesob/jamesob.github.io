@@ -10,7 +10,7 @@ Reserve.
 </div>
 
 Starting in 2008, central banks injected an unprecedented amount of new money
-into the global financial system. Aside from exaggerated divides in wealth
+into the global financial system. Along with big gaps in wealth
 distribution, this has created profound systemic risk. The last few months have
 shown indications that this risk is starting to come to the surface.
 
