@@ -613,7 +613,7 @@ yield or a millennial like me, disenchanted with almost every other option.
 
 Follow me [@jamesob](https://twitter.com/jamesob).
 
-Shouts to [Luke Gromen](https://twitter.com/LukeGromen), [Danielle DiMartino
+Shouts to [Luke Gromen](https://twitter.com/LukeGromen), [Ben Hunt at Epsilon Theory](https://twitter.com/EpsilonTheory), [Danielle DiMartino
 Booth](https://twitter.com/DiMartinoBooth), [Raoul
 Pal](https://twitter.com/raoulgmi), [Jeff
 Snider](https://twitter.com/JeffSnider_AIP?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
