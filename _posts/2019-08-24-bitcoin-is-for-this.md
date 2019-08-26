@@ -1,6 +1,8 @@
 ---
 title: Bitcoin for safety
 layout: post
+meta_image: /images/fin-fed.png
+summary: Experimental monetary policy and high leverage is going to blow up our economy. Bitcoin is here to help.
 ---
 
 <img width='100%' src='/images/fin-fed.png'  />
@@ -16,17 +18,17 @@ shown indications that this risk is starting to come to the surface.
 
 The setup in front of us is not for a garden variety recession. It's for
 potential cataclysm: a drawdown that will hit normal investors hard, but
-retirees and pensions especially so. This drawdown, when and if it happens,
+retirees and pensions especially so. This drawdown when and if it happens
 will lead the government to take extraordinary action in an attempt to avert
-disaster. That action will cause an incredible level of inflation.
+depression. That action will cause an incredible level of inflation.
 
-As I've watched these events play out, some of the only comfort I can find is
-in the continued prospect of Bitcoin. I see this new asset as one of the only
-potential safeguards that people in normal income brackets have against the
-kind of collapse I'm forecasting. As I lay out the narrative
-I've been following I'll occasionally interject with observations on why I
-think Bitcoin is going to become increasingly important, even relative to
-traditional safe-haven assets like gold.
+As I've watched the following events play out, some of the only optimism I can
+find is in the promise of Bitcoin as a nascent asset class. I see
+this new tool as one of the only potential safeguards that people in normal
+income brackets have against the kind of trouble I'm forecasting. As I lay out
+the narrative I've been following I'll occasionally interject with observations
+on why I think Bitcoin is going to become increasingly important, even relative
+to traditional safe-haven assets like gold.
 
 ### Welcome to negative
 
@@ -38,26 +40,17 @@ year bond yield has gone negative, also for the first time in history.
 
 This means that investors are paying governments (and some companies) for the
 privilege of lending them money. I pay the German government $10,000 today and
-in thirty years I get back $11 less. Intuitively this doesn't make much sense -
+in thirty years I get back $11 less. Intuitively this doesn't make much sense:
 given the time-value of money, cash I have on hand now should be worth more
 than theoretical cash in 30 years, at the very least because I may not be
-around in 30 years to spend that cash.
+around in 30 years to spend it.
 
-And besides, there's what we call "counterparty risk" - the possibility that
-the German government might not repay me (admittedly a low likelihood) or the
+And besides, there's what we call "counterparty risk:" the possibility that the
+German government might not repay me (admittedly a low likelihood) or the
 possibility that the euro will have suffered significant inflation since then,
 reducing the real purchasing power of my $10,000 (a much higher likelihood).
-The risks of lending someone else my money for 30 years should be offset by
-some reward, but with negative yields the lender is penalized for assuming this
-risk.
-
-At face value, US treasury yields are still positive (if not rapidly
-declining). That is, before you hedge them for foreign exchange risk - at which
-point they go more negative than their European counterparts.
-
-<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Japanese buying U.S. treasuries on a hedges basis are losing -117bps, otherwise exposed to FX. This inversion occurred in late 2018 &amp; is one reason liquidity is tightening in the treasury &amp; ST funding markets. <a href="https://t.co/LQBGtjAETv">pic.twitter.com/LQBGtjAETv</a></p>&mdash; Greg S. (@GS_CapSF) <a href="https://twitter.com/GS_CapSF/status/1162157481604157442?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet tw-align-center" data-conversation="none"><p lang="en" dir="ltr">And today: Absurdity that the US w/ at least $800bn net in Treasuries to still be auctioned this year has the least attractive (most inverted) G10 curve and missing foreign end buyers that have been &quot;priced out of the market&quot; <a href="https://t.co/Lpkjimi9Nr">pic.twitter.com/Lpkjimi9Nr</a></p>&mdash; Andrew W. Park (@apark_) <a href="https://twitter.com/apark_/status/1164295658460897280?ref_src=twsrc%5Etfw">August 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+The risks of lending money for 30 years should be offset by some reward, but
+with negative yields the lender is penalized for assuming this risk.
 
 This may not seem like such a big deal, or at most a weird abstraction more or
 less confined to finance people, the kind of people who worry
@@ -93,22 +86,23 @@ savings exposed to the stock market and all its associated drama:
 >
 > [Forbes](https://www.forbes.com/sites/stephenchen/2019/08/19/what-negative-interest-rates-mean-for-your-retirement/#2b34397d55f3)
 
-Negative rates are strange and disconcerting in themselves, but if we walk back
-to their cause we find there are other causes for alarm.
+Negative rates are strange and disconcerting in themselves, but reconstructing
+their cause reveals other big problems as we'll see in a bit.
  
 
-<div class='bitcoin-for'><p>
+<div class='bitcoin-for'><p><b>This is what Bitcoin is for.</b>
 Bitcoin, like gold, is a "non-productive" asset, a commodity. This means that
 it doesn't in itself generate yield, though obviously there's been plenty of
 price appreciation over its ten year life.</p>
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=oHho&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
 
-<p>Bitcoin is tool for addressing increasingly negative yields and diversifying savings - a 1 to 5%
-allocation lets you simultaneously cordon off risk to a small
-percentage of your portfolio but retain exposure to considerable upside.
-It's the <a
-href='https://www.investopedia.com/articles/investing/013114/barbell-investment-strategy.asp'>Talebian barbell</a> incarnate.
+<p>For reasons I'll describe shortly, this new asset is a possible tool for
+countering increasingly negative yields and diversifying savings. A 1 to 5%
+allocation lets you simultaneously cordon off risk to a small percentage of
+your portfolio but retain exposure to considerable upside.  It's the <a
+href='https://www.investopedia.com/articles/investing/013114/barbell-investment-strategy.asp'>
+barbell doctrine</a> incarnate.
 
 <blockquote>
 <p>Owning bitcoins is one of the few asymmetric bets that people across the entire world can participate in.</p>
@@ -118,9 +112,9 @@ href='https://www.investopedia.com/articles/investing/013114/barbell-investment-
 
 Instead of risking a huge portion of your savings in equities for positive
 return, you can use a small amount of Bitcoin as a metaphorical call option on
-a new asset class - one that isn't affected by the same vulnerabilities that
-have created the negative rate conundrum, in addition to the other maladies
-we'll get around to later.  </p>
+a new asset class &ndash; an asset class that isn't affected by the same
+vulnerabilities that have created the negative rate conundrum, in addition to
+the other maladies we'll get around to later.  </p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Why should I ever hold stocks? 5% <a href="https://twitter.com/hashtag/bitcoin?src=hash&amp;ref_src=twsrc%5Etfw">#bitcoin</a> + 95% cash outperforms stocks on risk AND return, every year past 6 years... <a href="https://t.co/WbB3n1VZLy">pic.twitter.com/WbB3n1VZLy</a></p>&mdash; PlanB (@100trillionUSD) <a href="https://twitter.com/100trillionUSD/status/1136969637588021250?ref_src=twsrc%5Etfw">June 7, 2019</a></blockquote>
 </div>
@@ -153,9 +147,21 @@ cheap credit that is supposed to stoke the economy by encouraging people to buy
 more things and take out more loans.
 
 When the economy is running too hot, the Fed (the US central bank) raises the price of money and
-limits credit expansion, though they've done much more easing than
-tightening in the past 20 years. As we'll see, the economy
+limits credit expansion, though they haven't done much of this
+in the past 20 years. As we'll see, the economy
 has become reliant on cheap credit in deep and interesting ways.
+
+ 
+<img width='100%' src='/images/fin-2018.png' />
+
+<div class="caption"> In 2018, the market crashed 11%, the worst December since
+the great depression, as the Fed tried to raise interest rates back to
+pre-crisis levels.  This crash prompted the Fed Open Market Committee to do a
+"dovish pivot" back to rate cuts in 2019.<br />The economy will no longer
+tolerate rising interest rates.</div>
+ 
+
+### Post 2008
 
 Central bank intervention came to a fever pitch 11 years ago. The 2007/8
 financial crisis was so bad that the Fed went beyond its usual measures. It
@@ -163,21 +169,21 @@ drastically upped its purchase of US Treasuries (debt) and started buying
 things like mortgage-backed securities.
 
 The chart below shows the level of our monetary base, or the amount of currency
-circulating plus the level of reserves banks hold at the Fed.
+circulating plus the level of reserves banks hold at the Fed. This is one of my
+favorite charts of all time, it's just insane.
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=lIdk&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
-<div class="caption">Over $3.3 trillion (5x) in new money was created starting in 2008.</div>
+<div class="caption">Over $3.3 trillion <b>(5x)</b> in new money was created starting in 2008.<br />Shaded gray bars are periods of recession.</div>
 
 The tricky part about central bank intervention is that it's a discretionary
 process driven by a relatively small group of people. How much intervention is
-too much? In 2008, the answer seemed to be "almost no amount of intervention is
-too much."
+too much? In 2008, the answer seemed to be "almost no amount is too much."
 
 As you can see above, this resulted in the supply of base money roughly
 *quintupling*. Why we didn't see crippling inflation is another story for a
 different blog[^1]. Even though we didn't see traditional (and I would argue
-faulty) measures of inflation like CPI and PCE spike, all this extra
-"liquidity" (i.e. cheap credit) has led to systemic bubbles in important asset
+deceptive) measures of inflation like CPI and PCE spike, all this extra
+"liquidity" has led to systemic bubbles in important asset
 markets like real estate
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=oH3c&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
@@ -210,7 +216,7 @@ due to intra-EU debt problems.
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=m5b4&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
 
-This is what's created deeply negative bond rates in Europe - the European
+This is what has created deeply negative bond rates in Europe - the European
 Central Bank (ECB) has been aggressively purchasing bonds in an attempt to
 inject cash into the economy, which drives bond yields down and in the process
 hurts anyone relying on fixed income.
@@ -245,12 +251,12 @@ fund expansion.
 <div class="caption">
 Corporate debt to GDP is higher than it's ever been. From <a
 href="https://www.dallasfed.org/research/economics/2019/0305.aspx">the Dallas
-Fed</a>.
+Fed</a>.<br />Shaded bars indicate recession.
 </div>
                                                 
 One way this cheap credit is used is for leveraged share buybacks, a term
 you've probably heard recently. In a nutshell, this is when a company takes
-advantage of favorably low interest rates (caused by the central bank's
+advantage of favorably low interest rates (enabled by the central bank's
 intervention) to take out a loan. Using the loan, the company buys back its own
 shares which (definitionally) reduces the number of shares outstanding and
 artificially boosts earnings-per-share, sending share prices higher. This has
@@ -290,11 +296,60 @@ the economy:
   above), funded by cheap credit,
 - so share prices are largely contingent on credit remaining cheap...
 
+
+### A quick note on pensions
+
+Public pensions in America probably merit their own post because they're so
+horrifying, but the short version is that their prospects for solvency are not
+good. Even assuming a starry-eyed rate of return (7.5% per year), they're still
+underfunded by $2 trillion. 
+
+ 
+<img width='100%' src='/images/fin-pensions.png' />
+<div class='caption'><a href='https://www.wsj.com/articles/the-pension-hole-for-u-s-cities-and-states-is-the-size-of-japans-economy-1532972501'>Source</a>
+</div>
+ 
+
+There's no risk-free way to get 7.5%. In order to get returns like that, you
+have to expose yourself to the equities market or, as is commonly the case
+these days, low-grade corporate debt. Under normal circumstances, seeing price
+volatility and riding out periods of loss is a guarantee for the
+kind of assets that net you 7.5% per annum.
+
+If we assume that pensions get a more realistic rate of return, the unfunded
+liabilities rise to as much as $8 trillion.
+
 <img width='100%' src='/images/fin-pension.png' />
-<div class='caption'>Oh did I mention that public pensions are still
+<div class='caption'>Did I mention that public pensions are still
 underfunded by $2T+ assuming a 7.5% yearly return?
 </div>
 
+Keep in mind, this 7.5% of return is expected in a world where most government
+debt is now *negatively yielding.*
+
+In the desperate search for return, pensions are increasingly relying on large
+positions of risky allocations. For example, the [New York State Teacher's
+Retirement
+System](https://www.nystrs.org/NYSTRS/media/PDF/About%20Us/fixed_domestic.pdf)
+owns $35 million of BBB-rated General Electric bonds. If the [GE fraud
+story](https://www.nytimes.com/2019/08/16/business/dealbook/ge-fraud.html) has
+any merit, those bonds may be downgraded to BB which would compel *all pension
+funds nationally* to unload the bonds. The funds would sell at a sizable loss
+and probably crash the corporate bond market.
+
+Because of this chase for yield, the stability of our pension system is now
+predicated on the stock and corporate bond markets forever performing. There is
+not good historical precedent for this.
+          
+<div class='bitcoin-for'><p><b>This is what Bitcoin is for.</b> Pensions could
+juice their returns for far less risk by selling off their large allocation of
+garbage BBB corporate bonds, almost certain to implode or suffer downgrades in
+a recession, and placing their risk in a much smaller percentage allocation of
+Bitcoin.  </p> </div>
+
+If pensions are reliant on risky assets for solvency, this means they are now
+reliant on cheap credit for solvency.
+         
 ### The huge problem starts when and if
 
 - credit *doesn't* get cheaper: slowing and heavily indebted companies like
@@ -329,34 +384,38 @@ institutions have any substantial volume of BTC to sell.
 </p>
 <p>
 The kind of ownership that would be compelled to sell in a situation like this,
-the "weak hands," have already
+"weak hands," have already
 been shaken out of their positions by BTC's volatility. The remaining owners are
-in it for the longterm. I predict that in a
-downturn, BTC's price will remain stable if not go up.
+in it for the longterm. It's my guess that in a
+downturn, BTC's relative price will be neutral to positive.
 </p>
 
 </div>
          
 The equities market, having been stoked up on easy credit (now painfully dry)
-may well see a 60-70% decline.
-Returning to current levels isn't a prospect for years, maybe decades.  We're
-talking about a depression and a bunch of people who are no longer able to fund
-their retirement. It'd be bad.
+may well see a 60-70% decline. Returning to current levels won't be in the
+cards for years, maybe decades. We're talking about a depression and a bunch
+of people who are no longer able to fund their retirement. It'd be bad.
 
 ### QE forever
 
-So the government basically can't let this happen. They have to keep the
+So anyway the above is all theoretical, because there won't be a crash... not
+in the form we're used to, anyway.
+The government basically can't let this happen. They have to keep the
 liquidity (read: cheap credit) flowing or else we have, basically, a complete
 collapse in equities and low-quality debt, and therefore in public pensions
-(who own large amounts of these things). I
-realize this sounds dramatic (and I'd love to be corrected) but this seems very
-bad.
+(who own large amounts of these things). This starts to get to, like,
+civilizational severity.
 
 Central banks will have to keep creating money to keep credit cheap so that
 companies can continue to buy back their own shares and prop up the equity
 market. This will continue to increase the money supply and will further
 exacerbate bubbles in real estate and equities. These bubbles will steadily
 widen the divide between the have-assets and the have-no-assets in America.
+
+The sort of recession that most people expect eventually may never come, since
+it can't be allowed to come. We may have entered a new monetary regime after
+the fireworks in 2008.
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=oHi2&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
 <div class='caption'>
@@ -391,7 +450,7 @@ regardless of amount.
 <p> It can't be confiscated. It's perpetually and internationally liquid. It
 doesn't know borders and gives final settlement in hours. It makes capital
 flight trivial and open to people who aren't fabulously rich or well-connected.
-Nobody's sure yet, but for these reasons I think there's a decent likelihood
+Nobody's sure yet, but for these reasons I think there's a decent chance
 that Bitcoin will function as a safe-haven asset, much like gold, in a
 significant downturn.  </p>
 
@@ -418,8 +477,16 @@ buying US treasuries at an alarming rate.
 <img width='100%' src='/images/fin-treasholdings.jpg' />
 <div class='caption'>Foreign central banks' holdings of US Treasuries down
 precipitously (<a href='https://www.zerohedge.com/news/2016-12-15/china-belgium-dump-treasuries-foreign-central-banks-liquidate-record-403-billion-us-'>source</a>).</div>
+ 
+US sovereign debt doesn't even have a yield advantage anymore even though
+treasury yields are nominally positive.  It turns out that once foreign
+investors hedge for currency risk, US bond yields go even more negative than
+their European counterparts mentioned early in the article.
 
-Meanwhile, central banks are buying gold like crazy. Why would they be doing
+<blockquote class="twitter-tweet tw-align-center" data-conversation="none"><p lang="en" dir="ltr">And today: Absurdity that the US w/ at least $800bn net in Treasuries to still be auctioned this year has the least attractive (most inverted) G10 curve and missing foreign end buyers that have been &quot;priced out of the market&quot; <a href="https://t.co/Lpkjimi9Nr">pic.twitter.com/Lpkjimi9Nr</a></p>&mdash; Andrew W. Park (@apark_) <a href="https://twitter.com/apark_/status/1164295658460897280?ref_src=twsrc%5Etfw">August 21, 2019</a></blockquote>
+ 
+Foreign central banks may not be buying our treasuries, but they're sure
+buying gold. Why would they be doing
 that? Gold's a barbarous relic, just shiny metal.
 
 <img width='100%' src='/images/fin-gold.jpg' />
@@ -427,10 +494,13 @@ that? Gold's a barbarous relic, just shiny metal.
  
 
 The writing's on the wall. The rest of the world is getting tired of funding
-obviously-insolvent programs like social security and medicare while
-simultaneously being vulnerable to dollar-based sanctions. Budget deficits
-continue to grow at record levels ([$234 billion for the month of Feb
-2019](https://www.businessinsider.com/us-budget-deficit-hits-record-february-national-debt-2019-3)).
+another country's obviously-unsustainable programs like social security and
+medicare while simultaneously being vulnerable to dollar-based sanctions.
+Budget deficits continue to grow at record levels ([$234 billion for the month
+of Feb
+2019](https://www.businessinsider.com/us-budget-deficit-hits-record-february-national-debt-2019-3) and we're on track to hit
+a record [$1 trillion for the
+year](https://www.latimes.com/opinion/story/2019-08-23/trillion-dollar-budget-deficit-national-debt-republicans-democrats)).
 Trump's unhinged Twitter indulgences are a nice foreground to [the mind-numbing
 222 trillion dollars of on- and off-balance sheet
 debt](https://www.zerohedge.com/news/2019-03-29/true-size-us-national-debt-including-unfunded-liabilities-222-trillion-dollars)
@@ -462,14 +532,14 @@ inflation will be historic.
 
 
 <div class='bitcoin-for'><p><b>This is what Bitcoin is for.</b> Bitcoin is an
-accessible insurance policy against this possible dollar endgame for anyone who
-wants it.  </p>
+accessible insurance policy against this increasingly likely dollar endgame for
+anyone who wants it.  </p>
 
 <p>
 Yes, central banks are buying gold and will likely continue to do so. Maybe
 some even have the intent of reforming the monetary system to sit on top of
-some kind of neo-gold standard. Rumors circulate that China is working on
-some kind of gold-backed cryptocurrency.
+some kind of gold standard 2.0. Rumors circulate that China is working on
+a gold-backed cryptocurrency.
 </p>
 
 <p>
@@ -490,8 +560,8 @@ Final settlement occurs indisputably within hours, not weeks. The cost of
 storing it is negligible. Cryptographic features like multisignature schemes
 and scripting abilities like timelocks enable a trustless programmability that
 makes it a completely new kind of financial asset, which is basically just a
-bonus on top of its killer feature: hardness as a money and suitability as a
-safe-haven asset.
+bonus on top of its killer feature: <b>hardness as a money and suitability as a
+safe-haven asset.</b>
 
 </p>
 
@@ -500,20 +570,27 @@ safe-haven asset.
 ### It only gets crazier from here
 
 I'm not sure that Bitcoin will work in the way that I think it will. Nobody is.
-But I am sure that if the narrative I spell out above is anywhere near right,
-the financial system in its current form is due for an abrupt change sometime
-in the next few years. 
-
-
-I'm sure that there's no coming back from the
+But I *am* sure that if the narrative I spell out above is anywhere near right,
+the financial system in its current form is in for an abrupt change
+in the next few years. I *am* sure that there's no coming back from the
 government largesse that materialized in 2008, both in terms of the
 reliance on credit it introduced and the precedent for significant
-intervention that it broached.
+intervention that it set.
+
+The kind of central bank interventions we've seen in the past 11 years are
+without equal. Regardless of political affiliation, most people who've been
+watching finance acknowledge we're in uncharted territory. The [average life of
+a fiat currency is 27
+years](https://www.dinardirham.com/the-rise-and-fall-of-fiat-currencies/), and
+since going off the gold standard (which I'm not necessarily defending), the US
+government has been allowed to engage in an inflationary frenzy that has no sign of
+slowing down.
 
 Bitcoin is designed, intentionally or incidentally, as a near ideal tool to
-have access to when turmoil hits global markets. When governments start to
-engage in never-before-seen monetary experimentation. Trustless settlement
-makes Bitcoin the ideal ["currency of
+have access to when this level of turmoil hits global markets, when governments
+start to engage in never-before-seen monetary experimentation, when Treasury
+departments and other political institutions start to lose their credibility.
+Trustless settlement makes Bitcoin the ideal ["currency of
 enemies"](https://twitter.com/murchandamus/status/926928242933510144) and
 censorship resistance means unconditional liquidity.
 
@@ -521,6 +598,8 @@ This doesn't mean that Bitcoin will actualize on its potential in whatever next
 crisis lies ahead of us, but it would seem foolish not to have a small amount
 of your portfolio betting that it will, whether you're a pension desperate for
 yield or a millennial like me, disenchanted with almost every other option.
+
+<br /><br /><br />
 
 ---
 
@@ -538,6 +617,11 @@ the word out on this stuff.
 - [Is a US recession coming? by Raoul Pal](https://www.youtube.com/watch?v=V7zEXiqiiqA)
 - [Luke Gromen on MacroVoices talking about the dollar end game](https://www.macrovoices.com/527-luke-gromen-the-dollar-end-game-has-already-begun)
 - [The Bullish Case for Bitcoin by Vijay Boyapati](https://medium.com/@vijayboyapati/the-bullish-case-for-bitcoin-6ecc8bdecc1)
+
+### Thanks
+
+Thanks to William O'Beirne, Luke McGrath, Jeff Vandrew Jr, and Neil Woodfine
+for reading an early version of this article and providing feedback.
 
 
 ### Footnotes
