@@ -18,17 +18,25 @@ shown indications that this risk is starting to come to the surface.
 
 The setup in front of us is not for a garden variety recession. It's for
 potential cataclysm: a drawdown that will hit normal investors hard, but
-retirees and pensions especially so. This drawdown when and if it happens
-will lead the government to take extraordinary action in an attempt to avert
-depression. That action will cause an incredible level of inflation.
+retirees and pensions especially so, threatening the premise of our financial
+system. This crash, or even just the threat of it, will lead our governments to
+take extraordinary action in an attempt to avert a long depression. That action
+will cause an incredible level of inflation.
 
-As I've watched the following events play out, some of the only optimism I can
-find is in the promise of Bitcoin as a nascent asset class. I see
+As I've watched the following events play out, some of the only optimism I feel
+is due to the emergence of Bitcoin as a nascent asset class. I see
 this new tool as one of the only potential safeguards that people in normal
-income brackets have against the kind of trouble I'm forecasting. As I lay out
-the narrative I've been following I'll occasionally interject with observations
-on why I think Bitcoin is going to become increasingly important, even relative
-to traditional safe-haven assets like gold.
+income brackets have against the kind of trouble I'm forecasting. 
+
+<div class='bitcoin-for'> <p> As I lay out the narrative I've watched unfold
+over the past few years, I'll occasionally interject with observations
+(formatted like this) on why I think Bitcoin is going to become increasingly
+important, even relative to traditional safe-haven assets like gold. After
+reading a draft of this post, my brother lovingly dubbed this "the shill zone," and
+I don't disagree.  </p> <p> It should be obvious, but as an explicit
+disclosure: I am long Bitcoin.  </p>
+
+</div>
 
 ### Welcome to negative
 
