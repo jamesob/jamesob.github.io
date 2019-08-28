@@ -624,6 +624,7 @@ the word out on this stuff.
 
 - [Is a US recession coming? by Raoul Pal](https://www.youtube.com/watch?v=V7zEXiqiiqA)
 - [Luke Gromen on MacroVoices talking about the dollar end game](https://www.macrovoices.com/527-luke-gromen-the-dollar-end-game-has-already-begun)
+- [Dave Collum's 2018 Year In Review](https://www.peakprosperity.com/2018-year-in-review/)
 - [The Bullish Case for Bitcoin by Vijay Boyapati](https://medium.com/@vijayboyapati/the-bullish-case-for-bitcoin-6ecc8bdecc1)
 
 ### Thanks
