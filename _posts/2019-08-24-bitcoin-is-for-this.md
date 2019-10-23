@@ -624,6 +624,7 @@ the word out on this stuff.
 
 - [Is a US recession coming? by Raoul Pal](https://www.youtube.com/watch?v=V7zEXiqiiqA)
 - [Luke Gromen on MacroVoices talking about the dollar end game](https://www.macrovoices.com/527-luke-gromen-the-dollar-end-game-has-already-begun)
+- [Dave Collum's 2018 Year In Review](https://www.peakprosperity.com/2018-year-in-review/)
 - [The Bullish Case for Bitcoin by Vijay Boyapati](https://medium.com/@vijayboyapati/the-bullish-case-for-bitcoin-6ecc8bdecc1)
 
 ### Thanks
@@ -634,7 +635,7 @@ for reading an early version of this article and providing feedback.
 
 ### Footnotes
 
-[^1]: Why didn't all this money result in rampant inflation? Because the Fed started paying interest on excess reserves (IOER), depository institutions hold a lot of this new money in reserves at the Fed and get paid an unnaturally high interest rate to do so.
+[^1]: Why didn't all this money result in rampant inflation? Because the Fed started paying interest on excess reserves (IOER), depository institutions hold a lot of this new money in reserves at the Fed and get paid an unnaturally high interest rate to do so. *Note:* readers have pointed out that my explanation here probably isn't correct. We didn't see rampant inflation likely because banks cannot use reserves to lend. See [here](https://twitter.com/junkbond2000/status/1166185797894193154) - thanks to David B.
 
 [^2]: This should be immediately and obviously sisyphean but hey nobody's perfect.
 [^3]: American public pension funds are [underfunded by anywhere from $2T-$8T](https://www.zerohedge.com/news/2016-08-09/public-pension-ponzi-are-public-pensions-short-8-trillion) depending on who you ask.
