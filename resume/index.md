@@ -113,7 +113,7 @@ serial solutions.
 ## Education
 
 - **B.Sc. in Computer Science, minor in Mathematics**  
-  George Mason University, Fairfax, VA  
+  George Mason University
 
 ## Interests
 
