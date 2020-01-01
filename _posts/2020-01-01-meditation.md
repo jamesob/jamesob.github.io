@@ -8,7 +8,8 @@ regular panic attacks; the full nine yards. I won't bore you with the details
 beyond saying the bad years were very bad; anyone who's had a dance with panic
 disorder can empathize.
 
-Out of any experience that painful, inevitably comes some good. One
+Out of any experience that bad [inevitably comes some
+good](https://jamesob.tumblr.com/post/93012819939/the-good-in-the-bad). One
 of these merciful silver linings was that it drove me to learn how to meditate.
 Somehow I'd come across [mindfulness-based stress
 reduction](https://en.wikipedia.org/wiki/Mindfulness-based_stress_reduction), a
