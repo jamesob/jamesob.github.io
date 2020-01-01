@@ -110,7 +110,7 @@ body {
   }
 
   ul {
-    list-style-type: circle;
+    @media @desktop-up { list-style-type: circle; }
   }
   
   code {
@@ -270,6 +270,12 @@ body {
   }
 
   #post-body {
+
+    p {
+      @media @phone-down {
+        margin-bottom: 30px;
+      }
+    }
 
     @media @phone-down {
       line-height: 340%;
