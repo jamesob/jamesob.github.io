@@ -1,29 +1,27 @@
-/*
-@font-face {
-   font-family: "MOD";
-   src: url("/fonts/MOD.otf"); 
-}
+// @font-face {
+//    font-family: "MOD";
+//    src: url("/fonts/MOD.otf"); 
+// }
 
-@font-face {
-  font-family: "pincoyablack";
-  src: url("/fonts/pincoyablack.otf");
-}
+// @font-face {
+//   font-family: "pincoyablack";
+//   src: url("/fonts/pincoyablack.otf");
+// }
 
-@font-face {
-  font-family: "betlog";
-  src: url("/fonts/betlog.ttf");
-}
+// @font-face {
+//   font-family: "betlog";
+//   src: url("/fonts/betlog.ttf");
+// }
 
 @font-face {
   font-family: "artifika";
   src: url("/fonts/artifika.ttf");
 }
 
-@font-face {
-  font-family: "permanentmarker";
-  src: url("/fonts/PermanentMarker.ttf");
-}
-*/
+// @font-face {
+//   font-family: "permanentmarker";
+//   src: url("/fonts/PermanentMarker.ttf");
+// }
 
 @font-face {
    font-family: "VAL";
@@ -37,6 +35,9 @@
 @standout-color: #eaeaea;
 
 @cream: #fffbe8;
+
+@phone-down: ~'only screen and (max-device-width: 580px)';
+@desktop-up: ~'only screen and (min-device-width: 581px)';
  
 /* ===============================
  * mixins
@@ -54,8 +55,10 @@
  * Utility classes
  * =============================== */ 
 .centered {
-  width: 760px;
-  margin: 0 auto;
+  @media @desktop-up {
+    width: 760px;
+    margin: 0 auto;
+  }
 }
 
 // same purpose as clearfix
@@ -76,8 +79,22 @@
 /* ===============================
  * body
  * =============================== */ 
-body {
-  margin: 30px 0 20px 20px;
+
+@media @desktop-up {
+  body {
+    margin: 30px 0 20px 20px;
+  }
+  .site {
+    line-height: 150%;
+  }
+}
+@media @phone-down {
+  body {
+    margin: 30px 40px 0px 40px;
+  }
+  .site {
+    line-height: 340%;
+  }
 }
 
 .site {
@@ -92,7 +109,6 @@ body {
   }
 
   font-size: 100%;
-  line-height: 150%;
   font-family: Palatino, georgia, "times new roman", serif;
 
   a {
@@ -192,12 +208,24 @@ body {
       a {
         text-decoration: none;
         color: @cream;
-        text-shadow: -1px -1px 0px @outline-color, 
-                     1px 1px 0 @outline-color,
-                     -1px 1px 0 @outline-color,
-                     1px -1px 0 @outline-color;
+
+        @media @desktop-up {
+          text-shadow: -1px -1px 0px @outline-color, 
+                       1px 1px 0 @outline-color,
+                       -1px 1px 0 @outline-color,
+                       1px -1px 0 @outline-color;
+        }
+        @media @phone-down {
+          text-shadow: -3px -3px 0px @outline-color, 
+                       3px 3px 0 @outline-color,
+                       -3px 3px 0 @outline-color,
+                       3px -3px 0 @outline-color;
+        }
       }
-      font-size: 43px;
+
+      @media @desktop-up { font-size: 43px; }
+      @media @phone-down { font-size: 68px; }
+
       font-family: "VAL";
     }
 
