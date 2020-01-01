@@ -80,25 +80,14 @@
  * body
  * =============================== */ 
 
-@media @desktop-up {
-  body {
-    margin: 30px 0 20px 20px;
-  }
-  .site {
-    line-height: 150%;
-  }
-}
-@media @phone-down {
-  body {
-    margin: 30px 40px 0px 40px;
-  }
-  .site {
-    line-height: 340%;
-  }
+body {
+  @media @desktop-up { margin: 30px 0 20px 20px; }
+  @media @phone-down { margin: 30px 40px 0px 40px; }
 }
 
 .site {
 
+  line-height: 150%;
 
   /* ===============================
    * Site-wide formatting
@@ -281,6 +270,10 @@
   }
 
   #post-body {
+
+    @media @phone-down {
+      line-height: 340%;
+    }
 
     h2, h3, h4 {
       margin-top: 4em;
