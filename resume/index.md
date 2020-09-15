@@ -8,7 +8,7 @@ I'm a generalist engineer with experience managing people, scoping projects,
 and working at all levels of implementation.
 I have significant interest in and experience with Bitcoin.
 
-## Notable opensource contributions
+## Code samples
 
 - cpp:
   [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)
@@ -34,16 +34,13 @@ I have significant interest in and experience with Bitcoin.
  
 - **Engineer**  
   [Chaincode Labs](https://www.chaincode.com/), New York, NY  
-  Mar. 2018 -  
+  Mar 2018 - Feb 2020
 
   - Develop and review [bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)
     and [bitcoinperf](https://bitcoinperf.com)
     - Proposed and implemented the
       [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/master/proposal)
       scaling project, currently in progress
-    - Developed change that results in [~17% speedup with 13.5% memory
-      reduction](https://github.com/bitcoin/bitcoin/pull/16718) during initial
-      block download, currently in progress
   - Manage internal compute/benchmarking infrastructure and networking
   - Co-founded [Bitcoin Optech](https://bitcoinops.org/), organizing 2018
     Optech Paris workshop
@@ -51,18 +48,19 @@ I have significant interest in and experience with Bitcoin.
  
 - **Senior Software Engineer**  
   [Tempo Automation](https://www.tempoautomation.com/), San Francisco, CA  
-  Aug. 2016 - Feb. 2018
+  Aug 2016 - Feb 2018
 
   - Automated operation of a PCB factory with full stack development of various tools.
   - Responsible for design, maintenance, and deploy of an ITAR-compliant
     server infrastructure on AWS. Uptime so far (including migration) is ~99.992%.
   - Led design and implementation of an ES6/React frontend on a tight timeline
     that facilitates $MM in annualized revenue.
+  - Led overhaul of hiring process.
 
 
 - **Platform Engineer**  
   [Counsyl](https://www.counsyl.com/), South San Francisco, CA  
-  Mar. 2015 - Aug. 2016
+  Mar 2015 - Aug 2016
   
   - Led development of an ETL/BI system that provides analytics on the operation
     of an automated genome sequencing lab.
@@ -74,7 +72,7 @@ I have significant interest in and experience with Bitcoin.
 
 - **Engineer, Lead**  
   [Percolate](https://www.percolate.com/), New York, NY  
-  Apr. 2012 – Jan. 2015  
+  Apr 2012 – Jan 2015  
     
   - Built and managed various parts of a large (~140k LOC) distributed 
     (~400 servers) system written in Python.
@@ -85,7 +83,7 @@ I have significant interest in and experience with Bitcoin.
 
 - **Web developer**  
   Phase2 Technology, Alexandria, VA  
-  Aug. 2011 – Mar. 2012  
+  Aug 2011 – Mar 2012  
     
   - Built a feed-processing service for large news sites using Grails and
     MongoDB that injects content into Drupal from various data sources.
@@ -102,6 +100,10 @@ serial solutions.
 
 ## Talks & publications
 
+- [[MIT Bitcoin Expo 2020] Contributing to Bitcoin Core: assumeutxo case
+  study](https://www.youtube.com/watch?v=3HVGolSlhqo)
+- [Bitcoin Core PR review club: flushing
+  coins](https://bitcoincore.reviews/17487.html)
 - [[Dev++ 2018] Overview of Bitcoin Core
   architecture](https://www.youtube.com/watch?v=L_sI_tXmy2U)
 - [[Chaincode Residency 2019] Advanced
@@ -117,8 +119,8 @@ serial solutions.
 
 ## Interests
 
-Bitcoin, cooking, finance & monetary policy, olympic lifting,
+Bitcoin, cooking, [finance & monetary policy](https://bearhaus.substack.com), 
+olympic lifting & CrossFit,
 [reading](https://www.goodreads.com/user/show/16430645-jamesob), DJing
-([poorly](http://soundcloud.com/jamesob)), going for walks and taking
-[pictures](http://instagram.com/_jamesob),
-[adventuring](http://ahadventure.us/)
+([poorly](http://soundcloud.com/jamesob)), 
+[sleeping outside](http://ahadventure.us/)
