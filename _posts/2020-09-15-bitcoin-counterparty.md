@@ -2,6 +2,7 @@
 title: "Is Bitcoin's lack of counterparty risk just a micro-optimization?"
 layout: post
 summary: Yeah, cheap riskless settlement is cool and all, but does it matter?
+meta_image: /images/2020-dollar-verification.jpg
 ---
 
 As more and more talk grows of the dollar getting displaced as the almighty global
