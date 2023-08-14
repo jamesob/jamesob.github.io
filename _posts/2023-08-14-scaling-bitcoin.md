@@ -1,7 +1,7 @@
 ---
 title: Thoughts on scaling bitcoin
 layout: post
-summary: "I talk about my expectation for how Bitcoin might scale to handle billions of users, and some implications for short-to-mid term protocol development."
+abstract: "I talk about my expectation for how Bitcoin might scale to handle billions of users, and some implications for short-to-mid term protocol development."
 ---
 
 A while ago, AJ published an [underread blogpost](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc) about scaling. I’ll do a hasty job of paraphrasing and say that the main gist is that the way that we might scale to **1 billion** users transacting at about **1 tx/week** (which is checking-account volume, my personal target) is by having about 50,000 kinda-sorted-trusted “sidechains” that bear the brunt of most payment volume.
