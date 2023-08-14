@@ -6,7 +6,9 @@ abstract: "I talk about my expectation for how Bitcoin might scale to handle bil
 
 A while ago, AJ published an [underread blogpost](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc) about scaling. I’ll do a hasty job of paraphrasing and say that the main gist is that the way that we might scale to **1 billion** users transacting at about **1 tx/week** (which is checking-account volume, my personal target) is by having about 50,000 kinda-sorted-trusted “sidechains” that bear the brunt of most payment volume.
 
-AJ/I use “sidechains” in a loose sense here to mean anything that allows aggregating bitcoin activity off-chain. If you wanted to be especially coarse you could just call them “bitcoin banks.” Examples of what I mean here are
+## Ok what's a sidechain?
+
+I (and maybe AJ?) use “sidechains” in a loose sense here to mean anything that allows aggregating bitcoin activity off-chain. If you wanted to be especially coarse you could just call them “bitcoin banks.” Examples of what I mean here are
 
 - a traditional, federated sidechain like Liquid,
   - (you’re trusting a group of signers not to rob you, but in return you get more expressive scripting abilities or confidential assets or faster blocks or some combination of all of them)
@@ -22,6 +24,8 @@ AJ/I use “sidechains” in a loose sense here to mean anything that allows agg
 The last option, this hypothetical coinpool thing, seems clearly preferable since it’s not relying on a third party. But it’s still a hypothetical, and then even if it weren’t (as we’ve seen with lightning) there are operational caveats around actually maintaining a working, live presence that understands a layer 2 protocol and is able to validate new activity and not get sybiled etc.
 
 Even relative experts aren’t necessarily able to run networked infrastructure that can lose money if it goes offline. It’s a full-time job, probably for multiple people.
+
+## Layer 1: uncomfortable
 
 Okay, so to get back on track here: in our projected scaling scenario, we’ve got individual users who are using 3 or 4 of these sidechain-type services that essentially resemble community banks. These “banks” are probably networked with payment channels (or atomic swappability) so that they can handle cross-bank liquidity operations, like doing the equivalent of wire transfers. I.e., I want to pay you, but we’re at different bitcoin banks, so the institutions themselves facilitate some kind of batched settlement over a lightning gateway.
 
@@ -55,22 +59,19 @@ Because mainchain space is scarce, we need to be able to pack all the exits we c
 
 Locking funds for later claim to a prespecified path (or set of paths) should be made as concise as possible so that in times of cataclysm, we can pack in as many exit transactions as possible.
 
-I don’t think it’s possible to get more concise than the bare script
-```
-<32 byte hash> OP_CHECKTEMPLATEVERIFY
-```
+I don’t think it’s possible to get more concise than the bare script `<32 byte hash> OP_CHECKTEMPLATEVERIFY`.
 
 It’s worth noting that a P2TR scriptPubKey is the same size (`OP_1 <32 byte pubkey>`), but then actually spending that coin comes with 17vB overhead (= `(34vB (controlblock) + 33vB (CTV script)) / 4`). If you’re trying to fill a block with 2-in-1-out CTV unrolls, this could be about 10% overhead.
 
 The burden of this overhead decreases as you add inputs or outputs of course, so “batch” unrolls for multiple users won’t benefit as much from bare script CTVs. But the most common use-case these days would be lightning channel closes, which are 1-in-2-out.
 
-There are rival proposals to CTV that are more flexible, like OP_TX/OP_TXHASH and others, but in a correlated crisis requiring mass exit from an L2, flexibility isn’t what’s needed - judicious use of the mainchain is. So whether or not OP_TX et al. are good for other things, I think CTV is needed simply because it is the most concise way to articulate exit from a contract on-chain at a time when blockspace might be precious.
+There are rival proposals to CTV that are more flexible, like `OP_TX`/`OP_TXHASH` and others, but in a correlated crisis requiring mass exit from an L2, flexibility isn’t what’s needed - judicious use of the mainchain is. So whether or not `OP_TX` et al. are good for other things, I think CTV is needed simply because it is the most concise way to articulate exit from a contract on-chain at a time when blockspace might be precious.
 
 ## Bomb-proof custody patterns
 
 The other observation that comes to mind is if there are going to be ~50,000 institutions managing large sums of bitcoin each, many of them perhaps managed by federated signers, there need to be relatively straightfoward custodial patterns that let us be pretty sure that theft or loss is out of the question.
 
-It shouldn’t come as a surprise that I think the functionality in [OP_VAULT](https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-0345.mediawiki) is critical to achieve this, because it introduces “reactive security.” As Jameson Lopp [says](https://blog.keys.casa/why-bitcoin-needs-covenants/):
+It shouldn’t come as a surprise that I think the functionality in [`OP_VAULT`](https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-0345.mediawiki) is critical to achieve this, because it introduces “reactive security.” As Jameson Lopp [says](https://blog.keys.casa/why-bitcoin-needs-covenants/):
 
 >With the right tools, we can be *reactive* rather than only *proactive* with regard to recovering from key compromises.
 >
@@ -78,7 +79,7 @@ It shouldn’t come as a surprise that I think the functionality in [OP_VAULT](h
 >
 > It is my sincere belief that every bitcoin self-custody user and every wallet developer should be salivating over the prospect of user-friendly vault functionality. The ability to "claw back" funds that have been lost due to a compromised security architecture means that bitcoiners can sleep more peacefully at night, knowing that they can be fallible, make mistakes, and not have to suffer from catastrophic loss due to a single oversight.
 
-I think that vaults that are enforced on-chain are probably a necessary part of successfully scaling custody to a large number of collaboratively managed pools of bitcoin. And OP_VAULT seems like the most chainspace-efficient way to do this.
+I think that vaults that are enforced on-chain are probably a necessary part of successfully scaling custody to a large number of collaboratively managed pools of bitcoin. And `OP_VAULT` seems like the most chainspace-efficient way to do this.
 
 Obviously there are a lot of parameters to be decided -- e.g.
 - who manages a watchtower, and how much do they know?
