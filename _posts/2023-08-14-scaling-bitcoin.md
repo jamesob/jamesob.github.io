@@ -39,7 +39,7 @@ Note also that part of what keeps these offchain constructions workable is the t
 
 These bank things are incentivized to keep operating (and not run away with the money) because (i) they collect fees and (ii?) they may be subject to some kind of local legal jurisdiction. But one of the saving graces here is that the the nature of bitcoin makes it feasible for each customer to also be an auditor.
 
-So let's assume for simplicity that throwing a transaction on layer 1 at maybe a few hundred bucks: something many people could afford in case there’s a Big Problem with their “bank” and they need to flee to layer 1 bitcoin, but definitely not something that you'd want to do every month or even every year.
+So let's assume for simplicity that throwing a transaction on layer 1 costs maybe a few hundred bucks: something many could afford in case there’s a Big Problem with their “bank” and they need to flee to layer 1 bitcoin, but not something everyone can afford, and definitely not something that you'd want to do every month or even every year.
 
 ## How we scale?
 
