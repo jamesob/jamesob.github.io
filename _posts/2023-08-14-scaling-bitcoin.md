@@ -6,7 +6,7 @@ abstract: "I talk about my expectation for how Bitcoin might scale to handle bil
 
 Back in June, AJ published an [underread blogpost](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc) about scaling. I’ll do a hasty job of paraphrasing the post --  which you should read in full -- by noting that it hypothesizes that the way that we might scale to **1 billion** users transacting at about **1 tx/week** (which is checking-account volume, my personal target) is by having about 50,000 kinda-sorted-trusted “sidechains” that bear the brunt of most payment volume.
 
-I'm going to discuss whether I think this assertion realistic, and if it has any implications on the covenants discussion.
+I'm going to discuss whether I think this assertion is realistic, and if it has any implications on the covenants discussion.
 
 ## Sidechains?
 
