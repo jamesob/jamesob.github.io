@@ -49,7 +49,7 @@ The alternatives? Can’t just raise the blocksize. Distributing the equivalent 
 
 I truly don’t think that your average person is going to manage a lightning node (directional liquidity and uptime are annoying), and the Phoenix model of a semi-trusted LSP that is by definition a kind of friendly sybil still requires pushing around a UTXO, which isn’t workable at the scale of a billion people. Assuming 41 bytes a UTXO, 1 billion of those things equates to about 380GB just for your UTXO set. This would make timely validation very difficult, although I dunno maybe it's worth some experimentation. [Utreexo](https://bitcoinops.org/en/topics/utreexo/) does help somewhat with this, and would probably be prerequisite to even approaching the problem.
 
-Is 50,000-”bank” thing  a compromise away from layer 1 ownership? Yes. But UTXO ownership for the entire world -- barring some unforeseen magic, which of course I’m rooting for! -- isn’t in the cards. At least with bitcoin’s technological context, we can have good auditing and custody tools to ensure that fraud is easily detectable and theft is basically impossible.
+Is the 50,000-”bank” thing  a compromise away from layer 1 ownership? Yes. But UTXO ownership for the entire world -- barring some unforeseen magic, which of course I’m rooting for! -- isn’t in the cards. At least with bitcoin’s technological context, we can have good auditing and custody tools to ensure that fraud is easily detectable and theft is basically impossible.
 
 ### Depression pitstop
 
@@ -81,10 +81,7 @@ The burden of this overhead decreases as you add inputs or outputs of course, so
 
 There are rival proposals to CTV that are more flexible, like `OP_TX`/`OP_TXHASH` and others, but in a correlated crisis requiring mass exit from an L2, flexibility isn’t what’s needed - judicious use of layer 1 is. So whether or not `OP_TX` et al. are good for other things (I don't know of any usecases?), I think CTV is needed simply because it is the most concise way to articulate exit from a contract on-chain at a time when blockspace might be precious.
 
-Per some basic analysis, using CTV's spend compression (congestion control), you'd be
-able to pack in [~33% more
-lightning closes](https://github.com/jamesob/verystable/blob/18a57207fe4fc106c4befaffc1784b012afc696c/examples/txn_size.py)
-into a block in times of crisis:
+Per some basic analysis, using CTV's spend compression (congestion control), you'd be able to pack in [~33% more lightning closes](https://github.com/jamesob/verystable/blob/18a57207fe4fc106c4befaffc1784b012afc696c/examples/txn_size.py) into a block in times of crisis:
 
 ```shell
 src/verystable (init 18a5720) % python examples/txn_size.py
