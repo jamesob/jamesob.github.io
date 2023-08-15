@@ -117,6 +117,8 @@ and I’m sure others. But I don’t think we can rely on proactive security to 
 
 Of course I'm leaving a lot out here. Stuff that isn't related to covenants per se, but is essential to allowing time-sensitive L2 protocols to actually work, like good mempool/fee management policy. Lightning is going to fall down without that work. And stuff that just lets Bitcoin work in a censorship resistant way, like BIP324.
 
+Someone should also work on fleshing out a "minimum viable coinpool," and figure out if we need primitives above and beyond taproot and CTV. That would be valuable info.
+
 ## Conclusion
 
 This article is already long enough, and there will probably be subsequent writings from me that either build on this or respond to posts from others using this lens.
