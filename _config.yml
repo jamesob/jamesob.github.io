@@ -7,5 +7,5 @@ title: jamesob
 description: 
 gist:
     noscript: false
-plugins_dir:
+plugins:
     - jekyll-feed
