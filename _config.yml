@@ -1,13 +1,11 @@
 encoding: UTF-8
-markdown: kramdown
-kramdown:
-    input: GFM
-    hard_wrap: false
 lsi: false
 safe: true
-incremental: false
+# incremental: false
 highlighter: rouge
+title: jamesob
+description: 
 gist:
     noscript: false
-plugins:
+plugins_dir:
     - jekyll-feed

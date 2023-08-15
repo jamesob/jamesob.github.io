@@ -1,22 +1,9 @@
-
-/*
-@font-face {
-  font-family: 'Oldenburg';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oldenburg'), local('Oldenburg-Regular'), url('http://themes.googleusercontent.com/static/fonts/oldenburg/v1/CRS5ubi7Czjub7bFdKPY-bO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
-}
-*/
-
 @font-face {
   font-family: 'monaco';
   font-style: monospace;
   src: local('/fonts/MONACO.TTF');
 }
 
-/* ===============================
- * body
- * =============================== */ 
 body {
   margin: 30px 0 20px 60px;
   font-family: Palatino, georgia, "times new roman", serif;
@@ -50,9 +37,6 @@ body a:hover {
 }
 
 
-/* 
- * paragraphs outside of lists.
- */
 #resume > p {
   margin-left: 20px;
 }
@@ -82,12 +66,6 @@ body a:hover {
   }
 }
 
-/* ===============================
- * list stuff
- * =============================== */ 
-
-
 ul li {
   margin-top: 6px;
 }
- 

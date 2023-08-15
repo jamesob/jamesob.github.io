@@ -12,136 +12,15 @@
     <h1>quotes</h1>
     <ul>
 
+      {% for q in site.data.quotes %}
       <li>
         <p>
-          <i>Charlie Rose:</i> There is a sense about you, that you are prepared to go down the dark road...
+          {{ q.quote }}
         </p>
-        <p>
-        <i><a href="https://youtu.be/g8UnCjeLev4?t=1275">David Lynch</a></i>: I like the idea of going down in. And everybody is like that. <b>Everybody is a detective.</b> The unknown is a magnet, and you can learn many many things by going down in there. But it doesn't negate a bright road either. Film is made up of contrasts. Knowledge and experience of combined opposites is sort of what it's all about.
-        </p>
+        {% if q.author %}
+        <p><i>{{ q.author }}</i></p>
       </li>
-
-      <li>
-      <p>We reject kings, presidents and voting. We believe in rough consensus
-      and running code.
-      </p>
-      <p><i><a href="https://tools.ietf.org/html/rfc7282#section-1">
-          David Clark</a></i></p>
-      </li>
-
-      <li>
-      <p>
-      Did you exchange<br />
-      A walk on part in the war<br />
-      For a lead role in a cage?
-      </p>
-      <p><i>Pink Floyd</i></p>
-      </li>
-
-      <li>
-      <p>
-      Prosperity comes to the mob, and to low-minded men as well as to great
-      ones; but it is the privilege of great men alone to send under the yoke
-      the disasters and terrors of mortal life: whereas to be always
-      prosperous, and to pass through life without a twinge of mental distress,
-      is to remain ignorant of one half of nature.
-      </p>
-      <p><i>
-        Seneca
-      </i></p>
-      </li>
-
-      <li>
-          <p>
-          When silence takes possession of you; when far from the racket of the human highway the sacred fire flames up in the stillness; when peace, which is the tranquility of order, puts order in your thoughts, feelings, and investigations, you are in the supreme disposition for learning; you can bring your materials together; you can create; you are definitely at your working point; <b>it is not the moment to dwell in wretched trifles, to half live while time runs by, and to sell heaven for nothings.</b>
-          </p>
-          <p><i>A.G. Sertillanges</i></p>
-      </li>
-
-      <li>
-          <p>Play stupid games, win stupid prizes.</p>
-          <p><i>old Bitcoin adage</i></p>
-      </li>
-
-      <li>
-        <p>
-        It all comes back. Perhaps it is difficult to see the value in having one's self back in that kind of mood, but I do see it; I think we are well advised to keep on nodding terms with the people we used to be, whether we find them attractive company or not. Otherwise they turn up unannounced and surprise us, come hammering on the mind's door at 4 a.m. of a bad night and demand to know who deserted them, who betrayed them, who is going to make amends. We forget all too soon the things we thought we could never forget. We forget the loves and the betrayals alike, forget what we whispered and what we screamed, forget who we were. I have already lost touch with a couple of people I used to be; one of them, a seventeen-year-old, presents little threat, although it would be of some interest to me to know again what it feels like to sit on a river levee drinking vodka-and-orange-juice and listening to Les Paul and Mary Ford and their echoes sing "How High the Moon" on the car radio. (You see I still have the scenes, but I no longer perceive myself among those present, no longer could ever improvise the dialogue.) The other one, a twenty-three-year-old, bothers me more. She was always a good deal of trouble, and I suspect she will reappear when I least want to see her, skirts too long, shy to the point of aggravation, always the injured party, full of recriminations and little hurts and stories I do not want to hear again, at once saddening me and angering me with her vulnerability and ignorance, an apparition all the more insistent for being so long banished.
-        </p>
-        <p>
-        It is a good idea, then, to keep in touch, and I suppose that keeping in touch is what notebooks are all about. And we are all on our own when it comes to keeping those lines open to ourselves: your notebook will never help me, nor mine you.”
-        </p>
-      <p><i>
-        Joan Didion
-      </i></p>
-      </li>
-
-      <li>
-      <p>We must not confuse dissent with disloyalty. We must remember
-      always that accusation is not proof and that conviction depends upon
-      evidence and due process of law. We will not walk in fear, one of
-      another. We will not be driven by fear into an age of unreason, if we dig
-      deep in our history and our doctrine, and remember that <b>we are not
-      descended from fearful men</b> — not from men who feared to write, to speak,
-      to associate and to defend causes that were, for the moment, unpopular.
-      </p>
-      <p><i>Edward R. Murrow</i></p>
-      </li>
-
-      <li>
-      <p>
-      If you're going to try, go all the way. Otherwise, don't even start.
-      This could mean losing girlfriends, wives, relatives and maybe even your
-      mind. It could mean not eating for three or four days. It could mean
-      freezing on a park bench. It could mean jail. It could mean derision. It
-      could mean mockery -- isolation. Isolation is the gift. All the others are
-      a test of your endurance, of how much you really want to do it. And,
-      you'll do it, despite rejection and the worst odds. And it will be better
-      than anything else you can imagine. If you're going to try, go all the
-      way. There is no other feeling like that. You will be alone with the
-      gods, and the nights will flame with fire. You will ride life straight to
-      perfect laughter. It's the only good fight there is.
-      </p>
-      <p><i>
-        Charles Bukowski
-      </i></p>
-      </li>
-
-      <li>
-      <p>
-      It is not the critic who counts, not the man who points out how the
-      strong man stumbled or where the doer of deeds could have done better.
-      The credit belongs to the man who is actually in the arena; whose face is
-      marred by dust and sweat and blood; who strives valiantly; who errs and
-      comes short again and again; who knows the great enthusiasms, the great
-      devotions, and spends himself in a worthy cause; who, at the best, knows
-      in the end the triumph of high achievement; and who, at the worst, if he
-      fails, at least fails while daring greatly, so that his place shall never
-      be with those cold and timid souls who know neither victory nor defeat.
-      </p>
-      <p><i>
-        Theodore Roosevelt
-      </i></p>
-      </li>
-
-      <li>
-      <p>
-      Perfection is achieved only by institutions on the point of collapse.
-      </p>
-
-      <p><i>
-        C. Northcote Parkinson
-      </i></p>
-      </li>
-
-      <li>
-      <p>
-      From time to time in the years to come, I hope you will be treated unfairly, so that you will come to know the value of justice. I hope that you will suffer betrayal because that will teach you the importance of loyalty. Sorry to say, but I hope you will be lonely from time to time so that you don’t take friends for granted. I wish you bad luck, again, from time to time so that you will be conscious of the role of chance in life and understand that your success is not completely deserved and that the failure of others is not completely deserved either. And when you lose, as you will from time to time, I hope every now and then, your opponent will gloat over your failure. It is a way for you to understand the importance of sportsmanship. I hope you’ll be ignored so you know the importance of listening to others, and I hope you will have just enough pain to learn compassion. Whether I wish these things or not, they’re going to happen. And whether you benefit from them or not will depend upon your ability to see the message in your misfortunes.
-      </p>
-
-      <p><i>
-        John Roberts, Chief Justice of the United States, to a bunch of middle-schoolers
-      </i></p>
-      </li>
+      {% endfor %}
 
     </ul>
 
