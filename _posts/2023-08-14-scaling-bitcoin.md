@@ -4,20 +4,20 @@ layout: post
 abstract: "I talk about my expectation for how Bitcoin might scale to handle billions of users, and some implications for short-to-mid term protocol development."
 ---
 
-Back in June, AJ published an [underread blogpost](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc) about scaling. I’ll do a hasty job of paraphrasing the post --  which you should read in full -- by noting that it hypothesizes that the way that we might scale to **1 billion** users transacting at about **1 tx/week** (which is checking-account volume, my personal target) is by having about 50,000 kinda-sorted-trusted “sidechains” that bear the brunt of most payment volume.
+Back in June, AJ published an [underread blogpost](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc) about scaling. I’ll do a hasty job of paraphrasing the post --  which you should read in full -- by noting that it hypothesizes that the way that we might scale to **1 billion** users transacting at about **1 tx/week** (which is checking-account volume, my personal target) is by having about 50,000 kinda-sorted-trusted off-chain entities that bear the brunt of most payment volume.
 
-I'm going to discuss whether I think this assertion is realistic, and if it has any implications on the covenants discussion.
+Here I discuss whether I think this is realistic, and if it tells us anything about possible consensus changes.
 
-## Sidechains?
+## Off-chain entities?
 
-I use “sidechains” in a loose sense here to mean anything that allows aggregating bitcoin activity off-chain. If you wanted to be especially coarse you could just say “bitcoin banks.” Examples of what I mean here are
+If you wanted to be especially coarse you could just say “bitcoin banks.” Examples of what I mean here are
 
 1. a traditional, federated sidechain like Liquid,
-  - You send your coins to be controlled by some third party (and you hope they send them back), but in return you get more expressive scripting abilities or confidential assets or faster blocks or some combination of all of them.
+  - You send your coins to be controlled by some third party, but in return you get more expressive scripting abilities or confidential assets or faster blocks or some combination of all of them.
   - Drivechains are sort of like this, but the peg-in and -out are mediated by bitcoin miners.
 1. some kind of Chaumian ecash bank like fedimint or cashu,
   - You send your coins to a federation (or even an individual operator), and you get some privacy benefits.
-1. or some yet-to-be-discovered design that isn’t really a sidechain at all, in that it doesn’t hinge on trusting some third party to return your coins ("peg out"). Instead such a design would rely purely on enforcement via smart contract (i.e. bitcoin script) and a magic sprinkle of *time-sensitivity* on the part of its users. 
+1. or some yet-to-be-discovered design that doesn’t hinge on trusting some third party to return your coins ("peg out"), instead relying on enforcement via smart contract (i.e. bitcoin script) and a magic sprinkle of *time-sensitivity* on the part of its users. 
   - This is like a [coinpool](https://coinpool.dev) or something vaguely in the direction of [Ark](https://www.arkpill.me/) (which is itself right now just a vague direction).
   - You could think of this as behaving like the generalization of a lightning channel from 2 parties to `n` parties. It would probably require interactivity across all participants for each payment, but the holy grail would be some design that allows subsets of participants to generate off-chain activity without requiring everyone to sign. Though whether the latter is even possible is an area of ongoing research.
   - For the purposes of this post, this could even be some kind of [ZKP rollup](https://github.com/john-light/validity-rollups/blob/main/validity_rollups_on_bitcoin.md) thing - after all, “fraud proof” and “penalty transaction” seem basically equivalent.
@@ -31,9 +31,9 @@ Even relative experts aren’t necessarily able to run networked infrastructure 
 
 ## Layer 1: uncomfortable
 
-Okay, so to get back on track here: in our projected scaling scenario, we’ve got individual users who are using 3 or 4 of these sidechain-type services that essentially resemble community banks. These “banks” are probably networked with payment channels (or atomic swappability) so that they can handle cross-bank liquidity operations, like doing the equivalent of wire transfers. I.e., I want to pay you, but we’re at different bitcoin banks, so the entities themselves facilitate some kind of batched settlement over a lightning gateway.
+Okay, so to get back on track here: in our projected scaling scenario, each user holds value with 3 or 4 of these semi-trusted/time-sensitive offchain services that more or less resemble community banks. These “banks” are probably networked with payment channels (or atomic swappability) so that they can handle cross-bank liquidity operations, like doing the equivalent of wire transfers. I.e. I want to pay you, but we’re at different bitcoin banks, so the entities themselves facilitate some kind of batched settlement over a lightning gateway.
 
-The quiet part out loud here is that by the time 1 billion people want to use bitcoin, the main chain is very expensive to transact on. Note that I say “very expensive” and not “impossibly expensive,” because if individuals lose the ability to take some form of layer 1 physical custody, bitcoin is just gold with less friction: a paper market will develop and all the nice properties of bitcoin will diminish, as AJ talks about in his post ([link again](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc)).
+The quiet part out loud here is that by the time 1 billion people want to use bitcoin, the main chain is very expensive to transact on. Note that I say “very expensive” and not “impossibly expensive,” because if users lose the ability to take some form of layer 1 physical custody, bitcoin is just gold with less friction: a paper market will develop and all the nice properties of bitcoin will diminish, as AJ talks about in his post ([link again](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc)).
 
 Note also that part of what keeps these offchain constructions workable is the threat of their depositors somehow interacting with layer 1. Even in the case of some kind of "trustless" coinpool thing, *the ability to appeal to layer 1 is what makes it all work*. So if L1 is too expensive to appeal to for most people, the coinpool design doesn’t really work. Maybe among poorer users, that appeal process happens in groups to amortize base layer fees over a set of users.
 
@@ -65,7 +65,7 @@ So, assuming you’re willing to entertain these broad strokes, this architectur
 
 ## Design for exit
 
-Because we’re probably going to see a few dominant second layer  (“bank”) designs emerge, we have to account for correlated failure.
+Because we’re probably going to see a few dominant second layer (“bank”) designs emerge, we have to account for correlated failure. While reviewing this article, [Rijndael](https://twitter.com/rot13maxi) referred to this as "the thundering herd."
 
 Take for example the [lnd fiasco(s)](https://github.com/btcsuite/btcd/issues/1906) within the last year that could have caused mass channel closures amongst lnd nodes. Once a few workable L2 designs come into common use, the probability of a mass exit event goes up, making this seem like a crucial usecase to plan for.
 
@@ -73,7 +73,7 @@ Because layer 1 space is scarce, we need to be able to pack all the exits we can
 
 Locking funds for later claim to a prespecified path (or set of paths) should be made as concise as possible so that in times of cataclysm, we can pack in as many exit transactions as possible.
 
-I don’t think it’s possible to get more concise than the bare script `<32 byte hash> OP_CHECKTEMPLATEVERIFY`.
+For a case like this, I don’t think you can get more concise than the bare script `<32 byte hash> OP_CHECKTEMPLATEVERIFY`.
 
 It’s worth noting that a P2TR scriptPubKey is the same size (`OP_1 <32 byte pubkey>`), but then actually spending that coin comes with 17vB overhead (= `(34vB (controlblock) + 33vB (CTV script)) / 4`). If you’re trying to fill a block with 2-in-1-out CTV unrolls, this could be about 10% overhead.
 
