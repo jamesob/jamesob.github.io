@@ -4,44 +4,58 @@ layout: res
 published: true
 ---
 
-I'm a generalist engineer with experience managing people, scoping projects,
-and working at all levels of implementation.
-I have significant interest in and experience with Bitcoin.
+I'm a generalist software engineer with experience managing people, scoping projects,
+and working at all levels of implementation. I have significant interest in and
+experience with Bitcoin.
 
 ## Code samples
 
 - cpp:
   [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)
 - py: 
+  [coldcore](https://github.com/jamesob/coldcore),
+  [bmon](https://github.com/chaincodelabs/bmon),
   [bitcoinperf](https://github.com/chaincodelabs/bitcoinperf),
-  [tinychain](https://github.com/jamesob/tinychain),
-  [rds_cp](https://github.com/counsyl/rds_cp),
-  [fipy](https://github.com/usnistgov/fipy),
-  [errbot](https://github.com/errbotio/errbot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob), 
-  [redset](https://github.com/percolate/redset), 
-  [pyotp](https://github.com/pyotp/pyotp/pull/1),
-  [ddbmock](https://github.com/sendgridlabs/ddbmock/commits?author=jamesob),
-  [beets](https://github.com/beetbox/beets/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob),
-  [boto](https://github.com/boto/boto/pull/1899)
+  [simple-ctv-vault](https://github.com/jamesob/simple-ctv-vault),
+  [opvault-demo](https://github.com/jamesob/simple-ctv-vault)
 - sh: 
   [desk](https://github.com/jamesob/desk)
 - go: 
   [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)
-- node: 
-  [jennifer](https://github.com/percolate/jennifer)
 
 ## Work experience
+
+- **Engineer**
+  [NYDIG](https://nydig.com/), New York, NY
+  May 2021 - present
+
+  - Opensource
+    [work](https://github.com/bitcoin/bitcoin/pulls?q=is%3Apr+author%3Ajamesob+is%3Aclosed) on Bitcoin Core 
+    - Completed assumeutxo project
+    - Designed and implemented [BIP-345
+      `OP_VAULT`](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki) soft
+      fork proposal
+    - Wrote paper on [Vaults and Covenants](https://jameso.be/vaults.pdf)
+    - Implemented Bitcoin network analysis and monitoring system [bmon](https://bmon.info)
+  - Made contributions to live state-of-the-art cold custody system 
  
-- **Engineer**  
+- **Founding board member**
+  [OpenSats](https://opensats.org/)
+  November 2020 - present
+
+  - Guide organization and perform technical assessments of candidates for $MM of
+    opensource funding
+
+- **Opensource engineer**  
   [Chaincode Labs](https://www.chaincode.com/), New York, NY  
   Mar 2018 - Feb 2020
 
-  - Develop and review [bitcoin/bitcoin](https://github.com/bitcoin/bitcoin)
+  - Develop and review [Bitcoin Core](https://github.com/bitcoin/bitcoin)
     and [bitcoinperf](https://bitcoinperf.com)
     - Proposed and implemented the
       [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/master/proposal)
-      scaling project, currently in progress
-  - Manage internal compute/benchmarking infrastructure and networking
+      scaling project
+  - Manage internal compute/benchmarking infrastructure
   - Co-founded [Bitcoin Optech](https://bitcoinops.org/), organizing 2018
     Optech Paris workshop
 
@@ -116,11 +130,3 @@ serial solutions.
 
 - **B.Sc. in Computer Science, minor in Mathematics**  
   George Mason University
-
-## Interests
-
-Bitcoin, cooking, [finance & monetary policy](https://bearhaus.substack.com), 
-olympic lifting & CrossFit,
-[reading](https://www.goodreads.com/user/show/16430645-jamesob), DJing
-([poorly](http://soundcloud.com/jamesob)), 
-[sleeping outside](http://ahadventure.us/)
