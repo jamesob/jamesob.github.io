@@ -77,7 +77,8 @@ experience with infrastructure, networking, and Bitcoin.
     (~400 servers) system written in Python.
   - Implemented practices and tools that helped the engineering team ship 
     multiple times a day while growing from 4 to ~50 engineers. 
-  - Resurrected QA, [automated it](https://blog.percolate.com/2012/11/tools-we-use/).
+  - Resurrected QA, [automated
+    it](https://web.archive.org/web/20160417131650/https://blog.percolate.com/2012/11/tools-we-use/)
   - Sped up multiple pages and processes by an order of magnitude.
 
 - **Web developer**  
@@ -115,8 +116,7 @@ serial solutions.
 ## Talks & publications
 
 - [BIP-345](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki)
-- [Thoughts on scaling Bitcoin
-  (2023)[https://delvingbitcoin.org/t/thoughts-on-scaling-and-consensus-changes-2023/32]
+- [Thoughts on scaling Bitcoin (2023))[https://delvingbitcoin.org/t/thoughts-on-scaling-and-consensus-changes-2023/32]
 - [Vaults and covenants](https://jameso.be/vaults.pdf)
 - [Numerous bitcoin
   talks](https://www.youtube.com/results?search_query=%22james+o%27beirne%22)
