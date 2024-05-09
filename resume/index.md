@@ -116,7 +116,7 @@ serial solutions.
 ## Talks & publications
 
 - [BIP-345](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki)
-- [Thoughts on scaling Bitcoin (2023))[https://delvingbitcoin.org/t/thoughts-on-scaling-and-consensus-changes-2023/32]
+- [Thoughts on scaling Bitcoin (2023)](https://delvingbitcoin.org/t/thoughts-on-scaling-and-consensus-changes-2023/32)
 - [Vaults and covenants](https://jameso.be/vaults.pdf)
 - [Numerous bitcoin
   talks](https://www.youtube.com/results?search_query=%22james+o%27beirne%22)
