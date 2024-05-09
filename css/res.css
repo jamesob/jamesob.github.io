@@ -20,6 +20,15 @@ ul {
   }
 }
 
+li {
+  line-height: 110%;
+}
+
+/* hack to get at job titles */
+#resume > ul > li > p {
+  line-height: 140%;
+}
+
 h1 {
   margin-bottom: 14px;
 }
@@ -31,7 +40,7 @@ h2 {
 
 body a {
   font-family: 'monaco', monospace;
-  font-size: 12px;
+  font-size: 11px;
   text-decoration: none;
   border-bottom: 1px dotted;
 }
@@ -61,7 +70,7 @@ body a:hover {
 #resume {
   width: 700px;
   margin-bottom: 80px;
-  line-height: 120%;
+  line-height: 100%;
 }
 
 @media print {
