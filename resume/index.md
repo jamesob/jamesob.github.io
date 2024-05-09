@@ -8,21 +8,6 @@ I'm a generalist software engineer with experience managing people, scoping proj
 and working at all levels of implementation. I have significant interest in and
 experience with infrastructure, networking, and Bitcoin.
 
-## Code samples
-
-- cpp:
-  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)
-- py: 
-  [coldcore](https://github.com/jamesob/coldcore),
-  [bmon](https://github.com/chaincodelabs/bmon),
-  [bitcoinperf](https://github.com/chaincodelabs/bitcoinperf),
-  [simple-ctv-vault](https://github.com/jamesob/simple-ctv-vault),
-  [opvault-demo](https://github.com/jamesob/simple-ctv-vault)
-- sh: 
-  [desk](https://github.com/jamesob/desk)
-- go: 
-  [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)
-
 ## Work experience
 
 - **Engineer**  
@@ -112,18 +97,29 @@ partial differential equations lib.
 serial solutions.
   - Proposed and implemented a CI framework with Buildbot.
 
+## Code samples
+
+- cpp:
+  [bitcoin](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=author%3Ajamesob+)
+- py: 
+  [coldcore](https://github.com/jamesob/coldcore),
+  [bmon](https://github.com/chaincodelabs/bmon),
+  [bitcoinperf](https://github.com/chaincodelabs/bitcoinperf),
+  [simple-ctv-vault](https://github.com/jamesob/simple-ctv-vault),
+  [opvault-demo](https://github.com/jamesob/simple-ctv-vault)
+- sh: 
+  [desk](https://github.com/jamesob/desk)
+- go: 
+  [terraform](https://github.com/hashicorp/terraform/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ajamesob+)
+
 ## Talks & publications
 
-- [[MIT Bitcoin Expo 2020] Contributing to Bitcoin Core: assumeutxo case
-  study](https://www.youtube.com/watch?v=3HVGolSlhqo)
-- [Bitcoin Core PR review club: flushing
-  coins](https://bitcoincore.reviews/17487.html)
-- [[Dev++ 2018] Overview of Bitcoin Core
-  architecture](https://www.youtube.com/watch?v=L_sI_tXmy2U)
-- [[Chaincode Residency 2019] Advanced
-  SegWit](https://www.youtube.com/watch?v=JgNgnwF9hfY)
-- [assumeutxo
-  proposal](https://github.com/jamesob/assumeutxo-docs/tree/master/proposal)
+- [BIP-345](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki)
+- [Thoughts on scaling Bitcoin
+  (2023)[https://delvingbitcoin.org/t/thoughts-on-scaling-and-consensus-changes-2023/32]
+- [Vaults and covenants](https://jameso.be/vaults.pdf)
+- [Numerous bitcoin
+  talks](https://www.youtube.com/results?search_query=%22james+o%27beirne%22)
 - [Bitcoin for safety](https://jameso.be/2019/08/24/bitcoin-is-for-this.html)
 
 ## Education
