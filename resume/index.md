@@ -61,7 +61,7 @@ experience with infrastructure, networking, and Bitcoin.
 
  
 - **Senior Software Engineer**  
-  [Tempo Automation](https://www.tempoautomation.com/), San Francisco, CA  
+  [Tempo Automation](https://en.wikipedia.org/wiki/Tempo_Automation), San Francisco, CA  
   Aug 2016 - Feb 2018
 
   - Automated operation of a PCB factory with full stack development of various tools.
