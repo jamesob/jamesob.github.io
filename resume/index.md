@@ -54,8 +54,7 @@ experience with infrastructure, networking, and Bitcoin.
   - Develop and review [Bitcoin Core](https://github.com/bitcoin/bitcoin)
     and [bitcoinperf](https://bitcoinperf.com)
     - Proposed and implemented the
-      [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/master/proposal)
-      scaling project
+      [assumeutxo](https://bitcoinops.org/en/topics/assumeutxo/) scaling project
   - Manage internal compute/benchmarking infrastructure
   - Co-founded [Bitcoin Optech](https://bitcoinops.org/), organizing 2018
     Optech Paris workshop
