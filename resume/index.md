@@ -25,9 +25,9 @@ experience with Bitcoin.
 
 ## Work experience
 
-- **Engineer**
-  [NYDIG](https://nydig.com/), New York, NY
-  May 2021 - present
+- **Engineer**  
+  [NYDIG](https://nydig.com/), New York, NY  
+  May 2021 - present  
 
   - Opensource
     [work](https://github.com/bitcoin/bitcoin/pulls?q=is%3Apr+author%3Ajamesob+is%3Aclosed) on Bitcoin Core 
@@ -39,9 +39,9 @@ experience with Bitcoin.
     - Implemented Bitcoin network analysis and monitoring system [bmon](https://bmon.info)
   - Made contributions to live state-of-the-art cold custody system 
  
-- **Founding board member**
-  [OpenSats](https://opensats.org/)
-  November 2020 - present
+- **Founding board member**  
+  [OpenSats](https://opensats.org/)  
+  November 2020 - present  
 
   - Guide organization and perform technical assessments of candidates for $MM of
     opensource funding
