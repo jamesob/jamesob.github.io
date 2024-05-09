@@ -6,7 +6,7 @@ published: true
 
 I'm a generalist software engineer with experience managing people, scoping projects,
 and working at all levels of implementation. I have significant interest in and
-experience with Bitcoin.
+experience with infrastructure, networking, and Bitcoin.
 
 ## Code samples
 
