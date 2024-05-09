@@ -31,7 +31,8 @@ experience with infrastructure, networking, and Bitcoin.
 
   - Opensource
     [work](https://github.com/bitcoin/bitcoin/pulls?q=is%3Apr+author%3Ajamesob+is%3Aclosed) on Bitcoin Core 
-    - Completed assumeutxo project
+    - Completed
+      [`assumeutxo`](https://bitcoinmagazine.com/technical/coming-soon-an-easier-way-to-bootstrap-your-bitcoin-nodes-utxo-set) project
     - Designed and implemented [BIP-345
       `OP_VAULT`](https://github.com/bitcoin/bips/blob/master/bip-0345.mediawiki) soft
       fork proposal
