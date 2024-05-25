@@ -29,18 +29,18 @@ experience with infrastructure, networking, and Bitcoin.
   [OpenSats](https://opensats.org/)  
   November 2020 - present  
 
-  - Guide organization and perform technical assessments of candidates for $MM of
+  - Guide 501(c)3 organization and perform technical assessments of candidates for $MM of
     opensource funding
 
 - **Opensource engineer**  
   [Chaincode Labs](https://www.chaincode.com/), New York, NY  
   Mar 2018 - Feb 2020
 
-  - Develop and review [Bitcoin Core](https://github.com/bitcoin/bitcoin)
+  - Developed and reviewed [Bitcoin Core](https://github.com/bitcoin/bitcoin)
     and [bitcoinperf](https://bitcoinperf.com)
     - Proposed and implemented the
       [assumeutxo](https://bitcoinops.org/en/topics/assumeutxo/) scaling project
-  - Manage internal compute/benchmarking infrastructure
+  - Managed internal compute/benchmarking infrastructure
   - Co-founded [Bitcoin Optech](https://bitcoinops.org/), organizing 2018
     Optech Paris workshop
 
