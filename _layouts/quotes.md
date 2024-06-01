@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <head>
@@ -9,22 +10,9 @@
 <body>
   <div id="quotes">
 
-    <h1>quotes</h1>
-    <ul>
-
-      {% for q in site.data.quotes %}
-      <li>
-        <p>
-          {{ q.quote }}
-        </p>
-        {% if q.author %}
-        <p><i>{{ q.author }}</i></p>
-      </li>
-      {% endfor %}
-
-    </ul>
-
+    {{content}}
 
   </div>
 </body>
 </html>
+
