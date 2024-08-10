@@ -18,7 +18,7 @@ hospitals. I've written about some of the studies that document its benefits
 [before](https://jamesob.tumblr.com/post/93734983064/study-roundup-does-meditation-reduce-anxiety).
 
 Meditation really isn't some woo-woo thing, at least for me. It's more or less
-just shutting the fuck up for a short while and seeing what floats to the
+just quieting down for a short while and seeing what floats to the
 top.  During this process of mental relaxation your body *physically* relaxes
 in a very pleasant way. The sensation of discovering tension in your
 musculature that you were previously unaware of, then feeling it recede is hard
