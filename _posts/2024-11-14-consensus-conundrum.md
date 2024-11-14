@@ -38,25 +38,25 @@ that this is how it worked up until about 2021.
 Given that, there are three factors that create the CONSENSUS CONUNDRUM facing bitcoin
 right now:
 
-1. The old benevolent dictators (or high-caste oligarchy) have abdicated their power,
-leaving a vacuum that shifts the project from “conventional mode of operation” to
-“novel, never-before-tried” mode: an attempt at some kind of supposedly meritocratic
-leaderlessness.
+- The old benevolent dictators (or high-caste oligarchy) have abdicated their power,
+  leaving a vacuum that shifts the project from “conventional mode of operation” to
+  “novel, never-before-tried” mode: an attempt at some kind of supposedly meritocratic
+  leaderlessness.
 
 This change is coupled with the fact that
 
-2. the possible design space for improvements and things to care about in bitcoin is
-wide open at this point. Do you want vaults? Or more L2s? What about rollups? Or how
-about a generic computational tool like CAT? Or should we bundle the generic things
-with applications (CTV + VAULT) to make sure they really work?
+- the possible design space for improvements and things to care about in bitcoin is
+  wide open at this point. Do you want vaults? Or more L2s? What about rollups? Or how
+  about a generic computational tool like CAT? Or should we bundle the generic things
+  with applications (CTV + VAULT) to make sure they really work?
 
 The problem is that all of these are valid opinions. They all have merit, both in terms
 of what to focus on and how to get to the end goal. There really isn’t a clear
 “correct” design pattern.
 
-3. A final factor that makes this situation poisonous is that faithfully pursuing,
-fleshing out, building, “doing the work” of presenting a proposal IS REALLY REALLY
-TIME CONSUMPTIVE AND MIND MELTING.
+- A final factor that makes this situation poisonous is that faithfully pursuing,
+  fleshing out, building, “doing the work” of presenting a proposal IS REALLY REALLY
+  TIME CONSUMPTIVE AND MIND MELTING.
 
 Getting the demos, specs, implementation, and "marketing" material together is a long
 grind that takes years of experience with Core to even approach.
