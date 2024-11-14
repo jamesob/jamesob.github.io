@@ -78,7 +78,7 @@ I’ve worked for some of the rare companies that care about bitcoin and do have
 money for this kind of R&D, and even then the resources are not sufficient to build a
 serious product demo on top of 1 of N speculative softforks that may never happen.
 
----
+—--
 
 This kind of situation is why human systems evolve leadership hierarchies. In general,
 to progress in a situation like this someone needs to be in a position to say “alright,
@@ -122,8 +122,8 @@ consensus changes have operated.
 This is something that everyone knows semi-consciously but doesn’t really want to own.
 
 Core devs saying “yes” and clicking merge has been a necessary precursor every time.
-And right now none of the Core devs are paying attention to the soft fork conversations
-- sort of understandable, there’s a bunch to do in bitcoin.
+And right now none of the Core devs are paying attention to the soft fork 
+conversations - sort of understandable, there’s a bunch to do in bitcoin.
 
 But let’s be honest here, a lot of the work happening in Core has been sort of
 secondary to bitcoin’s realization.
@@ -159,7 +159,7 @@ and conceptually they’d be great additions to bitcoin.
 Hell, probably a higher block size is safe given features like compactblocks and
 assumeutxo and eventually utreexo. But that’s another post for another day.
 
----
+—--
 
 I've gone back and forth about writing a post like this, because I don't have any
 concrete prescriptions or recommendations. I guess I can only hope that bringing up
